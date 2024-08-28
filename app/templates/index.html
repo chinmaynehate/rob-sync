@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI WebSocket</title>
+    <title>Go-1 Orchestra</title>
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>FastAPI WebSocket</h1>
+    <h1>Go-1 Orchestra</h1>
     <button onclick="executeCommand()">Execute Command</button>
     <script>
         var ws = new WebSocket("wss://rob-sync-production.up.railway.app/ws/ui");
+
+        ws.onopen = function() {
+            console.log("Connected to WebSocket");
+        };
+
+        ws.onerror = function(error) {
+            console.error("WebSocket Error: ", error);
+        };
+
         ws.onmessage = function(event) {
-            console.log(event.data);
+            console.log("Received from server: " + event.data);
         };
 
         function executeCommand() {
             fetch('/execute', {
                 method: 'POST'
-            });
+            }).then(response => response.json())
+              .then(data => console.log(data.message));
         }
     </script>
 </body>

@@ -6,10 +6,10 @@ from pathlib import Path
 
 app = FastAPI()
 
-# Add CORS middleware
+# Add CORS middleware (This is primarily for HTTP requests, but it doesn't hurt to have)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Update this to specify your allowed origins
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,24 +22,27 @@ class ConnectionManager:
     async def connect(self, websocket: WebSocket):
         await websocket.accept()
         self.active_connections.append(websocket)
+        print("New connection added")
 
     def disconnect(self, websocket: WebSocket):
         self.active_connections.remove(websocket)
+        print("Connection removed")
 
     async def broadcast(self, message: str):
+        print(f"Broadcasting message: {message}")
         for connection in self.active_connections:
             await connection.send_text(message)
 
 manager = ConnectionManager()
 
 @app.websocket("/ws/{client_id}")
-async def websocket_endpoint(websocket: WebSocket, client_id: int):
+async def websocket_endpoint(websocket: WebSocket, client_id: str):
     await manager.connect(websocket)
     try:
         while True:
             data = await websocket.receive_text()
             print(f"Message from client {client_id}: {data}")
-            await websocket.send_text(f"Message received: {data}")  # Respond to the client
+            await websocket.send_text(f"Message received: {data}")
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         print(f"Client {client_id} disconnected")
