@@ -11,19 +11,29 @@
     <div id="clients"></div>
     <button onclick="executeCommand()">Execute Command</button>
     <script>
-        var ws = new WebSocket("wss://rob-sync-production.up.railway.app/ws/ui");
+        // Fetch the currently connected clients when the page loads
+        window.onload = function() {
+            fetch('/clients')
+                .then(response => response.json())
+                .then(data => {
+                    updateClientList(data.clients);
+                });
 
-        ws.onopen = function() {
-            console.log("Connected to WebSocket");
-        };
+            // Open WebSocket connection
+            var ws = new WebSocket(`wss://${window.location.host}/ws/ui`);
 
-        ws.onerror = function(error) {
-            console.error("WebSocket Error: ", error);
-        };
+            ws.onopen = function() {
+                console.log("Connected to WebSocket");
+            };
 
-        ws.onmessage = function(event) {
-            console.log("Received from server: " + event.data);
-            displayClient(event.data);
+            ws.onerror = function(error) {
+                console.error("WebSocket Error: ", error);
+            };
+
+            ws.onmessage = function(event) {
+                console.log("Received from server: " + event.data);
+                updateClient(event.data);
+            };
         };
 
         function executeCommand() {
@@ -33,22 +43,34 @@
               .then(data => console.log(data.message));
         }
 
-        function displayClient(message) {
+        function updateClient(message) {
+            var clientId = message.split(' ')[1];
             var clientsDiv = document.getElementById('clients');
-            var clientElem;
+            var clientElem = document.getElementById(clientId);
 
             if (message.includes('connected')) {
-                clientElem = document.createElement('p');
-                clientElem.textContent = message;
-                clientElem.id = message.split(' ')[1]; // Assign the client ID as the element's ID
-                clientsDiv.appendChild(clientElem);
+                if (!clientElem) {
+                    clientElem = document.createElement('p');
+                    clientElem.textContent = `${clientId} connected`;
+                    clientElem.id = clientId;
+                    clientsDiv.appendChild(clientElem);
+                }
             } else if (message.includes('disconnected')) {
-                var clientId = message.split(' ')[1];
-                clientElem = document.getElementById(clientId);
                 if (clientElem) {
-                    clientsDiv.removeChild(clientElem); // Remove the client from the list
+                    clientsDiv.removeChild(clientElem);
                 }
             }
+        }
+
+        function updateClientList(clients) {
+            var clientsDiv = document.getElementById('clients');
+            clientsDiv.innerHTML = ''; // Clear the current list
+            clients.forEach(clientId => {
+                var clientElem = document.createElement('p');
+                clientElem.textContent = `${clientId} connected`;
+                clientElem.id = clientId;
+                clientsDiv.appendChild(clientElem);
+            });
         }
     </script>
 </body>
