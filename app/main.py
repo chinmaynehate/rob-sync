@@ -47,11 +47,25 @@ manager = ConnectionManager()
 #         manager.disconnect(websocket)
 #         print(f"Client {client_id} disconnected")
 
+# @app.websocket("/ws/{client_id}")
+# async def websocket_endpoint(websocket: WebSocket, client_id: str):
+#     await manager.connect(websocket)
+#     try:
+#         # Broadcast the client ID to all connected clients
+#         await manager.broadcast(f"Client {client_id} connected")
+        
+#         while True:
+#             data = await websocket.receive_text()
+#             print(f"Message from client {client_id}: {data}")
+#             await websocket.send_text(f"Message received: {data}")
+#     except WebSocketDisconnect:
+#         manager.disconnect(websocket)
+#         print(f"Client {client_id} disconnected")
 @app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: str):
     await manager.connect(websocket)
     try:
-        # Broadcast the client ID to all connected clients
+        # Notify all clients that a new client has connected
         await manager.broadcast(f"Client {client_id} connected")
         
         while True:
@@ -60,6 +74,8 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
             await websocket.send_text(f"Message received: {data}")
     except WebSocketDisconnect:
         manager.disconnect(websocket)
+        # Notify all clients that the client has disconnected
+        await manager.broadcast(f"Client {client_id} disconnected")
         print(f"Client {client_id} disconnected")
 
 

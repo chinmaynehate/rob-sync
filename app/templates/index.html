@@ -35,9 +35,20 @@
 
         function displayClient(message) {
             var clientsDiv = document.getElementById('clients');
-            var clientElem = document.createElement('p');
-            clientElem.textContent = message;
-            clientsDiv.appendChild(clientElem);
+            var clientElem;
+
+            if (message.includes('connected')) {
+                clientElem = document.createElement('p');
+                clientElem.textContent = message;
+                clientElem.id = message.split(' ')[1]; // Assign the client ID as the element's ID
+                clientsDiv.appendChild(clientElem);
+            } else if (message.includes('disconnected')) {
+                var clientId = message.split(' ')[1];
+                clientElem = document.getElementById(clientId);
+                if (clientElem) {
+                    clientsDiv.removeChild(clientElem); // Remove the client from the list
+                }
+            }
         }
     </script>
 </body>
