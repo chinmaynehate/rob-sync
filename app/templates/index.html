@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI WebSocket</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>FastAPI WebSocket</h1>
+    <button onclick="sendMessage()">Execute Command</button>
+    <script>
+        var ws = new WebSocket("ws://localhost:8000/ws/ui");
+        ws.onmessage = function(event) {
+            console.log(event.data);
+        };
+
+        function sendMessage() {
+            ws.send("Execute this command");
+        }
+    </script>
+</body>
+</html>
