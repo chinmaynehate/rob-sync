@@ -44,18 +44,18 @@
         }
 
         function updateClient(message) {
-            var clientId = message.split(' ')[1];
             var clientsDiv = document.getElementById('clients');
+            var [_, clientId, status] = message.split(' '); // Splitting message based on the expected format
             var clientElem = document.getElementById(clientId);
 
-            if (message.includes('connected')) {
+            if (status === 'connected') {
                 if (!clientElem) {
                     clientElem = document.createElement('p');
                     clientElem.textContent = `${clientId} connected`;
                     clientElem.id = clientId;
                     clientsDiv.appendChild(clientElem);
                 }
-            } else if (message.includes('disconnected')) {
+            } else if (status === 'disconnected') {
                 if (clientElem) {
                     clientsDiv.removeChild(clientElem);
                 }
