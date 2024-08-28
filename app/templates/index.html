@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Go-1 Orchestra</h1>
+    <div id="clients"></div>
     <button onclick="executeCommand()">Execute Command</button>
     <script>
         var ws = new WebSocket("wss://rob-sync-production.up.railway.app/ws/ui");
@@ -22,6 +23,7 @@
 
         ws.onmessage = function(event) {
             console.log("Received from server: " + event.data);
+            displayClient(event.data);
         };
 
         function executeCommand() {
@@ -29,6 +31,13 @@
                 method: 'POST'
             }).then(response => response.json())
               .then(data => console.log(data.message));
+        }
+
+        function displayClient(message) {
+            var clientsDiv = document.getElementById('clients');
+            var clientElem = document.createElement('p');
+            clientElem.textContent = message;
+            clientsDiv.appendChild(clientElem);
         }
     </script>
 </body>
