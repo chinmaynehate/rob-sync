@@ -29,6 +29,7 @@ async def websocket_endpoint(websocket: WebSocket, client_id: int):
         while True:
             data = await websocket.receive_text()
             print(f"Message from client {client_id}: {data}")
+            await websocket.send_text(f"Message received: {data}")  # Respond to the client
     except WebSocketDisconnect:
         manager.disconnect(websocket)
         print(f"Client {client_id} disconnected")
@@ -40,6 +41,6 @@ async def get():
 
 @app.post("/execute")
 async def execute_command():
-    command = "Your Command Here"
+    command = "Hi there"
     await manager.broadcast(command)
     return {"message": "Command sent to all clients"}

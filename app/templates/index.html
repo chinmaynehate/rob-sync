@@ -8,15 +8,17 @@
 </head>
 <body>
     <h1>FastAPI WebSocket</h1>
-    <button onclick="sendMessage()">Execute Command</button>
+    <button onclick="executeCommand()">Execute Command</button>
     <script>
-        var ws = new WebSocket("ws://localhost:8000/ws/ui");
+        var ws = new WebSocket("wss://rob-sync-production.up.railway.app/ws/ui");
         ws.onmessage = function(event) {
             console.log(event.data);
         };
 
-        function sendMessage() {
-            ws.send("Execute this command");
+        function executeCommand() {
+            fetch('/execute', {
+                method: 'POST'
+            });
         }
     </script>
 </body>
