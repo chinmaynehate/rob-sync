@@ -80,7 +80,7 @@ async def perform_triangle_formation():
         cmd.velocity = [0.3, 0] # Move forward
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3)
-        
+        cmd.mode = 0
         # Wait for 2 seconds to synchronize with other robots
         await asyncio.sleep(2)
         
@@ -91,7 +91,6 @@ async def perform_triangle_formation():
         cmd.velocity = [0.3, 0] # Move forward
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3)
-        
         # Move diagonally to the left
         cmd.velocity = [0.3, 0.3] # Move diagonally left
         await move_for_duration(2)
