@@ -85,7 +85,7 @@ async def handle_message(websocket, message):
             cmd.velocity = [0, 0]
             cmd.yawSpeed = 0.0
             cmd.reserve = 0
-        elif data["type"] == "form1":
+        elif data["type"] == "triangle":
             if name == "514": 
             cmd.mode = 2
             cmd.gaitType = 1

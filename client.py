@@ -3,40 +3,42 @@ import websockets
 import json
 import sys
 
+# Function to process commands
+async def process_command(command):
+    print(f"Processing command: {command}")
+    if command == "tilt":
+        print("Tilting...")
+    elif command == "dance 1":
+        print("Performing Dance 1...")
+    elif command == "dance 2":
+        print("Performing Dance 2...")
+    elif command == "forward":
+        print("Moving forward...")
+    elif command == "backward":
+        print("Moving backward...")
+    elif command == "left":
+        print("Turning left...")
+    elif command == "right":
+        print("Turning right...")
+    elif command == "stop":
+        print("Stopping...")
+    elif command == "triangle":
+        print("Triangle...")
+    else:
+        print("Unknown command received.")
+    await send_robot_command()
+
 # Function to handle received messages
 async def handle_message(websocket, message):
     print("Received message:", message)
     
     try:
         data = json.loads(message)
+        if "type" in data:
+            await process_command(data["type"])
     except json.JSONDecodeError:
-        # If the message is not JSON, just print it and return
-        print(f"Non-JSON message received: {message}")
-        return
-
-    if "type" in data:
-        print(f"Type: {data['type']}")
-
-        if data["type"] == "tilt":
-            print("Tilting...")
-        elif data["type"] == "dance 1":
-            print("Performing Dance 1...")
-        elif data["type"] == "dance 2":
-            print("Performing Dance 2...")
-        elif data["type"] == "forward":
-            print("Moving forward...")
-        elif data["type"] == "backward":
-            print("Moving backward...")
-        elif data["type"] == "left":
-            print("Turning left...")
-        elif data["type"] == "right":
-            print("Turning right...")
-        elif data["type"] == "stop":
-            print("Stopping...")
-        else:
-            print("Unknown command received.")
-
-        await send_robot_command()
+        # If the message is not JSON, treat it as a plain command
+        await process_command(message)
 
 # Function to send robot command
 async def send_robot_command():
