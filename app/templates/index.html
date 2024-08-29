@@ -16,28 +16,52 @@
         .joystick-row {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px; /* Space out rows */
+            margin-bottom: 10px; /* Space out rows */
             position: relative;
         }
         .joystick-row button {
-            width: 100px; /* Button size */
-            height: 100px; /* Button size */
-            font-size: 20px; /* Font size */
-            border-radius: 40%; /* Smaller radius for joystick buttons */
+            width: 70px; /* Smaller button size */
+            height: 70px; /* Smaller button size */
+            font-size: 16px; /* Smaller font size */
+            border-radius: 30%; /* Adjusted radius for smaller buttons */
+            border: 2px solid transparent; /* Initial border, transparent */
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, border-color 0.1s ease-in-out;
+        }
+        .highlighted {
+            border-color: #000000 !important; /* Keep border highlighted in gold color */
         }
         .joystick-left {
-            margin-right: 60px; /* Move left button further left */
+            margin-right: 40px; /* Adjust spacing for smaller buttons */
         }
         .joystick-right {
-            margin-left: 60px; /* Move right button further right */
+            margin-left: 40px; /* Adjust spacing for smaller buttons */
         }
         .joystick-center .btn {
-            width: 100px; /* Button size */
-            height: 100px; /* Button size */
-            font-size: 20px; /* Font size */
+            width: 70px; /* Smaller stop button */
+            height: 70px; /* Smaller stop button */
+            font-size: 16px; /* Smaller font size */
             border-radius: 50%; /* Keep stop button fully circular */
             z-index: 1;
-            margin-top: 1px; /* Move stop button slightly down */
+            margin-top: 10px; /* Adjust stop button position */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .joystick-row button,
+            .joystick-center .btn {
+                width: 50px; /* Even smaller button size on mobile */
+                height: 50px; /* Even smaller button size on mobile */
+                font-size: 14px; /* Smaller font size on mobile */
+            }
+            .joystick-left {
+                margin-right: 30px; /* Adjust spacing for mobile */
+            }
+            .joystick-right {
+                margin-left: 30px; /* Adjust spacing for mobile */
+            }
+            .joystick-center .btn {
+                margin-top: 5px; /* Adjust stop button position for mobile */
+            }
         }
     </style>
 </head>
@@ -68,30 +92,48 @@
         <!-- Joystick Layout -->
         <div class="joystick-container mt-4">
             <div class="joystick-row">
-                <button class="btn btn-success" onclick="executeCommand('forward')">↑</button>
+                <button class="btn btn-success" onclick="executeCommand('forward', this)">↑</button>
             </div>
             <div class="joystick-row">
-                <button class="btn btn-info joystick-left" onclick="executeCommand('left')">←</button>
+                <button class="btn btn-info joystick-left" onclick="executeCommand('left', this)">←</button>
                 <div class="joystick-center">
-                    <button class="btn btn-danger" onclick="executeCommand('stop')">■</button>
+                    <button class="btn btn-danger" onclick="executeCommand('stop', this)">■</button>
                 </div>
-                <button class="btn btn-info joystick-right" onclick="executeCommand('right')">→</button>
+                <button class="btn btn-info joystick-right" onclick="executeCommand('right', this)">→</button>
             </div>
             <div class="joystick-row">
-                <button class="btn btn-warning" onclick="executeCommand('backward')">↓</button>
+                <button class="btn btn-warning" onclick="executeCommand('backward', this)">↓</button>
             </div>
         </div>
 
         <!-- Dance Buttons -->
         <div class="row justify-content-center mt-4">
             <div class="col-auto">
-                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 1')">Dance 1</button>
-                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 2')">Dance 2</button>
+                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 1', this)">Dance 1</button>
+                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 2', this)">Dance 2</button>
             </div>
         </div>
     </div>
 
     <script>
+        function executeCommand(commandType, button) {
+            // Remove the highlight from all buttons
+            document.querySelectorAll('button').forEach(btn => btn.classList.remove('highlighted'));
+
+            // Highlight the clicked button
+            button.classList.add('highlighted');
+
+            fetch('/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ type: commandType })
+            }).then(response => response.json())
+              .then(data => console.log(data.message))
+              .catch(error => console.error('Error:', error));
+        }
+
         window.onload = function() {
             fetch('/clients')
                 .then(response => response.json())
@@ -114,18 +156,6 @@
                 updateClient(event.data);
             };
         };
-
-        function executeCommand(commandType) {
-            fetch('/execute', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ type: commandType })
-            }).then(response => response.json())
-              .then(data => console.log(data.message))
-              .catch(error => console.error('Error:', error));
-        }
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
