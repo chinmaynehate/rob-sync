@@ -28,7 +28,7 @@
             transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, border-color 0.1s ease-in-out;
         }
         .highlighted {
-            border-color: #000000 !important; /* Keep border highlighted in gold color */
+            border-color: #000000 !important; /* Keep border highlighted in black color */
         }
         .joystick-left {
             margin-right: 40px; /* Adjust spacing for smaller buttons */
@@ -106,11 +106,12 @@
             </div>
         </div>
 
-        <!-- Dance Buttons -->
+        <!-- Dance and Triangle Buttons -->
         <div class="row justify-content-center mt-4">
             <div class="col-auto">
                 <button class="btn btn-secondary m-2" onclick="executeCommand('dance 1', this)">Dance 1</button>
                 <button class="btn btn-secondary m-2" onclick="executeCommand('dance 2', this)">Dance 2</button>
+                <button class="btn btn-primary m-2" onclick="executeCommand('triangle', this)">Triangle</button>
             </div>
         </div>
     </div>
