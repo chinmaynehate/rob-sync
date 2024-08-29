@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from typing import List
@@ -65,7 +65,8 @@ async def get_clients():
     return JSONResponse(content={"clients": clients})
 
 @app.post("/execute")
-async def execute_command():
-    command = "Hi there"
+async def execute_command(request: Request):
+    data = await request.json()
+    command = data.get("type", "unknown")
     await manager.broadcast(command)
-    return {"message": "Command sent to all clients"}
+    return {"message": f"Command '{command}' sent to all clients"}

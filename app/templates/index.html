@@ -32,7 +32,14 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-auto">
-                <button class="btn btn-primary" onclick="executeCommand()">Execute Command</button>
+                <button class="btn btn-primary m-2" onclick="executeCommand('tilt')">Tilt</button>
+                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 1')">Dance 1</button>
+                <button class="btn btn-secondary m-2" onclick="executeCommand('dance 2')">Dance 2</button>
+                <button class="btn btn-success m-2" onclick="executeCommand('forward')">Forward</button>
+                <button class="btn btn-warning m-2" onclick="executeCommand('backward')">Backward</button>
+                <button class="btn btn-info m-2" onclick="executeCommand('left')">Left</button>
+                <button class="btn btn-info m-2" onclick="executeCommand('right')">Right</button>
+                <button class="btn btn-danger m-2" onclick="executeCommand('stop')">Stop</button>
             </div>
         </div>
     </div>
@@ -61,11 +68,16 @@
             };
         };
 
-        function executeCommand() {
+        function executeCommand(commandType) {
             fetch('/execute', {
-                method: 'POST'
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ type: commandType })  // Sending the command type (e.g., 'tilt')
             }).then(response => response.json())
-              .then(data => console.log(data.message));
+              .then(data => console.log(data.message))
+              .catch(error => console.error('Error:', error));
         }
 
         function updateClient(message) {
