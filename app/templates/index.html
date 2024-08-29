@@ -8,7 +8,15 @@
 </head>
 <body>
     <h1>Go-1 Orchestra</h1>
-    <div id="clients"></div>
+    <table id="clients-table" border="1" style="width:50%; margin: 0 auto;">
+        <thead>
+            <tr>
+                <th>Client ID</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="clients"></tbody>
+    </table>
     <button onclick="executeCommand()">Execute Command</button>
     <script>
         // Fetch the currently connected clients when the page loads
@@ -44,32 +52,32 @@
         }
 
         function updateClient(message) {
-            var clientsDiv = document.getElementById('clients');
+            var clientsTbody = document.getElementById('clients');
             var [_, clientId, status] = message.split(' '); // Splitting message based on the expected format
-            var clientElem = document.getElementById(clientId);
+            var clientRow = document.getElementById(clientId);
 
             if (status === 'connected') {
-                if (!clientElem) {
-                    clientElem = document.createElement('p');
-                    clientElem.textContent = `${clientId} connected`;
-                    clientElem.id = clientId;
-                    clientsDiv.appendChild(clientElem);
+                if (!clientRow) {
+                    clientRow = document.createElement('tr');
+                    clientRow.id = clientId;
+                    clientRow.innerHTML = `<td>${clientId}</td><td>${status}</td>`;
+                    clientsTbody.appendChild(clientRow);
                 }
             } else if (status === 'disconnected') {
-                if (clientElem) {
-                    clientsDiv.removeChild(clientElem);
+                if (clientRow) {
+                    clientsTbody.removeChild(clientRow);
                 }
             }
         }
 
         function updateClientList(clients) {
-            var clientsDiv = document.getElementById('clients');
-            clientsDiv.innerHTML = ''; // Clear the current list
+            var clientsTbody = document.getElementById('clients');
+            clientsTbody.innerHTML = ''; // Clear the current list
             clients.forEach(clientId => {
-                var clientElem = document.createElement('p');
-                clientElem.textContent = `${clientId} connected`;
-                clientElem.id = clientId;
-                clientsDiv.appendChild(clientElem);
+                var clientRow = document.createElement('tr');
+                clientRow.id = clientId;
+                clientRow.innerHTML = `<td>${clientId}</td><td>connected</td>`;
+                clientsTbody.appendChild(clientRow);
             });
         }
     </script>
