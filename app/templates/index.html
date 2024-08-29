@@ -9,25 +9,33 @@
     <style>
         .joystick-container {
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
-            gap: 10px;
+            align-items: center;
+            margin-top: 20px;
         }
         .joystick-row {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .joystick-row button {
+            width: 80px;
+            height: 80px;
+            font-size: 16px;
+            border-radius: 50%;
         }
         .joystick-center {
-            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -40px;
         }
         .joystick-center .btn {
-            position: absolute;
-            top: -50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
+            width: 80px;
+            height: 80px;
+            font-size: 16px;
+            border-radius: 50%;
+            z-index: 1;
         }
     </style>
 </head>
@@ -58,17 +66,17 @@
         <!-- Joystick Layout -->
         <div class="joystick-container mt-4">
             <div class="joystick-row">
-                <button class="btn btn-success" onclick="executeCommand('forward')">Forward</button>
+                <button class="btn btn-success" onclick="executeCommand('forward')">↑</button>
             </div>
             <div class="joystick-row">
-                <button class="btn btn-info" onclick="executeCommand('left')">Left</button>
+                <button class="btn btn-info" onclick="executeCommand('left')">←</button>
                 <div class="joystick-center">
-                    <button class="btn btn-danger" onclick="executeCommand('stop')">Stop</button>
+                    <button class="btn btn-danger" onclick="executeCommand('stop')">■</button>
                 </div>
-                <button class="btn btn-info" onclick="executeCommand('right')">Right</button>
+                <button class="btn btn-info" onclick="executeCommand('right')">→</button>
             </div>
             <div class="joystick-row">
-                <button class="btn btn-warning" onclick="executeCommand('backward')">Backward</button>
+                <button class="btn btn-warning" onclick="executeCommand('backward')">↓</button>
             </div>
         </div>
 
@@ -111,7 +119,7 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ type: commandType })  // Sending the command type (e.g., 'tilt')
+                body: JSON.stringify({ type: commandType })
             }).then(response => response.json())
               .then(data => console.log(data.message))
               .catch(error => console.error('Error:', error));
@@ -119,7 +127,7 @@
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
-            var [_, clientId, status] = message.split(' '); // Splitting message based on the expected format
+            var [_, clientId, status] = message.split(' ');
             var clientRow = document.getElementById(clientId);
 
             if (status === 'connected') {
@@ -138,7 +146,7 @@
 
         function updateClientList(clients) {
             var clientsTbody = document.getElementById('clients');
-            clientsTbody.innerHTML = ''; // Clear the current list
+            clientsTbody.innerHTML = '';
             clients.forEach(clientId => {
                 var clientRow = document.createElement('tr');
                 clientRow.id = clientId;
