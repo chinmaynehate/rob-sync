@@ -142,7 +142,7 @@
                     updateClientList(data.clients);
                 });
 
-            var ws = new WebSocket(`wss://${window.location.host}/ws/ui`);
+            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/ui`);
 
             ws.onopen = function() {
                 console.log("Connected to WebSocket");
@@ -154,13 +154,15 @@
 
             ws.onmessage = function(event) {
                 console.log("Received from server: " + event.data);
-                updateClient(event.data);
+                let message = JSON.parse(event.data);
+                updateClient(message);
             };
         };
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
-            var [_, clientId, status] = message.split(' ');
+            var clientId = message.client_id;
+            var status = message.status;
             var clientRow = document.getElementById(clientId);
 
             if (status === 'connected') {

@@ -154,7 +154,7 @@ async def on_close(websocket, path):
 async def on_error(websocket, error):
     print("Error occurred:", error)
 
-async def websocket_handler(uri, robot_name):
+async def websocket_handler(uri):
     try:
         async with websockets.connect(uri) as websocket:
             await on_open(websocket)
@@ -171,13 +171,13 @@ async def websocket_handler(uri, robot_name):
 
 async def main():
     if len(sys.argv) != 2:
-        print("Error: Name not specified")
+        print("Usage: client_udp_test.py <client_id>")
         sys.exit(1)
 
     global name
     name = sys.argv[1]
     uri = f"wss://rob-sync-production.up.railway.app/ws/{name}"
-    await websocket_handler(uri, name)
+    await websocket_handler(uri)
 
 if __name__ == "__main__":
     asyncio.run(main())

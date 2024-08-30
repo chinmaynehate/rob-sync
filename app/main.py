@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from typing import List
@@ -24,6 +24,7 @@ class ConnectionManager:
         await websocket.accept()
         self.active_connections[client_id] = websocket
         print(f"Client {client_id} connected")
+        return client_id
 
     def disconnect(self, client_id: str):
         if client_id in self.active_connections:
@@ -50,8 +51,6 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str):
         while True:
             data = await websocket.receive_text()
             print(f"Message from client {client_id}: {data}")
-            
-            # Echo back the received message as JSON
             await websocket.send_text(json.dumps({"type": "echo", "message": data}))
     except WebSocketDisconnect:
         manager.disconnect(client_id)
