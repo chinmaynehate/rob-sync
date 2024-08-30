@@ -117,6 +117,33 @@
     </div>
 
     <script>
+        // Function to simplify user agent and generate a UUID
+        function generateClientId() {
+            // Extract device type
+            var userAgent = navigator.userAgent.toLowerCase();
+            var deviceType = /mobile|tablet|ipad|iphone/.test(userAgent) ? 'Mobile' : 'Desktop';
+            
+            // Extract OS and Browser
+            var platform = navigator.platform.toLowerCase();
+            var os = userAgent.includes('android') ? 'Android' : 
+                     platform.includes('win') ? 'Windows' : 
+                     platform.includes('mac') ? 'Mac' : 
+                     platform.includes('linux') ? 'Linux' : 'Other';
+            
+            var browser = userAgent.includes('chrome') ? 'Chrome' :
+                          userAgent.includes('firefox') ? 'Firefox' :
+                          userAgent.includes('safari') ? 'Safari' : 'Other';
+
+            // Generate Short UUID (first 8 characters of a UUID)
+            var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            }).substring(0, 8);  // Shorten UUID to 8 characters
+
+            // Combine to create a unique client ID
+            return `${deviceType}-${os}-${browser}-${uuid}`;
+        }
+
         function executeCommand(commandType, button) {
             // Remove the highlight from all buttons
             document.querySelectorAll('button').forEach(btn => btn.classList.remove('highlighted'));
@@ -142,10 +169,12 @@
                     updateClientList(data.clients);
                 });
 
-            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/ui`);
+            // Generate a unique client ID using simplified device info and UUID
+            var uniqueClientId = generateClientId();
+            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/${uniqueClientId}`);
 
             ws.onopen = function() {
-                console.log("Connected to WebSocket");
+                console.log("Connected to WebSocket with ID:", uniqueClientId);
             };
 
             ws.onerror = function(error) {
