@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from typing import List
 from pathlib import Path
+import json
 
 app = FastAPI()
 
@@ -29,10 +30,11 @@ class ConnectionManager:
             del self.active_connections[client_id]
             print(f"Client {client_id} disconnected")
 
-    async def broadcast(self, message: str):
-        print(f"Broadcasting message: {message}")
+    async def broadcast(self, message: dict):
+        json_message = json.dumps(message)
+        print(f"Broadcasting message: {json_message}")
         for connection in self.active_connections.values():
-            await connection.send_text(message)
+            await connection.send_text(json_message)
 
     def get_active_clients(self):
         return list(self.active_connections.keys())
@@ -43,15 +45,17 @@ manager = ConnectionManager()
 async def websocket_endpoint(websocket: WebSocket, client_id: str):
     await manager.connect(websocket, client_id)
     try:
-        await manager.broadcast(f"Client {client_id} connected")
+        await manager.broadcast({"type": "status", "client_id": client_id, "status": "connected"})
         
         while True:
             data = await websocket.receive_text()
             print(f"Message from client {client_id}: {data}")
-            await websocket.send_text(f"Message received: {data}")
+            
+            # Echo back the received message as JSON
+            await websocket.send_text(json.dumps({"type": "echo", "message": data}))
     except WebSocketDisconnect:
         manager.disconnect(client_id)
-        await manager.broadcast(f"Client {client_id} disconnected")
+        await manager.broadcast({"type": "status", "client_id": client_id, "status": "disconnected"})
         print(f"Client {client_id} disconnected")
 
 @app.get("/")
@@ -68,5 +72,5 @@ async def get_clients():
 async def execute_command(request: Request):
     data = await request.json()
     command = data.get("type", "unknown")
-    await manager.broadcast(command)
+    await manager.broadcast({"type": "command", "command": command})
     return {"message": f"Command '{command}' sent to all clients"}

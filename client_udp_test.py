@@ -130,10 +130,12 @@ async def handle_message(websocket, message):
     try:
         data = json.loads(message)
         if "type" in data:
-            await process_command(data["type"])
+            if data["type"] == "command":
+                await process_command(data["command"])
+            else:
+                print("Unknown type of message received.")
     except json.JSONDecodeError:
-        # If the message is not JSON, treat it as a plain command
-        await process_command(message)
+        print(f"Non-JSON message received: {message}")
 
 # Function to send robot command
 async def send_robot_command():
