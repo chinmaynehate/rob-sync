@@ -1,4 +1,4 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Request, HTTPException
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, JSONResponse
 from typing import List
@@ -51,14 +51,17 @@ class ConnectionManager:
         json_message = json.dumps(message)
         print(f"Broadcasting message: {json_message}")
         for connection in self.active_connections.values():
-            await connection.send_text(json_message)
+            try:
+                await connection.send_text(json_message)
+            except Exception as e:
+                print(f"Failed to send message to {connection}: {e}")
 
     def get_active_clients(self):
         return list(self.active_connections.keys())
 
 manager = ConnectionManager()
 
-@app.websocket("/ws/{client_id}/{passcode}")
+@app.websocket("/ws/{client_id}")
 async def websocket_endpoint(websocket: WebSocket, client_id: str, passcode: str):
     connected_client = await manager.connect(websocket, client_id, passcode)
     if not connected_client:
