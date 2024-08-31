@@ -4,6 +4,8 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from typing import List
 from pathlib import Path
 import json
+import hashlib
+import os
 
 app = FastAPI()
 
@@ -16,15 +18,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Get the hashed passcode from environment variables
+REQUIRED_HASHED_PASSCODE = os.getenv("PASSCODE")
+
 class ConnectionManager:
     def __init__(self):
         self.active_connections: dict = {}
 
-    async def connect(self, websocket: WebSocket, client_id: str):
+    async def connect(self, websocket: WebSocket, client_id: str, passcode: str):
+        # Verify passcode
+        if not self.verify_passcode(passcode):
+            await websocket.close(code=1008, reason="Invalid passcode")
+            print(f"Client {client_id} provided an invalid passcode.")
+            return None
+
         await websocket.accept()
         self.active_connections[client_id] = websocket
         print(f"Client {client_id} connected")
         return client_id
+
+    def verify_passcode(self, passcode: str) -> bool:
+        # Hash the provided passcode and compare with the stored hash
+        hashed_passcode = hashlib.sha256(passcode.encode()).hexdigest()
+        return hashed_passcode == REQUIRED_HASHED_PASSCODE
 
     def disconnect(self, client_id: str):
         if client_id in self.active_connections:
@@ -42,9 +58,12 @@ class ConnectionManager:
 
 manager = ConnectionManager()
 
-@app.websocket("/ws/{client_id}")
-async def websocket_endpoint(websocket: WebSocket, client_id: str):
-    await manager.connect(websocket, client_id)
+@app.websocket("/ws/{client_id}/{passcode}")
+async def websocket_endpoint(websocket: WebSocket, client_id: str, passcode: str):
+    connected_client = await manager.connect(websocket, client_id, passcode)
+    if not connected_client:
+        return
+    
     try:
         await manager.broadcast({"type": "status", "client_id": client_id, "status": "connected"})
         

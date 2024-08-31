@@ -3,6 +3,7 @@ import websockets
 import json
 import sys
 import time
+import hashlib
 
 sys.path.append('../lib/python/arm64')
 import robot_interface as sdk
@@ -170,13 +171,18 @@ async def websocket_handler(uri):
         print(f"Error during WebSocket communication: {e}")
 
 async def main():
-    if len(sys.argv) != 2:
-        print("Usage: client_udp_test.py <client_id>")
+    if len(sys.argv) != 3:
+        print("Usage: client_udp_test.py <client_id> <passcode>")
         sys.exit(1)
 
     global name
     name = sys.argv[1]
-    uri = f"wss://rob-sync-production.up.railway.app/ws/{name}"
+    passcode = sys.argv[2]
+
+    # Hash the passcode
+    hashed_passcode = hashlib.sha256(passcode.encode()).hexdigest()
+
+    uri = f"wss://rob-sync-production.up.railway.app/ws/{name}/{hashed_passcode}"
     await websocket_handler(uri)
 
 if __name__ == "__main__":

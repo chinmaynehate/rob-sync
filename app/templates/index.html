@@ -169,9 +169,12 @@
                     updateClientList(data.clients);
                 });
 
+            // Prompt for passcode
+            var passcode = prompt("Enter Passcode:");
+
             // Generate a unique client ID using simplified device info and UUID
             var uniqueClientId = generateClientId();
-            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/${uniqueClientId}`);
+            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/${uniqueClientId}?passcode=${passcode}`);
 
             ws.onopen = function() {
                 console.log("Connected to WebSocket with ID:", uniqueClientId);

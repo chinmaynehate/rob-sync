@@ -2,6 +2,7 @@ import asyncio
 import websockets
 import json
 import sys
+import hashlib
 
 # Function to process commands
 async def process_command(command):
@@ -73,12 +74,17 @@ async def websocket_handler(uri):
         print(f"Error during WebSocket communication: {e}")
 
 async def main():
-    if len(sys.argv) != 2:
-        print("Usage: client.py <client_id>")
+    if len(sys.argv) != 3:
+        print("Usage: client.py <client_id> <passcode>")
         sys.exit(1)
 
     client_id = sys.argv[1]
-    uri = f"wss://rob-sync-production.up.railway.app/ws/{client_id}"
+    passcode = sys.argv[2]
+    
+    # Hash the passcode
+    hashed_passcode = hashlib.sha256(passcode.encode()).hexdigest()
+
+    uri = f"wss://rob-sync-production.up.railway.app/ws/{client_id}/{hashed_passcode}"
     await websocket_handler(uri)
 
 if __name__ == "__main__":
