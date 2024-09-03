@@ -71,7 +71,7 @@
     </style>
 </head>
 <body class="bg-light">
-    <div class="container my-5">
+    <div class="container my-5" id="main-content" style="display: none;">  <!-- Hide by default -->
         <h1 class="text-center mb-4">Go-1 Orchestra</h1>
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
@@ -179,6 +179,8 @@
             ws.onopen = function() {
                 console.log("Connected to WebSocket with ID:", uniqueClientId);
                 $('#passcodeModal').modal('hide');  // Hide the modal after connecting
+                document.getElementById('main-content').style.display = 'block';  // Show the main content
+                fetchClients();  // Load clients after successful connection
             };
 
             ws.onerror = function(error) {
@@ -191,6 +193,14 @@
                 let message = JSON.parse(event.data);
                 updateClient(message);
             };
+        }
+
+        function fetchClients() {
+            fetch('/clients')
+                .then(response => response.json())
+                .then(data => {
+                    updateClientList(data.clients);
+                });
         }
 
         function executeCommand(commandType, button) {
@@ -210,16 +220,6 @@
               .then(data => console.log(data.message))
               .catch(error => console.error('Error:', error));
         }
-
-        window.onload = function() {
-            fetch('/clients')
-                .then(response => response.json())
-                .then(data => {
-                    updateClientList(data.clients);
-                });
-
-            $('#passcodeModal').modal('show'); // Show the passcode modal on load
-        };
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
