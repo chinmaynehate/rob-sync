@@ -63,9 +63,38 @@
                 margin-top: 5px; /* Adjust stop button position for mobile */
             }
         }
+
+        #passcodeModal {
+            display: none; /* Initially hide the modal */
+            position: fixed;
+            z-index: 9999; /* Ensure it's on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* Center it */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; /* Fixed width */
+            text-align: center;
+        }
     </style>
 </head>
 <body class="bg-light">
+    <!-- Passcode Modal -->
+    <div id="passcodeModal">
+        <div class="modal-content">
+            <h5>Enter Passcode</h5>
+            <input type="password" id="passcodeInput" class="form-control" placeholder="Passcode">
+            <button class="btn btn-primary mt-3" onclick="submitPasscode()">Submit</button>
+        </div>
+    </div>
+
+    <!-- Content -->
     <div id="content" class="container my-5 d-none">
         <h1 class="text-center mb-4">Go-1 Orchestra</h1>
         <div class="row justify-content-center">
@@ -162,9 +191,12 @@
               .catch(error => console.error('Error:', error));
         }
 
-        function askForPasscode() {
-            // Prompt for passcode and hide content if incorrect
-            let passcode = prompt("Enter Passcode:", "");
+        function showPasscodeModal() {
+            document.getElementById('passcodeModal').style.display = 'block';
+        }
+
+        function submitPasscode() {
+            let passcode = document.getElementById('passcodeInput').value;
 
             if (passcode) {
                 // Generate a unique client ID using simplified device info and UUID
@@ -174,11 +206,12 @@
                 ws.onopen = function () {
                     console.log("Connected to WebSocket with ID:", uniqueClientId);
                     document.getElementById('content').classList.remove('d-none'); // Show content if passcode is correct
+                    document.getElementById('passcodeModal').style.display = 'none'; // Hide modal
                 };
 
                 ws.onerror = function (error) {
                     console.error("WebSocket Error: ", error);
-                    askForPasscode(); // Ask for the passcode again on error
+                    alert("Invalid passcode. Please try again."); // Alert for invalid passcode
                 };
 
                 ws.onmessage = function (event) {
@@ -187,13 +220,9 @@
                     updateClient(message);
                 };
             } else {
-                askForPasscode(); // Ask for passcode again if canceled or incorrect
+                alert("Passcode cannot be empty.");
             }
         }
-
-        window.onload = function () {
-            askForPasscode();
-        };
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
@@ -225,6 +254,16 @@
                 clientsTbody.appendChild(clientRow);
             });
         }
+
+        window.onload = function () {
+            fetch('/clients')
+                .then(response => response.json())
+                .then(data => {
+                    updateClientList(data.clients);
+                });
+
+            showPasscodeModal(); // Show modal to enter passcode
+        };
     </script>
 </body>
 </html>
