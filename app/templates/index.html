@@ -130,6 +130,9 @@
                 </div>
                 <div class="modal-body">
                     <input type="password" id="passcodeInput" class="form-control" placeholder="Enter Passcode">
+                    <div class="invalid-feedback" id="error-message" style="display: none; color: red;">
+                        Incorrect passcode. Please try again.
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" onclick="connectWebSocket()">Submit</button>
@@ -175,10 +178,12 @@
 
             ws.onopen = function() {
                 console.log("Connected to WebSocket with ID:", uniqueClientId);
+                $('#passcodeModal').modal('hide');  // Hide the modal after connecting
             };
 
             ws.onerror = function(error) {
                 console.error("WebSocket Error: ", error);
+                document.getElementById('error-message').style.display = 'block'; // Show error message
             };
 
             ws.onmessage = function(event) {
@@ -186,8 +191,6 @@
                 let message = JSON.parse(event.data);
                 updateClient(message);
             };
-
-            $('#passcodeModal').modal('hide');  // Hide the modal after connecting
         }
 
         function executeCommand(commandType, button) {
@@ -215,7 +218,7 @@
                     updateClientList(data.clients);
                 });
 
-            $('#passcodeModal').modal('show');  // Show the passcode modal on load
+            $('#passcodeModal').modal('show'); // Show the passcode modal on load
         };
 
         function updateClient(message) {
