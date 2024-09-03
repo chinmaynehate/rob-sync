@@ -63,15 +63,10 @@
                 margin-top: 5px; /* Adjust stop button position for mobile */
             }
         }
-
-        /* Center the modal content */
-        .modal-content {
-            text-align: center;
-        }
     </style>
 </head>
 <body class="bg-light">
-    <div class="container my-5" id="main-content" style="display: none;">  <!-- Hide by default -->
+    <div id="content" class="container my-5 d-none">
         <h1 class="text-center mb-4">Go-1 Orchestra</h1>
         <div class="row justify-content-center">
             <div class="col-12 col-md-8 col-lg-6">
@@ -121,26 +116,6 @@
         </div>
     </div>
 
-    <!-- Passcode Modal -->
-    <div class="modal fade" id="passcodeModal" tabindex="-1" role="dialog" aria-labelledby="passcodeModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="passcodeModalLabel">Enter Passcode</h5>
-                </div>
-                <div class="modal-body">
-                    <input type="password" id="passcodeInput" class="form-control" placeholder="Enter Passcode">
-                    <div class="invalid-feedback" id="error-message" style="display: none; color: red;">
-                        Incorrect passcode. Please try again.
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="connectWebSocket()">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         // Function to simplify user agent and generate a UUID
         function generateClientId() {
@@ -169,40 +144,6 @@
             return `${deviceType}-${os}-${browser}-${uuid}`;
         }
 
-        function connectWebSocket() {
-            var passcode = document.getElementById('passcodeInput').value;
-
-            // Generate a unique client ID using simplified device info and UUID
-            var uniqueClientId = generateClientId();
-            var ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/${uniqueClientId}?passcode=${passcode}`);
-
-            ws.onopen = function() {
-                console.log("Connected to WebSocket with ID:", uniqueClientId);
-                $('#passcodeModal').modal('hide');  // Hide the modal after connecting
-                document.getElementById('main-content').style.display = 'block';  // Show the main content
-                fetchClients();  // Load clients after successful connection
-            };
-
-            ws.onerror = function(error) {
-                console.error("WebSocket Error: ", error);
-                document.getElementById('error-message').style.display = 'block'; // Show error message
-            };
-
-            ws.onmessage = function(event) {
-                console.log("Received from server: " + event.data);
-                let message = JSON.parse(event.data);
-                updateClient(message);
-            };
-        }
-
-        function fetchClients() {
-            fetch('/clients')
-                .then(response => response.json())
-                .then(data => {
-                    updateClientList(data.clients);
-                });
-        }
-
         function executeCommand(commandType, button) {
             // Remove the highlight from all buttons
             document.querySelectorAll('button').forEach(btn => btn.classList.remove('highlighted'));
@@ -220,6 +161,39 @@
               .then(data => console.log(data.message))
               .catch(error => console.error('Error:', error));
         }
+
+        function askForPasscode() {
+            // Prompt for passcode and hide content if incorrect
+            let passcode = prompt("Enter Passcode:", "");
+
+            if (passcode) {
+                // Generate a unique client ID using simplified device info and UUID
+                let uniqueClientId = generateClientId();
+                let ws = new WebSocket(`wss://rob-sync-production.up.railway.app/ws/${uniqueClientId}?passcode=${encodeURIComponent(passcode)}`);
+
+                ws.onopen = function () {
+                    console.log("Connected to WebSocket with ID:", uniqueClientId);
+                    document.getElementById('content').classList.remove('d-none'); // Show content if passcode is correct
+                };
+
+                ws.onerror = function (error) {
+                    console.error("WebSocket Error: ", error);
+                    askForPasscode(); // Ask for the passcode again on error
+                };
+
+                ws.onmessage = function (event) {
+                    console.log("Received from server: " + event.data);
+                    let message = JSON.parse(event.data);
+                    updateClient(message);
+                };
+            } else {
+                askForPasscode(); // Ask for passcode again if canceled or incorrect
+            }
+        }
+
+        window.onload = function () {
+            askForPasscode();
+        };
 
         function updateClient(message) {
             var clientsTbody = document.getElementById('clients');
@@ -252,9 +226,5 @@
             });
         }
     </script>
-
-    <!-- Add Bootstrap JS and jQuery for modal functionality -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
