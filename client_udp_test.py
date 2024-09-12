@@ -105,9 +105,9 @@ async def create_triangle(x, y, d, speed, robot):
 
 # Function to perform the triangle formation
 async def perform_triangle_formation():
-    await create_triangle(2, 1, 0.5, 0.3, "514")
-    await create_triangle(2, 1, 0.5, 0.3, "605")
-    await create_triangle(2, 1, 0.5, 0.3, "699")
+    await create_triangle(2, 1, 0.5, 0.15, "514")
+    await create_triangle(2, 1, 0.5, 0.15, "605")
+    await create_triangle(1, 1, 0.5, 0.15, "699")
     # if name == "514": 
     #     # Move forward for 3 seconds
     #     cmd.mode = 2
