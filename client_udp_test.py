@@ -4,6 +4,7 @@ import json
 import sys
 import time
 import hashlib
+import math
 
 sys.path.append('../lib/python/arm64')
 import robot_interface as sdk
@@ -72,41 +73,75 @@ async def process_command(command):
 
     await send_robot_command()
 
+# robot: id of robot (last 3)
+# speed: an arbitrary speed multipler
+# x: y length of triangle
+# y: x length of triangle
+# d: distance for 514 (middle robot) to move forwards
+async def create_triangle(x, y, d, speed, robot):
+    if robot == "605":
+        x1 = 2*x*speed
+        y1 = y*speed
+        cmd.mode = 2
+        cmd.gaitType = 1
+        cmd.velocity = [x1, y1]
+        cmd.footRaiseHeight = 0.1
+        time = (math.sqrt(4*x**2 + y**2))/(math.sqrt(x1**2 + y1**2))
+        await move_for_duration(time)
+    elif robot == "699":
+        x2 = x*speed
+        y2 = y*speed
+        cmd.mode = 2
+        cmd.gaitType = 1
+        cmd.velocity = [x2, -y2]
+        cmd.footRaiseHeight = 0.1
+        time = (math.sqrt(x**2 + y**2))/(math.sqrt(x2**2 + y2**2))
+        await move_for_duration(time)
+    elif robot == "514":
+        cmd.mode = 2
+        cmd.gaitType = 1
+        cmd.velocity = [d*speed, 0]
+        cmd.footRaiseHeight = 0.1
+        await move_for_duration(d/speed)
+
 # Function to perform the triangle formation
 async def perform_triangle_formation():
-    if name == "514": 
-        # Move forward for 3 seconds
-        cmd.mode = 2
-        cmd.gaitType = 1
-        cmd.velocity = [0.3, 0] # Move forward
-        cmd.footRaiseHeight = 0.1
-        await move_for_duration(3)
-        cmd.velocity = [0.0, 0]
-        # Wait for 2 seconds to synchronize with other robots
-        await move_for_duration(2)
+    create_triangle(2, 1, 0.5, 0.3, "514")
+    create_triangle(2, 1, 0.5, 0.3, "605")
+    create_triangle(2, 1, 0.5, 0.3, "699")
+    # if name == "514": 
+    #     # Move forward for 3 seconds
+    #     cmd.mode = 2
+    #     cmd.gaitType = 1
+    #     cmd.velocity = [0.3, 0] # Move forward
+    #     cmd.footRaiseHeight = 0.1
+    #     await move_for_duration(3)
+    #     cmd.velocity = [0.0, 0]
+    #     # Wait for 2 seconds to synchronize with other robots
+    #     await move_for_duration(2)
         
-    elif name == "605": 
-        # Move forward for 3 seconds
-        cmd.mode = 2
-        cmd.gaitType = 1
-        cmd.velocity = [0.3, 0] # Move forward
-        cmd.footRaiseHeight = 0.1
-        await move_for_duration(3)
-        # Move diagonally to the left
-        cmd.velocity = [0.3, 0.3] # Move diagonally left
-        await move_for_duration(2)
+    # elif name == "605": 
+    #     # Move forward for 3 seconds
+    #     cmd.mode = 2
+    #     cmd.gaitType = 1
+    #     cmd.velocity = [0.3, 0] # Move forward
+    #     cmd.footRaiseHeight = 0.1
+    #     await move_for_duration(3)
+    #     # Move diagonally to the left
+    #     cmd.velocity = [0.3, 0.3] # Move diagonally left
+    #     await move_for_duration(2)
         
-    elif name == "699":
-        # Move forward for 3 seconds
-        cmd.mode = 2
-        cmd.gaitType = 1
-        cmd.velocity = [0.3, 0] # Move forward
-        cmd.footRaiseHeight = 0.1
-        await move_for_duration(3)
+    # elif name == "699":
+    #     # Move forward for 3 seconds
+    #     cmd.mode = 2
+    #     cmd.gaitType = 1
+    #     cmd.velocity = [0.3, 0] # Move forward
+    #     cmd.footRaiseHeight = 0.1
+    #     await move_for_duration(3)
         
-        # Move diagonally to the right
-        cmd.velocity = [0.3, -0.3] # Move diagonally right
-        await move_for_duration(2)
+    #     # Move diagonally to the right
+    #     cmd.velocity = [0.3, -0.3] # Move diagonally right
+    #     await move_for_duration(2)
     
     # Perform two dances (All robots start at the same time)
     for dance_command in ["dance 1", "dance 2"]:
