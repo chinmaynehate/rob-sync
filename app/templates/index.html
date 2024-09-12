@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,77 +14,114 @@
             align-items: center;
             margin-top: 20px;
         }
+
         .joystick-row {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px; /* Space out rows */
+            margin-bottom: 10px;
+            /* Space out rows */
             position: relative;
         }
+
         .joystick-row button {
-            width: 70px; /* Smaller button size */
-            height: 70px; /* Smaller button size */
-            font-size: 16px; /* Smaller font size */
-            border-radius: 30%; /* Adjusted radius for smaller buttons */
-            border: 2px solid transparent; /* Initial border, transparent */
+            width: 70px;
+            /* Smaller button size */
+            height: 70px;
+            /* Smaller button size */
+            font-size: 16px;
+            /* Smaller font size */
+            border-radius: 30%;
+            /* Adjusted radius for smaller buttons */
+            border: 2px solid transparent;
+            /* Initial border, transparent */
             transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out, border-color 0.1s ease-in-out;
         }
+
         .highlighted {
-            border-color: #000000 !important; /* Keep border highlighted in black color */
+            border-color: #000000 !important;
+            /* Keep border highlighted in black color */
         }
+
         .joystick-left {
-            margin-right: 40px; /* Adjust spacing for smaller buttons */
+            margin-right: 40px;
+            /* Adjust spacing for smaller buttons */
         }
+
         .joystick-right {
-            margin-left: 40px; /* Adjust spacing for smaller buttons */
+            margin-left: 40px;
+            /* Adjust spacing for smaller buttons */
         }
+
         .joystick-center .btn {
-            width: 70px; /* Smaller stop button */
-            height: 70px; /* Smaller stop button */
-            font-size: 16px; /* Smaller font size */
-            border-radius: 50%; /* Keep stop button fully circular */
+            width: 70px;
+            /* Smaller stop button */
+            height: 70px;
+            /* Smaller stop button */
+            font-size: 16px;
+            /* Smaller font size */
+            border-radius: 50%;
+            /* Keep stop button fully circular */
             z-index: 1;
-            margin-top: 1px; /* Adjust stop button position */
+            margin-top: 1px;
+            /* Adjust stop button position */
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+
             .joystick-row button,
             .joystick-center .btn {
-                width: 50px; /* Even smaller button size on mobile */
-                height: 50px; /* Even smaller button size on mobile */
-                font-size: 14px; /* Smaller font size on mobile */
+                width: 50px;
+                /* Even smaller button size on mobile */
+                height: 50px;
+                /* Even smaller button size on mobile */
+                font-size: 14px;
+                /* Smaller font size on mobile */
             }
+
             .joystick-left {
-                margin-right: 30px; /* Adjust spacing for mobile */
+                margin-right: 30px;
+                /* Adjust spacing for mobile */
             }
+
             .joystick-right {
-                margin-left: 30px; /* Adjust spacing for mobile */
+                margin-left: 30px;
+                /* Adjust spacing for mobile */
             }
+
             .joystick-center .btn {
-                margin-top: 5px; /* Adjust stop button position for mobile */
+                margin-top: 5px;
+                /* Adjust stop button position for mobile */
             }
         }
 
         #passcodeModal {
-            display: none; /* Initially hide the modal */
+            display: none;
+            /* Initially hide the modal */
             position: fixed;
-            z-index: 9999; /* Ensure it's on top */
+            z-index: 9999;
+            /* Ensure it's on top */
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
         }
+
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto; /* Center it */
+            margin: 15% auto;
+            /* Center it */
             padding: 20px;
             border: 1px solid #888;
-            width: 300px; /* Fixed width */
+            width: 300px;
+            /* Fixed width */
             text-align: center;
         }
     </style>
 </head>
+
 <body class="bg-light">
     <!-- Passcode Modal -->
     <div id="passcodeModal">
@@ -151,20 +189,20 @@
             // Extract device type
             var userAgent = navigator.userAgent.toLowerCase();
             var deviceType = /mobile|tablet|ipad|iphone/.test(userAgent) ? 'Mobile' : 'Desktop';
-            
+
             // Extract OS and Browser
             var platform = navigator.platform.toLowerCase();
-            var os = userAgent.includes('android') ? 'Android' : 
-                     platform.includes('win') ? 'Windows' : 
-                     platform.includes('mac') ? 'Mac' : 
-                     platform.includes('linux') ? 'Linux' : 'Other';
-            
+            var os = userAgent.includes('android') ? 'Android' :
+                platform.includes('win') ? 'Windows' :
+                    platform.includes('mac') ? 'Mac' :
+                        platform.includes('linux') ? 'Linux' : 'Other';
+
             var browser = userAgent.includes('chrome') ? 'Chrome' :
-                          userAgent.includes('firefox') ? 'Firefox' :
-                          userAgent.includes('safari') ? 'Safari' : 'Other';
+                userAgent.includes('firefox') ? 'Firefox' :
+                    userAgent.includes('safari') ? 'Safari' : 'Other';
 
             // Generate Short UUID (first 8 characters of a UUID)
-            var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxxxx'.replace(/[xy]/g, function(c) {
+            var uuid = 'xxxx-xxxx-4xxx-yxxx-xxxxxx'.replace(/[xy]/g, function (c) {
                 var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
                 return v.toString(16);
             }).substring(0, 8);  // Shorten UUID to 8 characters
@@ -187,8 +225,8 @@
                 },
                 body: JSON.stringify({ type: commandType })
             }).then(response => response.json())
-              .then(data => console.log(data.message))
-              .catch(error => console.error('Error:', error));
+                .then(data => console.log(data.message))
+                .catch(error => console.error('Error:', error));
         }
 
         function showPasscodeModal() {
@@ -266,4 +304,5 @@
         };
     </script>
 </body>
+
 </html>
