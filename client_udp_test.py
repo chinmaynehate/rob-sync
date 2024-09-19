@@ -92,54 +92,22 @@ async def create_triangle(x, y, d, speed, robot):
     elif name == "514":
         cmd.mode = 2
         cmd.gaitType = 1
-        cmd.velocity = [0.24, 0.166]
+        cmd.velocity = [0.399, 0.265]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(6)
 
-# Function to perform the triangle formation
 async def perform_triangle_formation():
+    # Start timer for 10 seconds
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
-    # if name == "514": 
-    #     # Move forward for 3 seconds
-    #     cmd.mode = 2
-    #     cmd.gaitType = 1
-    #     cmd.velocity = [0.3, 0] # Move forward
-    #     cmd.footRaiseHeight = 0.1
-    #     await move_for_duration(3)
-    #     cmd.velocity = [0.0, 0]
-    #     # Wait for 2 seconds to synchronize with other robots
-    #     await move_for_duration(2)
-        
-    # elif name == "605": 
-    #     # Move forward for 3 seconds
-    #     cmd.mode = 2
-    #     cmd.gaitType = 1
-    #     cmd.velocity = [0.3, 0] # Move forward
-    #     cmd.footRaiseHeight = 0.1
-    #     await move_for_duration(3)
-    #     # Move diagonally to the left
-    #     cmd.velocity = [0.3, 0.3] # Move diagonally left
-    #     await move_for_duration(2)
-        
-    # elif name == "699":
-    #     # Move forward for 3 seconds
-    #     cmd.mode = 2
-    #     cmd.gaitType = 1
-    #     cmd.velocity = [0.3, 0] # Move forward
-    #     cmd.footRaiseHeight = 0.1
-    #     await move_for_duration(3)
-        
-    #     # Move diagonally to the right
-    #     cmd.velocity = [0.3, -0.3] # Move diagonally right
-    #     await move_for_duration(2)
     
-    # Perform two dances (All robots start at the same time)
-    for dance_command in ["dance 1", "dance 2"]:
-        await process_command(dance_command)
-        await asyncio.sleep(3)  # Allow each dance to perform for 3 seconds
+    # Create a task to start dance after 10 seconds
+    asyncio.create_task(start_dance_after_timeout(10))
     
-    # Stop all robots
-    await process_command("stop")
+    # Function to start dance after timeout
+async def start_dance_after_timeout(timeout):
+    await asyncio.sleep(timeout)
+    await process_command("dance 1")
+    # await process_command("stop")
 
 
 # Function to move for a specific duration
