@@ -78,18 +78,18 @@ async def process_command(command):
 # y: x length of triangle
 # d: distance for 514 (middle robot) to move forwards
 async def create_triangle(x, y, d, speed, robot):
-    if robot == "605":
+    if name == "605":
         # dont move
         cmd.mode = 2
-        cmd.mode = [0, 0]
+        cmd.velocity = [0, 0]
         await move_for_duration(6)
-    elif robot == "699":
+    elif name == "699":
         cmd.mode = 2
         cmd.gaitType = 1
         cmd.velocity = [0.134, -0.268]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
-    elif robot == "514":
+    elif name == "514":
         cmd.mode = 2
         cmd.gaitType = 1
         cmd.velocity = [0.24, 0.166]
@@ -98,9 +98,7 @@ async def create_triangle(x, y, d, speed, robot):
 
 # Function to perform the triangle formation
 async def perform_triangle_formation():
-    await create_triangle(2, 1, 0.5, 0.15, "514")
-    await create_triangle(2, 1, 0.5, 0.15, "605")
-    await create_triangle(1, 1, 0.5, 0.15, "699")
+    await create_triangle(2, 1, 0.5, 0.15, "kjhk")
     # if name == "514": 
     #     # Move forward for 3 seconds
     #     cmd.mode = 2
