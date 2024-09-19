@@ -89,26 +89,20 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.velocity = [0.134, -0.268]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
+        cmd.velocity = [0, 0]
+        await move_for_duration(2.3)
+
     elif name == "514":
         cmd.mode = 2
         cmd.gaitType = 1
-        cmd.velocity = [0.399, 0.265]
+        cmd.velocity = [0.24, 0.166]
         cmd.footRaiseHeight = 0.1
-        await move_for_duration(3.7)
+        await move_for_duration(6)
 
 async def perform_triangle_formation():
     # Start timer for 10 seconds
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
-    
-    # Create a task to start dance after 10 seconds
-    asyncio.create_task(start_dance_after_timeout(10))
-    
-    # Function to start dance after timeout
-async def start_dance_after_timeout(timeout):
-    await asyncio.sleep(timeout)
     await process_command("dance 1")
-    # await process_command("stop")
-
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
