@@ -94,7 +94,7 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.gaitType = 1
         cmd.velocity = [0.399, 0.265]
         cmd.footRaiseHeight = 0.1
-        await move_for_duration(6)
+        await move_for_duration(3.7)
 
 async def perform_triangle_formation():
     # Start timer for 10 seconds
