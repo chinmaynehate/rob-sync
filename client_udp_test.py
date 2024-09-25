@@ -102,6 +102,7 @@ async def create_triangle(x, y, d, speed, robot):
 async def perform_triangle_formation():
     # Start timer for 10 seconds
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
+    await asyncio.sleep(2)
     await process_command("dance 1")
 
 # Function to move for a specific duration
