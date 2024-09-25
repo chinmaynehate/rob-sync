@@ -92,7 +92,7 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.velocity = [0, 0]
         await move_for_duration(2.3)
 
-    elif name == "514":
+    elif name == "814":
         cmd.mode = 2
         cmd.gaitType = 1
         cmd.velocity = [0.24, 0.166]
