@@ -341,3 +341,107 @@
 2024-09-24 20:09:09 Successfully reconnected to main Wi-Fi.
 2024-09-24 20:09:09 
 2024-09-24 20:09:09 Log has been saved to update_log.txt
+2024-09-25 21:27:43 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-25 21:27:47 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-25 21:27:47 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-25 21:27:47 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-25 21:27:47 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-25 21:27:47 
+2024-09-25 21:27:47 The programs included with the Debian GNU/Linux system are free software;
+2024-09-25 21:27:47 the exact distribution terms for each program are described in the
+2024-09-25 21:27:47 individual files in /usr/share/doc/*/copyright.
+2024-09-25 21:27:47 
+2024-09-25 21:27:47 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-25 21:27:47 permitted by applicable law.
+2024-09-25 21:27:47 --2024-09-25 16:27:47--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-25 21:27:48 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8002::154, 2606:50c0:8001::154, ...
+2024-09-25 21:27:48 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+2024-09-25 21:27:48 HTTP request sent, awaiting response... 200 OK
+2024-09-25 21:27:48 Length: 5423 (5.3K) [text/plain]
+2024-09-25 21:27:48 Saving to: ‘client_udp_test.py’
+2024-09-25 21:27:48 
+2024-09-25 21:27:48      0K .....                                                 100% 5.76M=0.001s
+2024-09-25 21:27:48 
+2024-09-25 21:27:48 2024-09-25 16:27:48 (5.76 MB/s) - ‘client_udp_test.py’ saved [5423/5423]
+2024-09-25 21:27:48 
+2024-09-25 21:27:49 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-25 21:27:49 Usage: client_udp_test.py <client_id>
+2024-09-25 21:27:49 Closing UDP.
+2024-09-25 21:27:49 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-25 21:27:49 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-25 21:27:49 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-25 21:27:50 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-25 21:27:50 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-25 21:27:50 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-25 21:27:51 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-25 21:27:51 
+2024-09-25 21:27:51 The programs included with the Debian GNU/Linux system are free software;
+2024-09-25 21:27:51 the exact distribution terms for each program are described in the
+2024-09-25 21:27:51 individual files in /usr/share/doc/*/copyright.
+2024-09-25 21:27:51 
+2024-09-25 21:27:51 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-25 21:27:51 permitted by applicable law.
+2024-09-25 21:27:51 --2024-09-25 16:27:51--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-25 21:27:51 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8001::154, 2606:50c0:8002::154, ...
+2024-09-25 21:27:51 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-09-25 21:27:51 HTTP request sent, awaiting response... 200 OK
+2024-09-25 21:27:51 Length: 5423 (5.3K) [text/plain]
+2024-09-25 21:27:51 Saving to: ‘client_udp_test.py’
+2024-09-25 21:27:51 
+2024-09-25 21:27:51      0K .....                                                 100%  817K=0.006s
+2024-09-25 21:27:51 
+2024-09-25 21:27:51 2024-09-25 16:27:51 (817 KB/s) - ‘client_udp_test.py’ saved [5423/5423]
+2024-09-25 21:27:51 
+2024-09-25 21:27:52 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-25 21:27:52 Usage: client_udp_test.py <client_id>
+2024-09-25 21:27:52 Closing UDP.
+2024-09-25 21:27:52 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-25 21:27:52 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-25 21:27:52 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-25 21:27:53 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-25 21:27:53 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-25 21:27:53 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-25 21:27:53 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-25 21:27:53 
+2024-09-25 21:27:53 The programs included with the Debian GNU/Linux system are free software;
+2024-09-25 21:27:53 the exact distribution terms for each program are described in the
+2024-09-25 21:27:53 individual files in /usr/share/doc/*/copyright.
+2024-09-25 21:27:53 
+2024-09-25 21:27:53 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-25 21:27:53 permitted by applicable law.
+2024-09-25 21:27:53 --2024-09-25 16:27:53--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-25 21:27:53 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8001::154, ...
+2024-09-25 21:27:53 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+2024-09-25 21:27:54 HTTP request sent, awaiting response... 200 OK
+2024-09-25 21:27:54 Length: 5423 (5.3K) [text/plain]
+2024-09-25 21:27:54 Saving to: ‘client_udp_test.py’
+2024-09-25 21:27:54 
+2024-09-25 21:27:54      0K .....                                                 100%  477K=0.01s
+2024-09-25 21:27:54 
+2024-09-25 21:27:54 2024-09-25 16:27:54 (477 KB/s) - ‘client_udp_test.py’ saved [5423/5423]
+2024-09-25 21:27:54 
+2024-09-25 21:27:55 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-25 21:27:55 Usage: client_udp_test.py <client_id>
+2024-09-25 21:27:55 Closing UDP.
+2024-09-25 21:27:55 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-25 21:27:55 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-25 21:27:55 Giving up on 32:7B:C9:5F:06:F1 after 3 attempts.
+2024-09-25 21:27:55 Waiting for 5 seconds before proceeding to the next Pi...
+2024-09-25 21:28:00 Reconnecting to main Wi-Fi...
+2024-09-25 21:28:02 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-09-25 21:28:02 Successfully reconnected to main Wi-Fi.
+2024-09-25 21:28:02 
+2024-09-25 21:28:02 Log has been saved to update_log.txt
+2024-09-25 21:33:34 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-25 21:33:40 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-25 21:33:40 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-25 21:33:40 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-25 21:33:41 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-25 21:33:41 
+2024-09-25 21:33:41 The programs included with the Debian GNU/Linux system are free software;
+2024-09-25 21:33:41 the exact distribution terms for each program are described in the
+2024-09-25 21:33:41 individual files in /usr/share/doc/*/copyright.
+2024-09-25 21:33:41 
+2024-09-25 21:33:41 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-25 21:33:41 permitted by applicable law.
+2024-09-25 21:33:41 --2024-09-25 16:33:41--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py

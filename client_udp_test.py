@@ -100,7 +100,7 @@ async def create_triangle(x, y, d, speed, robot):
 async def perform_triangle_formation():
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
     start_time = int((time.time() * 1000))
-    target_time = start_time + 10000
+    target_time = start_time + 15000
     
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
