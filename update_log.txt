@@ -1,0 +1,343 @@
+2024-09-24 19:59:09 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 19:59:11 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 19:59:11 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 19:59:11 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:11 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 19:59:11 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 19:59:11 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 19:59:11 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 19:59:11 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:11 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 19:59:11 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 19:59:11 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 19:59:11 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 19:59:11 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:11 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 19:59:11 Giving up on 32:7B:C9:5F:06:F1 after 3 attempts.
+2024-09-24 19:59:11 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 19:59:12 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 19:59:12 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 19:59:12 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:12 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 19:59:12 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 19:59:12 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 19:59:12 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 19:59:12 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:12 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 19:59:12 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 19:59:12 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 19:59:12 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 19:59:12 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:12 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 19:59:12 Giving up on 32:7B:C9:2E:38:E0 after 3 attempts.
+2024-09-24 19:59:12 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 19:59:13 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 19:59:13 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 19:59:13 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:13 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 19:59:13 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 19:59:13 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 19:59:13 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 19:59:13 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:13 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 19:59:13 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 19:59:13 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 19:59:13 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 19:59:13 ./update_pi.sh: line 72: sshpass: command not found
+2024-09-24 19:59:13 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 19:59:13 Giving up on 60:FB:00:4D:71:82 after 3 attempts.
+2024-09-24 19:59:13 Reconnecting to main Wi-Fi...
+2024-09-24 19:59:14 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-09-24 19:59:14 Successfully reconnected to main Wi-Fi.
+2024-09-24 19:59:14 
+2024-09-24 19:59:14 Log has been saved to update_log.txt
+2024-09-24 20:01:12 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 20:01:12 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 20:01:12 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 20:01:12 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:01:12 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:01:12 
+2024-09-24 20:01:12 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:01:12 the exact distribution terms for each program are described in the
+2024-09-24 20:01:12 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:01:12 
+2024-09-24 20:01:12 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:01:12 permitted by applicable law.
+2024-09-24 20:01:12 --2024-09-24 15:01:13--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:01:13 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8002::154, 2606:50c0:8003::154, ...
+2024-09-24 20:01:13 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-09-24 20:01:13 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:01:13 Length: 4953 (4.8K) [text/plain]
+2024-09-24 20:01:13 Saving to: ‘client_udp_test.py’
+2024-09-24 20:01:13 
+2024-09-24 20:01:13      0K ....                                                  100% 10.1M=0s
+2024-09-24 20:01:13 
+2024-09-24 20:01:13 2024-09-24 15:01:13 (10.1 MB/s) - ‘client_udp_test.py’ saved [4953/4953]
+2024-09-24 20:01:13 
+2024-09-24 20:01:14 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:22 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 20:08:26 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 20:08:26 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 20:08:26 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:27 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:27 
+2024-09-24 20:08:27 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:27 the exact distribution terms for each program are described in the
+2024-09-24 20:08:27 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:27 
+2024-09-24 20:08:27 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:27 permitted by applicable law.
+2024-09-24 20:08:27 --2024-09-24 15:08:27--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:27 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8003::154, 2606:50c0:8002::154, ...
+2024-09-24 20:08:27 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-09-24 20:08:27 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:27 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:27 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:28 
+2024-09-24 20:08:28      0K ....                                                  100% 53.1K=0.09s
+2024-09-24 20:08:28 
+2024-09-24 20:08:28 2024-09-24 15:08:28 (53.1 KB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:28 
+2024-09-24 20:08:28 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:28 [Error] Bind client ip&port failed: Address already in use
+2024-09-24 20:08:28 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:28 Closing UDP.
+2024-09-24 20:08:28 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-24 20:08:28 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 20:08:28 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 20:08:29 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 20:08:29 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 20:08:29 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:29 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:29 
+2024-09-24 20:08:29 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:29 the exact distribution terms for each program are described in the
+2024-09-24 20:08:29 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:29 
+2024-09-24 20:08:29 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:29 permitted by applicable law.
+2024-09-24 20:08:29 --2024-09-24 15:08:29--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:29 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8000::154, 2606:50c0:8003::154, ...
+2024-09-24 20:08:29 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-09-24 20:08:30 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:30 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:30 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:30 
+2024-09-24 20:08:30      0K ....                                                  100%  949K=0.005s
+2024-09-24 20:08:30 
+2024-09-24 20:08:30 2024-09-24 15:08:30 (949 KB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:30 
+2024-09-24 20:08:30 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:30 [Error] Bind client ip&port failed: Address already in use
+2024-09-24 20:08:30 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:30 Closing UDP.
+2024-09-24 20:08:31 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-24 20:08:31 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 20:08:31 Connecting to 32:7B:C9:5F:06:F1...
+2024-09-24 20:08:31 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-09-24 20:08:31 Successfully connected to 32:7B:C9:5F:06:F1
+2024-09-24 20:08:31 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:31 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:31 
+2024-09-24 20:08:31 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:31 the exact distribution terms for each program are described in the
+2024-09-24 20:08:31 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:31 
+2024-09-24 20:08:31 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:31 permitted by applicable law.
+2024-09-24 20:08:32 --2024-09-24 15:08:32--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:32 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8002::154, 2606:50c0:8001::154, 2606:50c0:8000::154, ...
+2024-09-24 20:08:32 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8002::154|:443... connected.
+2024-09-24 20:08:32 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:32 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:32 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:32 
+2024-09-24 20:08:32      0K ....                                                  100% 4.86M=0.001s
+2024-09-24 20:08:32 
+2024-09-24 20:08:32 2024-09-24 15:08:32 (4.86 MB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:32 
+2024-09-24 20:08:33 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:33 [Error] Bind client ip&port failed: Address already in use
+2024-09-24 20:08:33 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:33 Closing UDP.
+2024-09-24 20:08:33 Failed to run the script on 32:7B:C9:5F:06:F1
+2024-09-24 20:08:33 Failed to update 32:7B:C9:5F:06:F1. Retrying...
+2024-09-24 20:08:33 Giving up on 32:7B:C9:5F:06:F1 after 3 attempts.
+2024-09-24 20:08:33 Waiting for 5 seconds before proceeding to the next Pi...
+2024-09-24 20:08:38 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 20:08:40 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 20:08:40 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 20:08:40 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:40 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:40 
+2024-09-24 20:08:40 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:40 the exact distribution terms for each program are described in the
+2024-09-24 20:08:40 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:40 
+2024-09-24 20:08:40 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:40 permitted by applicable law.
+2024-09-24 20:08:40 --2024-09-24 15:08:40--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:40 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8003::154, 2606:50c0:8002::154, ...
+2024-09-24 20:08:40 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-09-24 20:08:41 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:41 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:41 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:41 
+2024-09-24 20:08:41      0K ....                                                  100% 1.03M=0.005s
+2024-09-24 20:08:41 
+2024-09-24 20:08:41 2024-09-24 15:08:41 (1.03 MB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:41 
+2024-09-24 20:08:42 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:42 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:42 Closing UDP.
+2024-09-24 20:08:42 Failed to run the script on 32:7B:C9:2E:38:E0
+2024-09-24 20:08:42 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 20:08:42 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 20:08:42 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 20:08:42 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 20:08:42 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:43 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:43 
+2024-09-24 20:08:43 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:43 the exact distribution terms for each program are described in the
+2024-09-24 20:08:43 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:43 
+2024-09-24 20:08:43 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:43 permitted by applicable law.
+2024-09-24 20:08:43 --2024-09-24 15:08:43--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:43 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8002::154, 2606:50c0:8003::154, ...
+2024-09-24 20:08:43 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-09-24 20:08:43 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:44 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:44 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:44 
+2024-09-24 20:08:44      0K ....                                                  100% 8.63M=0.001s
+2024-09-24 20:08:44 
+2024-09-24 20:08:44 2024-09-24 15:08:44 (8.63 MB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:44 
+2024-09-24 20:08:44 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:44 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:44 Closing UDP.
+2024-09-24 20:08:44 Failed to run the script on 32:7B:C9:2E:38:E0
+2024-09-24 20:08:44 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 20:08:44 Connecting to 32:7B:C9:2E:38:E0...
+2024-09-24 20:08:45 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-09-24 20:08:45 Successfully connected to 32:7B:C9:2E:38:E0
+2024-09-24 20:08:45 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:45 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:45 
+2024-09-24 20:08:45 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:45 the exact distribution terms for each program are described in the
+2024-09-24 20:08:45 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:45 
+2024-09-24 20:08:45 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:45 permitted by applicable law.
+2024-09-24 20:08:45 --2024-09-24 15:08:46--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:45 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8001::154, 2606:50c0:8002::154, ...
+2024-09-24 20:08:46 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-09-24 20:08:46 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:46 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:46 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:46 
+2024-09-24 20:08:46      0K ....                                                  100% 1.08M=0.004s
+2024-09-24 20:08:46 
+2024-09-24 20:08:46 2024-09-24 15:08:46 (1.08 MB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:46 
+2024-09-24 20:08:47 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:47 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:47 Closing UDP.
+2024-09-24 20:08:47 Failed to run the script on 32:7B:C9:2E:38:E0
+2024-09-24 20:08:47 Failed to update 32:7B:C9:2E:38:E0. Retrying...
+2024-09-24 20:08:47 Giving up on 32:7B:C9:2E:38:E0 after 3 attempts.
+2024-09-24 20:08:47 Waiting for 5 seconds before proceeding to the next Pi...
+2024-09-24 20:08:52 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 20:08:55 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 20:08:55 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 20:08:55 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:56 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:56 
+2024-09-24 20:08:56 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:56 the exact distribution terms for each program are described in the
+2024-09-24 20:08:56 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:56 
+2024-09-24 20:08:56 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:56 permitted by applicable law.
+2024-09-24 20:08:56 --2024-09-24 15:08:56--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:56 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8000::154, 2606:50c0:8003::154, ...
+2024-09-24 20:08:56 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-09-24 20:08:57 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:57 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:57 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:57 
+2024-09-24 20:08:57      0K ....                                                  100%  363K=0.01s
+2024-09-24 20:08:57 
+2024-09-24 20:08:57 2024-09-24 15:08:57 (363 KB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:57 
+2024-09-24 20:08:58 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:08:58 Usage: client_udp_test.py <client_id>
+2024-09-24 20:08:58 Closing UDP.
+2024-09-24 20:08:58 Failed to run the script on 60:FB:00:4D:71:82
+2024-09-24 20:08:58 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 20:08:58 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 20:08:58 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 20:08:58 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 20:08:58 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:08:59 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:08:59 
+2024-09-24 20:08:59 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:08:59 the exact distribution terms for each program are described in the
+2024-09-24 20:08:59 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:08:59 
+2024-09-24 20:08:59 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:08:59 permitted by applicable law.
+2024-09-24 20:08:59 --2024-09-24 15:08:59--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:08:59 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8002::154, 2606:50c0:8003::154, 2606:50c0:8000::154, ...
+2024-09-24 20:08:59 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8002::154|:443... connected.
+2024-09-24 20:08:59 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:08:59 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:08:59 Saving to: ‘client_udp_test.py’
+2024-09-24 20:08:59 
+2024-09-24 20:08:59      0K ....                                                  100%  714K=0.007s
+2024-09-24 20:08:59 
+2024-09-24 20:08:59 2024-09-24 15:08:59 (714 KB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:08:59 
+2024-09-24 20:09:00 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:09:00 Usage: client_udp_test.py <client_id>
+2024-09-24 20:09:00 Closing UDP.
+2024-09-24 20:09:00 Failed to run the script on 60:FB:00:4D:71:82
+2024-09-24 20:09:00 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 20:09:00 Connecting to 60:FB:00:4D:71:82...
+2024-09-24 20:09:00 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-09-24 20:09:00 Successfully connected to 60:FB:00:4D:71:82
+2024-09-24 20:09:00 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-09-24 20:09:01 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-09-24 20:09:01 
+2024-09-24 20:09:01 The programs included with the Debian GNU/Linux system are free software;
+2024-09-24 20:09:01 the exact distribution terms for each program are described in the
+2024-09-24 20:09:01 individual files in /usr/share/doc/*/copyright.
+2024-09-24 20:09:01 
+2024-09-24 20:09:01 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-09-24 20:09:01 permitted by applicable law.
+2024-09-24 20:09:01 --2024-09-24 15:09:01--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/client_udp_test.py
+2024-09-24 20:09:01 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8002::154, 2606:50c0:8003::154, ...
+2024-09-24 20:09:01 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-09-24 20:09:01 HTTP request sent, awaiting response... 200 OK
+2024-09-24 20:09:01 Length: 4980 (4.9K) [text/plain]
+2024-09-24 20:09:01 Saving to: ‘client_udp_test.py’
+2024-09-24 20:09:01 
+2024-09-24 20:09:01      0K ....                                                  100% 1.24M=0.004s
+2024-09-24 20:09:01 
+2024-09-24 20:09:01 2024-09-24 15:09:01 (1.24 MB/s) - ‘client_udp_test.py’ saved [4980/4980]
+2024-09-24 20:09:01 
+2024-09-24 20:09:02 UDP Initialized. socketfd: 3   Port: 8080
+2024-09-24 20:09:02 Usage: client_udp_test.py <client_id>
+2024-09-24 20:09:02 Closing UDP.
+2024-09-24 20:09:02 Failed to run the script on 60:FB:00:4D:71:82
+2024-09-24 20:09:02 Failed to update 60:FB:00:4D:71:82. Retrying...
+2024-09-24 20:09:02 Giving up on 60:FB:00:4D:71:82 after 3 attempts.
+2024-09-24 20:09:02 Waiting for 5 seconds before proceeding to the next Pi...
+2024-09-24 20:09:07 Reconnecting to main Wi-Fi...
+2024-09-24 20:09:09 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-09-24 20:09:09 Successfully reconnected to main Wi-Fi.
+2024-09-24 20:09:09 
+2024-09-24 20:09:09 Log has been saved to update_log.txt

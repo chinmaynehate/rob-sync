@@ -34,8 +34,8 @@ if [ -z "$SSH_PASSWORD" ] || [ -z "$WIFI_PASSWORD" ] || [ -z "$MAIN_WIFI_PASSWOR
     exit 1
 fi
 
-# Array of dynamically detected Raspberry Pi hotspots
-pis=($(nmcli dev wifi list | grep 'GO' | awk '{print $1}'))
+# Array of dynamically detected Raspberry Pi hotspots by SSID (assuming SSID contains 'Unitree_Go')
+pis=($(nmcli dev wifi list | grep 'Unitree_Go' | awk '{print $1}'))
 
 # If no Pi hotspots are found, exit
 if [ ${#pis[@]} -eq 0 ]; then
@@ -43,7 +43,7 @@ if [ ${#pis[@]} -eq 0 ]; then
     exit 1
 fi
 
-# Print how many Pi hotspots were found and list their names
+# Print how many Pi hotspots were found and list their SSIDs
 echo "Found ${#pis[@]} Raspberry Pi hotspots:"
 for pi in "${pis[@]}"; do
     echo " - $pi"
@@ -52,7 +52,7 @@ done
 # Log output to both the terminal and a log file with timestamps
 exec > >(while IFS= read -r line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done | tee -a "$LOGFILE") 2>&1
 
-# Function to connect to Pi's hotspot
+# Function to connect to Pi's hotspot using SSID
 connect_to_hotspot() {
     local pi_ssid="$1"
     echo "Connecting to $pi_ssid..."
@@ -65,10 +65,18 @@ connect_to_hotspot() {
     fi
 }
 
+# Function to extract the last three digits from the SSID (ignoring the trailing 'A')
+get_pi_suffix() {
+    local pi_ssid="$1"
+    # Extract last four characters, remove the trailing 'A' if present
+    local pi_suffix=$(echo "$pi_ssid" | grep -oE '[0-9]{3}A$' | sed 's/A//')
+    echo "$pi_suffix"
+}
+
 # Function to update the Pi
 update_pi() {
     local pi_ssid="$1"
-    local pi_suffix="${pi_ssid: -3}"
+    local pi_suffix=$(get_pi_suffix "$pi_ssid")  # Get last three digits excluding 'A'
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
         rm -rf client_udp_test.py || { echo "Failed to remove old file on $pi_ssid"; exit 1; }
@@ -116,6 +124,8 @@ update_single_pi() {
 # Sequential execution (since only one Pi can be connected at a time)
 for pi_ssid in "${pis[@]}"; do
     update_single_pi "$pi_ssid"
+    echo "Waiting for 5 seconds before proceeding to the next Pi..."
+    sleep 5  # Wait a bit before moving on to the next Pi
 done
 
 # After all Pis are processed, reconnect to the main Wi-Fi network
@@ -123,7 +133,3 @@ reconnect_to_main_wifi
 
 # Final log message
 echo -e "\nLog has been saved to $LOGFILE"
-
-
-
-# ./update_rpis.sh -u new_ssh_password -w new_wifi_password -s CustomMainSSID -r 5 -m new_main_wifi_password

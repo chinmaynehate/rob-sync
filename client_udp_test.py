@@ -98,9 +98,21 @@ async def create_triangle(x, y, d, speed, robot):
         await move_for_duration(3.7)
 
 async def perform_triangle_formation():
-    # Start timer for 10 seconds
+    # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
+    start_time = int((time.time() * 1000))
+    target_time = start_time + 10000
+    
+    # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
-    await asyncio.sleep(1.5) # wait for intertia of movement to stop
+    
+    # Sleep to allow inertia of movement to stop
+    await asyncio.sleep(3)
+    
+    # Continuously check if the current time has reached the target time
+    while int((time.time() * 1000)) < target_time:
+        await asyncio.sleep(0.1)  # Wait for a short time before checking again
+        
+    # Once the target time is reached, execute the "dance 1" command
     await process_command("dance 1")
 
 # Function to move for a specific duration
