@@ -82,15 +82,13 @@ async def create_triangle(x, y, d, speed, robot):
         # dont move
         cmd.mode = 2
         cmd.velocity = [0, 0]
-        await move_for_duration(6)
+        await move_for_duration(3.7)
     elif name == "699":
         cmd.mode = 2
         cmd.gaitType = 1
         cmd.velocity = [0.134, -0.268]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
-        cmd.velocity = [0, 0]
-        await move_for_duration(2.3)
 
     elif name == "814":
         cmd.mode = 2
@@ -98,13 +96,11 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.velocity = [0.24, 0.166]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
-        cmd.velocity = [0, 0]
-        await move_for_duration(2.3)
 
 async def perform_triangle_formation():
     # Start timer for 10 seconds
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
-    await asyncio.sleep(2) # wait for intertia of movement to stop
+    await asyncio.sleep(1.5) # wait for intertia of movement to stop
     await process_command("dance 1")
 
 # Function to move for a specific duration
