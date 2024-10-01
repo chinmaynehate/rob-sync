@@ -12,7 +12,6 @@ udp_robot = sdk.UDP(0xee, 8080, "192.168.123.161", 8082)
 state_robot = sdk.HighState()
 cmd = sdk.HighCmd()
 udp_robot.InitCmdData(cmd)
-
 # PID controller class
 class PIDController:
     def __init__(self, Kp, Ki, Kd, setpoint, min_output, max_output):
@@ -85,6 +84,37 @@ async def adjust_yaw_with_pid(target_yaw, Kp=0.5, Ki=0.0, Kd=0.1):
     cmd.yawSpeed = 0
     await send_robot_command()
 
+
+# # Function to adjust the robot's yaw to a target value
+# async def adjust_yaw(target_yaw):
+#     current_yaw = get_current_yaw()
+#     print(f"Current Yaw: {current_yaw}, Target Yaw: {target_yaw}")
+    
+#     # Calculate the yaw difference
+#     yaw_diff = target_yaw - current_yaw
+#     yaw_speed = 0.3  # Adjust this value to control the rotation speed
+
+#     # Rotate the robot until the yaw difference is minimal
+#     while abs(yaw_diff) > 0.01:  # Threshold to stop rotation
+#         # Set yaw speed to correct the orientation
+#         cmd.mode = 2  # Ensure the robot is in walk mode
+#         if yaw_diff > 0:
+#             cmd.yawSpeed = yaw_speed  # Rotate anticlockwise (left turn)
+#         else:
+#             cmd.yawSpeed = -yaw_speed  # Rotate clockwise (right turn)
+        
+#         await send_robot_command()
+#         await asyncio.sleep(0.05)  # Small delay for smooth correction
+
+#         # Update yaw difference
+#         current_yaw = get_current_yaw()
+#         yaw_diff = target_yaw - current_yaw
+    
+#     # Stop rotating
+#     cmd.yawSpeed = 0
+#     await send_robot_command()
+
+
 # Function to process commands
 async def process_command(command):
     print(f"Processing command: {command}")
@@ -144,15 +174,14 @@ async def process_command(command):
 
     await send_robot_command()
 
-# Function to send robot command
-async def send_robot_command():
-    print("Sending the command to the robot")
-    udp_robot.SetSend(cmd)
-    udp_robot.Send()
-
-# Function to create the triangle movement
+# robot: id of robot (last 3)
+# speed: an arbitrary speed multipler
+# x: y length of triangle
+# y: x length of triangle
+# d: distance for 514 (middle robot) to move forwards
 async def create_triangle(x, y, d, speed, robot):
     if name == "605":
+        # dont move
         cmd.mode = 2
         cmd.velocity = [0, 0]
         await move_for_duration(3.7)
@@ -162,6 +191,7 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.velocity = [0.134, -0.268]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
+
     elif name == "814":
         cmd.mode = 2
         cmd.gaitType = 1
@@ -169,42 +199,7 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
 
-# Function to move for a specific duration
-async def move_for_duration(seconds):
-    start_time = time.time()
-    while time.time() - start_time < seconds:
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        await asyncio.sleep(0.05)
-
-# WebSocket event handlers
-async def on_open(websocket):
-    print("Connected to the WebSocket server")
-    await websocket.send(json.dumps({"type": "getConnectedClients"}))
-
-async def on_close(websocket, path):
-    print("Connection closed")
-
-async def on_error(websocket, error):
-    print("Error occurred:", error)
-
-async def websocket_handler(uri):
-    try:
-        async with websockets.connect(uri) as websocket:
-            await on_open(websocket)
-
-            while True:
-                try:
-                    message = await websocket.recv()
-                    await handle_message(websocket, message)
-                except websockets.ConnectionClosed as e:
-                    await on_close(websocket, None)
-                    break
-    except (websockets.WebSocketException) as e:
-        print(f"Error during WebSocket communication: {e}")
-
-# Modified perform_triangle_formation function with PID yaw adjustment
-async def perform_triangle_formation(adjust_yaw_flag=True):
+async def perform_triangle_formation(adjust_yaw_flag=False):
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
     start_time = int((time.time() * 1000))
     target_time = start_time + 15000
@@ -234,6 +229,79 @@ async def perform_triangle_formation(adjust_yaw_flag=True):
     # After the dance, check and adjust yaw again using PID if needed
     if adjust_yaw_flag:
         await adjust_yaw_with_pid(target_yaw=initial_yaw, Kp=0.5, Ki=0.0, Kd=0.1)
+
+
+# async def perform_triangle_formation():
+#     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
+#     start_time = int((time.time() * 1000))
+#     target_time = start_time + 15000
+    
+#     # Start the triangle formation
+#     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
+    
+#     # Sleep to allow inertia of movement to stop
+#     await asyncio.sleep(3)
+    
+#     # Continuously check if the current time has reached the target time
+#     while int((time.time() * 1000)) < target_time:
+#         await asyncio.sleep(0.1)  # Wait for a short time before checking again
+        
+#     # Once the target time is reached, execute the "dance 1" command
+#     await process_command("dance 1")
+
+# Function to move for a specific duration
+async def move_for_duration(seconds):
+    start_time = time.time()
+    while time.time() - start_time < seconds:
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.05)
+
+# Function to handle received messages
+async def handle_message(websocket, message):
+    print("Received message:", message)
+    
+    try:
+        data = json.loads(message)
+        if "type" in data:
+            if data["type"] == "command":
+                await process_command(data["command"])
+            else:
+                print("Unknown type of message received.")
+    except json.JSONDecodeError:
+        print(f"Non-JSON message received: {message}")
+
+# Function to send robot command
+async def send_robot_command():
+    print("Sending the command to the robot")
+    udp_robot.SetSend(cmd)
+    udp_robot.Send()
+
+# WebSocket event handlers
+async def on_open(websocket):
+    print("Connected to the WebSocket server")
+    await websocket.send(json.dumps({"type": "getConnectedClients"}))
+
+async def on_close(websocket, path):
+    print("Connection closed")
+
+async def on_error(websocket, error):
+    print("Error occurred:", error)
+
+async def websocket_handler(uri):
+    try:
+        async with websockets.connect(uri) as websocket:
+            await on_open(websocket)
+
+            while True:
+                try:
+                    message = await websocket.recv()
+                    await handle_message(websocket, message)
+                except websockets.ConnectionClosed as e:
+                    await on_close(websocket, None)
+                    break
+    except (websockets.WebSocketException) as e:
+        print(f"Error during WebSocket communication: {e}")
 
 async def main():
     if len(sys.argv) != 2:
