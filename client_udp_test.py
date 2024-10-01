@@ -13,6 +13,42 @@ state_robot = sdk.HighState()
 cmd = sdk.HighCmd()
 udp_robot.InitCmdData(cmd)
 
+# Function to get the current yaw of the robot
+def get_current_yaw():
+    udp_robot.Recv()
+    udp_robot.GetRecv(state_robot)  # Retrieve the latest state
+    return state_robot.rpy[2]  # Yaw value (rpy[2])
+
+# Function to adjust the robot's yaw to a target value
+async def adjust_yaw(target_yaw):
+    current_yaw = get_current_yaw()
+    print(f"Current Yaw: {current_yaw}, Target Yaw: {target_yaw}")
+    
+    # Calculate the yaw difference
+    yaw_diff = target_yaw - current_yaw
+    yaw_speed = 0.3  # Adjust this value to control the rotation speed
+
+    # Rotate the robot until the yaw difference is minimal
+    while abs(yaw_diff) > 0.01:  # Threshold to stop rotation
+        # Set yaw speed to correct the orientation
+        cmd.mode = 2  # Ensure the robot is in walk mode
+        if yaw_diff > 0:
+            cmd.yawSpeed = yaw_speed  # Rotate anticlockwise (left turn)
+        else:
+            cmd.yawSpeed = -yaw_speed  # Rotate clockwise (right turn)
+        
+        await send_robot_command()
+        await asyncio.sleep(0.05)  # Small delay for smooth correction
+
+        # Update yaw difference
+        current_yaw = get_current_yaw()
+        yaw_diff = target_yaw - current_yaw
+    
+    # Stop rotating
+    cmd.yawSpeed = 0
+    await send_robot_command()
+
+
 # Function to process commands
 async def process_command(command):
     print(f"Processing command: {command}")
@@ -66,7 +102,7 @@ async def process_command(command):
         cmd.yawSpeed = 0.0
         cmd.reserve = 0
     elif command == "triangle":
-        await perform_triangle_formation()
+        await perform_triangle_formation(adjust_yaw_flag=True)
     else:
         print("Unknown command received.")
 
@@ -97,10 +133,15 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
 
-async def perform_triangle_formation():
+async def perform_triangle_formation(adjust_yaw_flag=True):
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
     start_time = int((time.time() * 1000))
     target_time = start_time + 15000
+    
+    # Capture the initial yaw if yaw adjustment is enabled
+    if adjust_yaw_flag:
+        initial_yaw = get_current_yaw()
+        print(f"Initial Yaw: {initial_yaw}")
     
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
@@ -108,12 +149,40 @@ async def perform_triangle_formation():
     # Sleep to allow inertia of movement to stop
     await asyncio.sleep(3)
     
+    # Check and adjust yaw if needed
+    if adjust_yaw_flag:
+        await adjust_yaw(initial_yaw)
+    
     # Continuously check if the current time has reached the target time
     while int((time.time() * 1000)) < target_time:
         await asyncio.sleep(0.1)  # Wait for a short time before checking again
         
     # Once the target time is reached, execute the "dance 1" command
     await process_command("dance 1")
+    
+    # After the dance, check and adjust yaw again if needed
+    if adjust_yaw_flag:
+        await adjust_yaw(initial_yaw)
+
+
+
+# async def perform_triangle_formation():
+#     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
+#     start_time = int((time.time() * 1000))
+#     target_time = start_time + 15000
+    
+#     # Start the triangle formation
+#     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
+    
+#     # Sleep to allow inertia of movement to stop
+#     await asyncio.sleep(3)
+    
+#     # Continuously check if the current time has reached the target time
+#     while int((time.time() * 1000)) < target_time:
+#         await asyncio.sleep(0.1)  # Wait for a short time before checking again
+        
+#     # Once the target time is reached, execute the "dance 1" command
+#     await process_command("dance 1")
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
