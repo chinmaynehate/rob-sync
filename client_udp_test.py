@@ -175,7 +175,7 @@ async def process_command(command):
         cmd.yawSpeed = 0.0
         cmd.reserve = 0
     elif command == "triangle":
-        await perform_triangle_formation(adjust_yaw_flag=True)
+        await perform_triangle_formation(adjust_yaw_flag=False)
     else:
         print("Unknown command received.")
 

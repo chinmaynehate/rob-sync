@@ -86,7 +86,7 @@ get_internet_access() {
     local pi_ssid="$1"
     echo "Running dhclient to get internet access on $pi_ssid..."
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0' > /dev/null 2>&1
-    if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'ping -c 1 8.8.8.8' > /dev/null 2>&1; then
+    if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'curl -s -I https://www.google.com' > /dev/null 2>&1; then
         echo "$pi_ssid has internet access."
         return 0
     else
