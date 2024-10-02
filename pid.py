@@ -83,6 +83,17 @@ async def adjust_yaw_with_pid(target_yaw, Kp=0.5, Ki=0.0, Kd=0.1):
     # Once the yaw is adjusted, stop the yaw movement
     cmd.yawSpeed = 0
     await send_robot_command()
+    
+    cmd.mode = 0 
+    cmd.gaitType = 0
+    cmd.speedLevel = 0
+    cmd.footRaiseHeight = 0
+    cmd.bodyHeight = 0
+    cmd.euler = [0, 0, 0]
+    cmd.velocity = [0, 0]
+    cmd.yawSpeed = 0.0
+    cmd.reserve = 0
+    await send_robot_command()
 
 # Function to process commands
 async def process_command(command):

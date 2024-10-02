@@ -78,7 +78,7 @@ kill_python_process() {
     local pi_ssid="$1"
     echo "Checking for running python3 processes on $pi_ssid..."
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'pgrep -f client_udp_test.py && sudo pkill -f client_udp_test.py' > /dev/null 2>&1
-    echo "Killed python3 process for client_udp_test.py on $pi_ssid"
+    echo "Killed python3 process for pid.py on $pi_ssid"
 }
 
 # Function to run dhclient and get internet access on the Pi
@@ -117,9 +117,9 @@ update_pi() {
     # Run the update and immediately close the SSH session after the Python script is started
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
-        rm -rf client_udp_test.py || { echo "Failed to remove old file on $pi_ssid"; exit 1; }
-        wget -O client_udp_test.py "$WGET_URL" || { echo "Failed to download new file on $pi_ssid"; exit 1; }
-        nohup python3 client_udp_test.py $pi_suffix > /dev/null 2>&1 &
+        rm -rf pid.py || { echo "Failed to remove old file on $pi_ssid"; exit 1; }
+        wget -O pid.py "$WGET_URL" || { echo "Failed to download new file on $pi_ssid"; exit 1; }
+        nohup python3 pid.py $pi_suffix > /dev/null 2>&1 &
 EOF
 
     echo "Pi $pi_ssid has been updated successfully and SSH session closed. Moving to the next Pi..."
