@@ -195,6 +195,7 @@ async def create_triangle(x, y, d, speed, robot):
 #     print("Yaw is ",get_current_yaw())
 
 async def perform_triangle_formation():
+    target_yaw = get_current_yaw()
     print("Yaw before formation: ", get_current_yaw())
     
     start_time = int((time.time() * 1000))
@@ -217,7 +218,7 @@ async def perform_triangle_formation():
     print("Yaw after dance: ", get_current_yaw())
     
     # Adjust the yaw to correct back to the initial value (0.0 in this case)
-    await adjust_yaw_with_pid(target_yaw=0.0)
+    # await adjust_yaw_with_pid(target_yaw=target_yaw)
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
