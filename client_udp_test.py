@@ -103,7 +103,7 @@ async def create_triangle(x, y, d, speed, robot):
 
 async def perform_triangle_formation():
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
-    print("Yaw is ",get_current_yaw())
+    print("Yaw is : ",get_current_yaw())
     start_time = int((time.time() * 1000))
     target_time = start_time + 15000
     
