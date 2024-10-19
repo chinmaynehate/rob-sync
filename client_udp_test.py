@@ -97,13 +97,13 @@ async def create_triangle(x, y, d, speed, robot):
     elif name == "814":
         cmd.mode = 2
         cmd.gaitType = 1
-        cmd.velocity = [0.24, 0.166]
+        # cmd.velocity = [0.24, 0.166]
+        cmd.velocity = [0.399, 0.265]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
 
 async def perform_triangle_formation():
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
-    print("Yaw is ",get_current_yaw)
     start_time = int((time.time() * 1000))
     target_time = start_time + 15000
     
@@ -119,7 +119,6 @@ async def perform_triangle_formation():
         
     # Once the target time is reached, execute the "dance 1" command
     await process_command("dance 1")
-    print("Yaw is ",get_current_yaw)
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
