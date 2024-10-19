@@ -1,3 +1,4 @@
+# integration of yaw pid with triangle and dance.
 import asyncio
 import websockets
 import json
@@ -13,76 +14,72 @@ state_robot = sdk.HighState()
 cmd = sdk.HighCmd()
 udp_robot.InitCmdData(cmd)
 
-# PID controller class
-class PIDController:
-    def __init__(self, Kp, Ki, Kd, setpoint, min_output, max_output):
-        self.Kp = Kp  # Proportional gain
-        self.Ki = Ki  # Integral gain
-        self.Kd = Kd  # Derivative gain
-        self.setpoint = setpoint  # Target yaw (desired yaw)
-        self.min_output = min_output  # Minimum output (lower bound for yawSpeed)
-        self.max_output = max_output  # Maximum output (upper bound for yawSpeed)
-        
-        self.previous_error = 0  # Previous error value for derivative calculation
-        self.integral = 0  # Accumulated integral error
-        
-    def calculate(self, current_value):
-        # Calculate error
-        error = self.setpoint - current_value
-        
-        # Proportional term
-        P = self.Kp * error
-        
-        # Integral term
-        self.integral += error
-        I = self.Ki * self.integral
-        
-        # Derivative term
-        D = self.Kd * (error - self.previous_error)
-        self.previous_error = error
-        
-        # PID output
-        output = P + I + D
-        
-        # Clamp the output to the specified bounds (min_output, max_output)
-        return max(self.min_output, min(self.max_output, output))
+async def set_robot_mode(mode):
+    cmd.mode = mode  # Set the mode (1 for standing, 2 for walking, etc.)
+    cmd.velocity = [0, 0]  # No movement
+    cmd.yawSpeed = 0.0  # No rotation
+    udp_robot.SetSend(cmd)
+    udp_robot.Send()
 
-# Function to get the current yaw of the robot
 def get_current_yaw():
     udp_robot.Recv()  # Receive the latest data from the robot
     udp_robot.GetRecv(state_robot)  # Populate state_robot with the latest data
     return state_robot.imu.rpy[2]  # Return the yaw (rpy[2]) from the IMU
 
-# Function to adjust the robot's yaw using a PID controller
-async def adjust_yaw_with_pid(target_yaw, Kp=0.1, Ki=0.0, Kd=0.1):
-    # Initialize the PID controller
-    pid_controller = PIDController(Kp=Kp, Ki=Ki, Kd=Kd, setpoint=target_yaw, min_output=-1.0, max_output=1.0)
+# PID controller function
+async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold=0.01):
+    integral = 0.0  # Initialize the integral term
+    previous_error = 0.0  # Initialize the previous error for the derivative term
+    previous_time = time.time()
     
-    # Get the current yaw
-    current_yaw = get_current_yaw()
-    
-    # Loop to keep adjusting the yaw until the error is small enough
-    while abs(target_yaw - current_yaw) > 0.01:  # Threshold for yaw error (in radians)
-        # Calculate the PID output (desired yawSpeed)
-        yaw_speed = pid_controller.calculate(current_yaw)
-        
-        # Apply the calculated yawSpeed while keeping velocity [0, 0] (no forward/backward movement)
-        cmd.mode = 2  # Ensure the robot is in walk mode
-        cmd.velocity = [0, 0]  # No forward or sideways movement
-        cmd.yawSpeed = yaw_speed  # Apply the yawSpeed calculated by the PID controller
-        
-        # Send the command to the robot
-        await send_robot_command()
-        
-        # Sleep briefly to allow the robot to adjust
-        await asyncio.sleep(0.05)
-        
-        # Update the current yaw for the next iteration
+    while True:
+        current_time = time.time()
+        dt = current_time - previous_time
+        previous_time = current_time
+
+        # Continuous communication and data fetch
+        udp_robot.Recv()
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        time.sleep(0.05)
+        # Get the current yaw and calculate error
         current_yaw = get_current_yaw()
-    
-    # Once the yaw is adjusted, stop the yaw movement
-    cmd.yawSpeed = 0
-    await send_robot_command()
+        error = set_point - current_yaw
+        print("error",error)
+        # Stop the loop if the error is within an acceptable range
+        if abs(error) < threshold:
+            print(f"Aligned to setpoint within threshold: {threshold}")
+            break
+
+        # Proportional term
+        P_term = K_p * error
+
+        # Integral term accumulation
+        integral += error * dt
+        I_term = K_i * integral
+
+        # Derivative term (rate of change of error)
+        derivative = (error - previous_error) / dt if dt > 0 else 0.0
+        D_term = K_d * derivative
+        previous_error = error
+
+        # Apply the PID controller logic
+        yawSpeed = P_term + I_term + D_term
+
+        # Limit yawSpeed to avoid extreme values
+        yawSpeed = max(min(yawSpeed,2.0), -2.0)  # Clamp between -1 and 1
+        
+        # Set yaw speed and keep velocity zero (no forward/backward movement)
+        cmd.yawSpeed = yawSpeed
+        cmd.velocity = [0, 0]
+
+        # Send command to robot
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+
+        print(f"Current Yaw: {current_yaw:.5f} | Error: {error:.5f} | Yaw Speed: {yawSpeed:.5f} | Integral: {integral:.5f} | Derivative: {derivative:.5f}")
+
+        time.sleep(0.1)  # Sleep for a short time before checking again
 
 # Function to process commands
 async def process_command(command):
@@ -150,7 +147,7 @@ async def process_command(command):
 # d: distance for 514 (middle robot) to move forwards
 async def create_triangle(x, y, d, speed, robot):
     if name == "605":
-        # don't move
+        # dont move
         cmd.mode = 2
         cmd.velocity = [0, 0]
         await move_for_duration(3.7)
@@ -160,38 +157,54 @@ async def create_triangle(x, y, d, speed, robot):
         cmd.velocity = [0.134, -0.268]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
+
     elif name == "814":
         cmd.mode = 2
         cmd.gaitType = 1
-        cmd.velocity = [0.24, 0.166]
+        # cmd.velocity = [0.24, 0.166]
+        cmd.velocity = [0.399, 0.265]
         cmd.footRaiseHeight = 0.1
         await move_for_duration(3.7)
 
 async def perform_triangle_formation():
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
-    start_time = int((time.time() * 1000))
-    target_time = start_time + 20000
     
-    # Get the current yaw before starting
-    initial_yaw = get_current_yaw()
-    print("Initial yaw: " + initial_yaw)
+    
+    udp_robot.Recv()
+    udp_robot.SetSend(cmd)
+    udp_robot.Send()
+    await set_robot_mode(2)
+    time.sleep(0.05)
+    set_point = get_current_yaw()
+    print("set point", set_point)
+    
+    
+    start_time = int((time.time() * 1000))
+    target_time = start_time + 15000
+
+    yaw_adjust_time = target_time + 30000
+    
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk")
     
     # Sleep to allow inertia of movement to stop
     await asyncio.sleep(3)
-    initial_yaw = get_current_yaw()
-    # Adjust yaw using the PID controller
-    # await adjust_yaw_with_pid(initial_yaw)
     
     # Continuously check if the current time has reached the target time
     while int((time.time() * 1000)) < target_time:
         await asyncio.sleep(0.1)  # Wait for a short time before checking again
         
     # Once the target time is reached, execute the "dance 1" command
+    #await set_robot_mode(12)
     await process_command("dance 1")
+
+    while int((time.time()*1000)) < yaw_adjust_time:
+        await asyncio.sleep(0.1)
+
     
-    # await adjust_yaw_with_pid(initial_yaw)
+    await set_robot_mode(2)
+    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+    
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
@@ -259,3 +272,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
