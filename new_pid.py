@@ -202,7 +202,7 @@ async def perform_triangle_formation():
     
     
     start_time = int((time.time() * 1000))
-    target_time = start_time + 15000
+    target_time = start_time + 8000
 
     yaw_adjust_time = target_time + 17000
     
@@ -228,6 +228,7 @@ async def perform_triangle_formation():
     await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
     
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
+    await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
@@ -295,4 +296,5 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
 
