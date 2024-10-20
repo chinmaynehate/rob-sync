@@ -192,13 +192,13 @@ async def perform_triangle_formation():
     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
     
     
-    udp_robot.Recv()
-    udp_robot.SetSend(cmd)
-    udp_robot.Send()
-    await set_robot_mode(2)
-    time.sleep(0.05)
-    set_point = get_current_yaw()
-    print("set point", set_point)
+    # udp_robot.Recv()
+    # udp_robot.SetSend(cmd)
+    # udp_robot.Send()
+    # await set_robot_mode(2)
+    # time.sleep(0.05)
+    # set_point = get_current_yaw()
+    # print("set point", set_point)
     
     
     start_time = int((time.time() * 1000))
@@ -224,11 +224,11 @@ async def perform_triangle_formation():
         await asyncio.sleep(0.1)
 
     
-    await set_robot_mode(2)
-    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+    # await set_robot_mode(2)
+    # await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
     
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
-    await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
+    # await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
