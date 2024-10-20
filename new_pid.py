@@ -41,8 +41,7 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         udp_robot.Recv()
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        # time.sleep(0.05)
-        await asyncio.sleep(0.05)
+        time.sleep(0.05)
         # Get the current yaw and calculate error
         current_yaw = get_current_yaw()
         error = set_point - current_yaw
@@ -80,8 +79,8 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
 
         print(f"Current Yaw: {current_yaw:.5f} | Error: {error:.5f} | Yaw Speed: {yawSpeed:.5f} | Integral: {integral:.5f} | Derivative: {derivative:.5f}")
 
-        # time.sleep(0.1)  # Sleep for a short time before checking again
-        await asyncio.sleep(0.1)
+        time.sleep(0.1)  # Sleep for a short time before checking again
+
 # Function to process commands
 async def process_command(command):
     print(f"Processing command: {command}")
@@ -189,50 +188,111 @@ async def create_triangle(x, y, d, speed, robot, dir):
             await move_for_duration(3.7)
         
 
+# async def perform_triangle_formation():
+#     # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
+    
+    
+#     udp_robot.Recv()
+#     udp_robot.SetSend(cmd)
+#     udp_robot.Send()
+#     await set_robot_mode(2)
+#     time.sleep(0.05)
+#     set_point = get_current_yaw()
+#     print("set point", set_point)
+    
+    
+#     start_time = int((time.time() * 1000))
+#     target_time = start_time + 10000
+
+#     yaw_adjust_time = target_time + 21000
+    
+#     # Start the triangle formation
+#     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
+    
+#     # Sleep to allow inertia of movement to stop
+#     await asyncio.sleep(3)
+    
+#     # Continuously check if the current time has reached the target time
+#     while int((time.time() * 1000)) < target_time:
+#         await asyncio.sleep(0.1)  # Wait for a short time before checking again
+        
+#     # Once the target time is reached, execute the "dance 1" command
+#     #await set_robot_mode(12)
+    
+    
+#     await process_command("dance 1")
+
+#     while int((time.time()*1000)) < yaw_adjust_time:
+#         await asyncio.sleep(0.1)
+
+    
+#     await set_robot_mode(2)
+#     await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+    
+#     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
+#     await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
+
+
 async def perform_triangle_formation():
-    # Get the current Unix time in milliseconds and add 10 seconds (10000 ms)
-    
-    
+    # Initial setup
     udp_robot.Recv()
     udp_robot.SetSend(cmd)
     udp_robot.Send()
     await set_robot_mode(2)
-    # time.sleep(0.05)
-    await asyncio.sleep(0.05)
-    set_point = get_current_yaw()
-    print("set point", set_point)
-    
-    
-    start_time = int((time.time() * 1000))
-    target_time = start_time + 10000
+    await asyncio.sleep(0.05)  # Ensure non-blocking sleep
 
-    yaw_adjust_time = target_time + 21000
-    
-    # Start the triangle formation
-    await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
-    
-    # Sleep to allow inertia of movement to stop
-    await asyncio.sleep(3)
-    
-    # Continuously check if the current time has reached the target time
-    while int((time.time() * 1000)) < target_time:
-        await asyncio.sleep(0.1)  # Wait for a short time before checking again
-        
-    # Once the target time is reached, execute the "dance 1" command
-    #await set_robot_mode(12)
-    await set_robot_mode(2)
-    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+    set_point = get_current_yaw()  # Capture the initial yaw
+    print("Set point:", set_point)
 
-    await process_command("dance 1")
+    # Set up target times for each step
+    start_time = int(time.time() * 1000)
 
-    while int((time.time()*1000)) < yaw_adjust_time:
+    # Define specific times for each action (in milliseconds)
+    triangle_time = start_time + 10000  # Time to finish the first triangle
+    yaw_adjust_after_triangle_time = triangle_time + 5000  # Yaw adjustment after triangle
+    dance_time = yaw_adjust_after_triangle_time + 10000  # Time to start dance 1
+    backward_triangle_time = dance_time + 10000  # Time to finish the backward triangle
+    final_yaw_adjust_time = backward_triangle_time + 5000  # Final yaw adjustment
+
+    # Start the main loop to manage actions based on time
+    while True:
+        current_time = int(time.time() * 1000)
+
+        # 1. Create Triangle (Forward)
+        if current_time < triangle_time:
+            await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
+            print("Created Triangle Forward")
+
+        # 2. Adjust Yaw after Triangle
+        elif triangle_time <= current_time < yaw_adjust_after_triangle_time:
+            print("Adjusting yaw after triangle...")
+            await set_robot_mode(2)
+            await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+
+        # 3. Perform Dance 1
+        elif yaw_adjust_after_triangle_time <= current_time < dance_time:
+            print("Performing Dance 1...")
+            await process_command("dance 1")
+
+        # 4. Create Triangle (Backward)
+        elif dance_time <= current_time < backward_triangle_time:
+            print("Created Triangle Backward")
+            await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
+
+        # 5. Final Yaw Adjustment
+        elif backward_triangle_time <= current_time < final_yaw_adjust_time:
+            print("Final Yaw Adjustment...")
+            await set_robot_mode(2)
+            await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+
+        # If the final step is completed, break the loop
+        elif current_time >= final_yaw_adjust_time:
+            print("Sequence completed.")
+            break
+
+        # Sleep briefly to avoid busy-waiting
         await asyncio.sleep(0.1)
-    
-    await set_robot_mode(2)
-    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
-    
-    await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
-    await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
+
 
 # Function to move for a specific duration
 async def move_for_duration(seconds):
