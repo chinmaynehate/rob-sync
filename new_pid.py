@@ -232,7 +232,7 @@ async def perform_triangle_formation():
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "backward")
     # await apply_pid_controller(set_point, K_p=2.0,K_i=0.02, K_d=0.05, threshold = 0.01)
 
-    while int((time.time()*1000)) < yaw_adjust_time:
+    while int((time.time()*1000)) < dance_second:
         await asyncio.sleep(0.1)
     
     await process_command("dance 2")
