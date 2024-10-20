@@ -202,15 +202,21 @@ async def perform_triangle_formation():
     
     
     start_time = int((time.time() * 1000))
-    target_time = start_time + 8000
-
-    yaw_adjust_time = target_time + 18000
+    yaw_adjust_first = start_time + 10000 # adjust yaw before dance
+    target_time = start_time + 15000 # time to start dance
+    yaw_adjust_time_second = target_time + 18000 # after dance
     
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
     
     # Sleep to allow inertia of movement to stop
     await asyncio.sleep(3)
+    
+    while int((time.time() * 1000)) < yaw_adjust_first:
+        await asyncio.sleep(0.1)
+    await set_robot_mode(2)
+    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+
     
     # Continuously check if the current time has reached the target time
     while int((time.time() * 1000)) < target_time:
@@ -220,11 +226,8 @@ async def perform_triangle_formation():
     #await set_robot_mode(12)
     await process_command("dance 1")
 
-    while int((time.time()*1000)) < yaw_adjust_time:
+    while int((time.time()*1000)) < yaw_adjust_time_second:
         await asyncio.sleep(0.1)
-
-    
-    
     await set_robot_mode(2)
     await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
     
