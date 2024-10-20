@@ -208,7 +208,7 @@ async def perform_triangle_formation():
     
     dance_second = go_back + 10000
     
-    reset = dance_second + 20000
+    reset = dance_second + 30000
     
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
@@ -242,9 +242,9 @@ async def perform_triangle_formation():
     while int((time.time()*1000)) < reset:
         await asyncio.sleep(0.1)
     
-    time.sleep(0.5)
+    # time.sleep(0.5)
     await set_robot_mode(2)
-    time.sleep(0.5)
+    # time.sleep(0.5)
     await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
 
     
