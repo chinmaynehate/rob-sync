@@ -202,9 +202,9 @@ async def perform_triangle_formation():
     
     
     start_time = int((time.time() * 1000))
-    target_time = start_time + 8000
+    target_time = start_time + 10000
 
-    yaw_adjust_time = target_time + 18000
+    yaw_adjust_time = target_time + 20000
     
     # Start the triangle formation
     await create_triangle(2, 1, 0.5, 0.15, "kjhk", "forward")
