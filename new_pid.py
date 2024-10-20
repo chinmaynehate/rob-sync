@@ -41,7 +41,8 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         udp_robot.Recv()
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        time.sleep(0.05)
+        # time.sleep(0.05)
+        await asyncio.sleep(0.05)
         # Get the current yaw and calculate error
         current_yaw = get_current_yaw()
         error = set_point - current_yaw
@@ -79,8 +80,8 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
 
         print(f"Current Yaw: {current_yaw:.5f} | Error: {error:.5f} | Yaw Speed: {yawSpeed:.5f} | Integral: {integral:.5f} | Derivative: {derivative:.5f}")
 
-        time.sleep(0.1)  # Sleep for a short time before checking again
-
+        # time.sleep(0.1)  # Sleep for a short time before checking again
+        await asyncio.sleep(0.1)
 # Function to process commands
 async def process_command(command):
     print(f"Processing command: {command}")
@@ -196,7 +197,8 @@ async def perform_triangle_formation():
     udp_robot.SetSend(cmd)
     udp_robot.Send()
     await set_robot_mode(2)
-    time.sleep(0.05)
+    # time.sleep(0.05)
+    await asyncio.sleep(0.05)
     set_point = get_current_yaw()
     print("set point", set_point)
     
