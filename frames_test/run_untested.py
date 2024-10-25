@@ -1,4 +1,3 @@
-
 # untested implementation of drill logic
 
 import sys
@@ -16,18 +15,15 @@ udp_robot = sdk.UDP(0xee, 8080, "192.168.123.161", 8082)
 state_robot = sdk.HighState()
 cmd = sdk.HighCmd()
 udp_robot.InitCmdData(cmd)
-
 def get_current_yaw():
     udp_robot.Recv()  # Receive the latest data from the robot
     udp_robot.GetRecv(state_robot)  # Populate state_robot with the latest data
     return state_robot.imu.rpy[2]  # Return the yaw (rpy[2]) from the IMU
-
-# PID controller function
 async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold=0.01):
     integral = 0.0  # Initialize the integral term
     previous_error = 0.0  # Initialize the previous error for the derivative term
     previous_time = time.time()
-    
+
     while True:
         current_time = time.time()
         dt = current_time - previous_time
@@ -64,7 +60,7 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
 
         # Limit yawSpeed to avoid extreme values
         yawSpeed = max(min(yawSpeed,2.0), -2.0)  # Clamp between -1 and 1
-        
+
         # Set yaw speed and keep velocity zero (no forward/backward movement)
         cmd.yawSpeed = yawSpeed
         cmd.velocity = [0, 0]
@@ -76,7 +72,6 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         print(f"Current Yaw: {current_yaw:.5f} | Error: {error:.5f} | Yaw Speed: {yawSpeed:.5f} | Integral: {integral:.5f} | Derivative: {derivative:.5f}")
 
         time.sleep(0.1)  # Sleep for a short time before checking again
-
 
 async def process_command(command):
     print(f"Processing command: {command}")
@@ -143,6 +138,13 @@ async def move_for_duration(seconds):
         udp_robot.Send()
         await asyncio.sleep(0.05)
 
+async def set_robot_mode(mode):
+    cmd.mode = mode  # Set the mode (1 for standing, 2 for walking, etc.)
+    cmd.velocity = [0, 0]  # No movement
+    cmd.yawSpeed = 0.0  # No rotation
+    udp_robot.SetSend(cmd)
+    udp_robot.Send()
+
 # Command-line argument for the robot name
 name = int(sys.argv[1])
 
@@ -161,6 +163,11 @@ def get_robot_position(frame, robot_number):
 # might need to switch x and y of cmd.velocity
 async def do_drill():
     for i in range(len(frames) - 1):
+        await set_robot_mode(2)
+        time.sleep(0.05)
+        set_point = get_current_yaw()
+# this needs to be called once robot is to it's position
+        print(set_point)
         print(i)
         print(name)
         print(frames[i], frames[i+1])
@@ -181,10 +188,16 @@ async def do_drill():
 
                 # simulate performance at frame
                 print(int(frame_info[i][1]))
+                await set_robot_mode(2)
+                time.sleep(0.05)
+              #  set_point = get_current_yaw()
                 cmd.mode =int(frame_info[i][1])
+
                 if (frame_info[i][1] == 13):
-                    print("waiting 40")
-                    await move_for_duration(40)
+                    print("waiting 45")
+                    await move_for_duration(45)
+                    await set_robot_mode(2)
+                    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
                     # call rotate 90 clockwise
                 else:
                     print("waiting 20")
@@ -209,10 +222,15 @@ async def do_drill():
 
             # enter mode
             print(int(frame_info[i][1]))
+            await set_robot_mode(2)
+            time.sleep(0.05)
+           # set_point = get_current_yaw()
             cmd.mode = int(frame_info[i][1])
             if (frame_info[i][1] == 13):
-                print("waiting 40")
-                await move_for_duration(40)
+                print("waiting 45")
+                await move_for_duration(45)
+                await set_robot_mode(2)
+                await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
                 # call rotate 90 clockwise
             else:
                 print("waiting 20")
