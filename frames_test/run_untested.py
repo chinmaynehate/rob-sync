@@ -372,7 +372,7 @@ async def main():
 
     global name
     name = sys.argv[1]
-    uri = f"wss://rob-sync-production.up.railway.app/ws/{name}"
+    uri = f"ws://192.168.0.24:8000/ws/{name}"
     await websocket_handler(uri)
 
 if __name__ == "__main__":
