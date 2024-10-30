@@ -2,11 +2,35 @@
 
 import sys
 import asyncio
-from config3 import frames, frame_info, frame_transition_time
 import websockets
 import json
 import time
 import math
+
+frame0 = [[0, 0, 0],  
+          [1, 2, 3],  
+          [0, 0, 0]]  
+
+frame1 = [[0, 0, 0],
+          [0, 2, 0],
+          [1, 0, 3]]
+
+frame2 = [[0, 0, 0],
+          [1, 0, 3],
+          [0, 2, 0]]
+
+frame3 = [[0, 0, 0],  
+          [0, 0, 0],  
+          [1, 2, 3]] 
+
+frames = [frame0, frame1, frame2, frame3]
+
+# time spent at frame before entering given mode
+# [time, mode]
+frame_info = [[3, 12], [3, 12], [3, 12], [3, 12]]
+
+# transition time to next frame
+frame_transition_time = [3, 3, 3]
 
 sys.path.append('../lib/python/arm64')
 import robot_interface as sdk
