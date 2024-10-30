@@ -209,9 +209,8 @@ async def do_drill():
                 # print("cmd.velocity[0][0] for " + str(frame_transition_time[i]) + " seconds")
                 cmd.mode = 2
                 cmd.velocity = [0, 0]
-                while int(time.time() - startTime) < time.time() + frame_transition_time[i]*1000 + frame_info[i][0]*1000:
-                    udp_robot.SetSend(cmd)
-                    udp_robot.Send()
+                curr = time.time() - startTime
+                while int(time.time() - startTime) < curr + frame_transition_time[i] + frame_info[i][0]:
                     await asyncio.sleep(0.05)
                 # await move_for_duration(frame_transition_time[i])
                 # await move_for_duration(frame_info[i][0])
