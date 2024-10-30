@@ -1,0 +1,244 @@
+2024-10-29 17:39:40 Connecting to Unitree_Go513605A...
+2024-10-29 17:39:43 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:39:43 Successfully connected to Unitree_Go513605A
+2024-10-29 17:39:43 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:39:44 Killed python3 process for pid.py on Unitree_Go513605A
+2024-10-29 17:39:44 Running dhclient to get internet access on Unitree_Go513605A...
+2024-10-29 17:39:46 Unitree_Go513605A has internet access.
+2024-10-29 17:39:46 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:39:46 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:39:46 
+2024-10-29 17:39:46 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:39:46 the exact distribution terms for each program are described in the
+2024-10-29 17:39:46 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:39:46 
+2024-10-29 17:39:46 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:39:46 permitted by applicable law.
+2024-10-29 17:39:46 --2024-10-29 12:39:47--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/new_pid.py
+2024-10-29 17:39:46 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8001::154, ...
+2024-10-29 17:39:47 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+2024-10-29 17:39:47 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:39:47 Length: 9806 (9.6K) [text/plain]
+2024-10-29 17:39:47 Saving to: ‘new_pid.py’
+2024-10-29 17:39:47 
+2024-10-29 17:39:47      0K .........                                             100% 2.36M=0.004s
+2024-10-29 17:39:47 
+2024-10-29 17:39:47 2024-10-29 12:39:47 (2.36 MB/s) - ‘new_pid.py’ saved [9806/9806]
+2024-10-29 17:39:47 
+2024-10-29 17:39:47 Pi Unitree_Go513605A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:39:47 Successfully updated Unitree_Go513605A
+2024-10-29 17:39:47 Connecting to Unitree_Go506699A...
+2024-10-29 17:39:47 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-29 17:39:47 Successfully connected to Unitree_Go506699A
+2024-10-29 17:39:47 Checking for running python3 processes on Unitree_Go506699A...
+2024-10-29 17:39:49 Killed python3 process for pid.py on Unitree_Go506699A
+2024-10-29 17:39:49 Running dhclient to get internet access on Unitree_Go506699A...
+2024-10-29 17:40:48 Connecting to Unitree_Go513605A...
+2024-10-29 17:40:51 Connecting to Unitree_Go513605A...
+2024-10-29 17:40:52 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:40:52 Successfully connected to Unitree_Go513605A
+2024-10-29 17:40:52 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:40:52 Killed python3 process for pid.py on Unitree_Go513605A
+2024-10-29 17:40:52 Running dhclient to get internet access on Unitree_Go513605A...
+2024-10-29 17:40:57 Connecting to Unitree_Go513814A...
+2024-10-29 17:41:10 Connecting to Unitree_Go513605A...
+2024-10-29 17:41:11 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:41:11 Successfully connected to Unitree_Go513605A
+2024-10-29 17:41:11 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:41:11 Killed python3 process for pid.py on Unitree_Go513605A
+2024-10-29 17:41:11 Running dhclient to get internet access on Unitree_Go513605A...
+2024-10-29 17:41:13 Unitree_Go513605A has internet access.
+2024-10-29 17:41:13 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:41:14 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:41:14 
+2024-10-29 17:41:14 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:41:14 the exact distribution terms for each program are described in the
+2024-10-29 17:41:14 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:41:14 
+2024-10-29 17:41:14 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:41:14 permitted by applicable law.
+2024-10-29 17:41:14 --2024-10-29 12:41:14--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/new_pid.py
+2024-10-29 17:41:14 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8002::154, 2606:50c0:8003::154, 2606:50c0:8000::154, ...
+2024-10-29 17:41:14 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8002::154|:443... connected.
+2024-10-29 17:41:14 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:41:14 Length: 9806 (9.6K) [text/plain]
+2024-10-29 17:41:14 Saving to: ‘new_pid.py’
+2024-10-29 17:41:14 
+2024-10-29 17:41:14      0K .........                                             100% 3.80M=0.002s
+2024-10-29 17:41:14 
+2024-10-29 17:41:14 2024-10-29 12:41:15 (3.80 MB/s) - ‘new_pid.py’ saved [9806/9806]
+2024-10-29 17:41:14 
+2024-10-29 17:41:14 Pi Unitree_Go513605A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:41:14 Successfully updated Unitree_Go513605A
+2024-10-29 17:41:14 Connecting to Unitree_Go513814A...
+2024-10-29 17:41:15 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-29 17:41:15 Successfully connected to Unitree_Go513814A
+2024-10-29 17:41:15 Checking for running python3 processes on Unitree_Go513814A...
+2024-10-29 17:41:16 Killed python3 process for pid.py on Unitree_Go513814A
+2024-10-29 17:41:16 Running dhclient to get internet access on Unitree_Go513814A...
+2024-10-29 17:41:18 Unitree_Go513814A has internet access.
+2024-10-29 17:41:18 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:41:19 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:41:19 
+2024-10-29 17:41:19 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:41:19 the exact distribution terms for each program are described in the
+2024-10-29 17:41:19 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:41:19 
+2024-10-29 17:41:19 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:41:19 permitted by applicable law.
+2024-10-29 17:41:19 --2024-10-29 12:41:19--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/new_pid.py
+2024-10-29 17:41:19 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8002::154, 2606:50c0:8001::154, ...
+2024-10-29 17:41:19 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+2024-10-29 17:41:19 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:41:19 Length: 9806 (9.6K) [text/plain]
+2024-10-29 17:41:19 Saving to: ‘new_pid.py’
+2024-10-29 17:41:19 
+2024-10-29 17:41:19      0K .........                                             100% 1.88M=0.005s
+2024-10-29 17:41:19 
+2024-10-29 17:41:19 2024-10-29 12:41:20 (1.88 MB/s) - ‘new_pid.py’ saved [9806/9806]
+2024-10-29 17:41:19 
+2024-10-29 17:41:19 Pi Unitree_Go513814A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:41:19 Successfully updated Unitree_Go513814A
+2024-10-29 17:41:19 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-29 17:41:20 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-29 17:41:20 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-29 17:41:20 
+2024-10-29 17:41:20 Log has been saved to update_log.txt
+2024-10-29 17:44:38 Connecting to Unitree_Go513814A...
+2024-10-29 17:44:39 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-29 17:44:39 Successfully connected to Unitree_Go513814A
+2024-10-29 17:44:39 Checking for running python3 processes on Unitree_Go513814A...
+2024-10-29 17:44:39 Killed python3 process for pid.py on Unitree_Go513814A
+2024-10-29 17:44:39 Running dhclient to get internet access on Unitree_Go513814A...
+2024-10-29 17:45:02 Connecting to Unitree_Go513605A...
+2024-10-29 17:45:11 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:45:11 Successfully connected to Unitree_Go513605A
+2024-10-29 17:45:11 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:45:55 Connecting to Unitree_Go513605A...
+2024-10-29 17:46:45 Connecting to Unitree_Go513605A...
+2024-10-29 17:46:55 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:46:55 Successfully connected to Unitree_Go513605A
+2024-10-29 17:46:55 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:46:55 Killed python3 process for pid.py on Unitree_Go513605A
+2024-10-29 17:46:55 Running dhclient to get internet access on Unitree_Go513605A...
+2024-10-29 17:46:58 Unitree_Go513605A has internet access.
+2024-10-29 17:46:58 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:47:00 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:47:00 
+2024-10-29 17:47:00 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:47:00 the exact distribution terms for each program are described in the
+2024-10-29 17:47:00 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:47:00 
+2024-10-29 17:47:00 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:47:00 permitted by applicable law.
+2024-10-29 17:47:01 --2024-10-29 12:47:01--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/new_pid.py
+2024-10-29 17:47:01 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8001::154, 2606:50c0:8002::154, 2606:50c0:8003::154, ...
+2024-10-29 17:47:01 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8001::154|:443... connected.
+2024-10-29 17:47:01 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:47:01 Length: 9806 (9.6K) [text/plain]
+2024-10-29 17:47:01 Saving to: ‘new_pid.py’
+2024-10-29 17:47:01 
+2024-10-29 17:47:01      0K .........                                             100%  230K=0.04s
+2024-10-29 17:47:01 
+2024-10-29 17:47:01 2024-10-29 12:47:02 (230 KB/s) - ‘new_pid.py’ saved [9806/9806]
+2024-10-29 17:47:01 
+2024-10-29 17:47:01 Pi Unitree_Go513605A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:47:01 Successfully updated Unitree_Go513605A
+2024-10-29 17:47:01 Connecting to Unitree_Go513814A...
+2024-10-29 17:47:03 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-29 17:47:03 Successfully connected to Unitree_Go513814A
+2024-10-29 17:47:03 Checking for running python3 processes on Unitree_Go513814A...
+2024-10-29 17:47:04 Killed python3 process for pid.py on Unitree_Go513814A
+2024-10-29 17:47:04 Running dhclient to get internet access on Unitree_Go513814A...
+2024-10-29 17:47:06 Unitree_Go513814A has internet access.
+2024-10-29 17:47:06 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:47:07 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:47:07 
+2024-10-29 17:47:07 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:47:07 the exact distribution terms for each program are described in the
+2024-10-29 17:47:07 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:47:07 
+2024-10-29 17:47:07 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:47:07 permitted by applicable law.
+2024-10-29 17:47:07 --2024-10-29 12:47:08--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/client/new_pid.py
+2024-10-29 17:47:07 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8001::154, 2606:50c0:8002::154, ...
+2024-10-29 17:47:07 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-10-29 17:47:07 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:47:07 Length: 9806 (9.6K) [text/plain]
+2024-10-29 17:47:07 Saving to: ‘new_pid.py’
+2024-10-29 17:47:07 
+2024-10-29 17:47:07      0K .........                                             100%  621K=0.02s
+2024-10-29 17:47:07 
+2024-10-29 17:47:07 2024-10-29 12:47:08 (621 KB/s) - ‘new_pid.py’ saved [9806/9806]
+2024-10-29 17:47:07 
+2024-10-29 17:47:08 Pi Unitree_Go513814A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:47:08 Successfully updated Unitree_Go513814A
+2024-10-29 17:47:08 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-29 17:47:08 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-29 17:47:08 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-29 17:47:08 
+2024-10-29 17:47:08 Log has been saved to update_log.txt
+2024-10-29 17:48:53 Connecting to Unitree_Go513814A...
+2024-10-29 17:48:53 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-29 17:48:53 Successfully connected to Unitree_Go513814A
+2024-10-29 17:48:53 Checking for running python3 processes on Unitree_Go513814A...
+2024-10-29 17:48:54 Killed python3 process for pid.py on Unitree_Go513814A
+2024-10-29 17:48:54 Running dhclient to get internet access on Unitree_Go513814A...
+2024-10-29 17:48:57 Unitree_Go513814A has internet access.
+2024-10-29 17:48:57 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:49:01 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:49:01 
+2024-10-29 17:49:01 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:49:01 the exact distribution terms for each program are described in the
+2024-10-29 17:49:01 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:49:01 
+2024-10-29 17:49:01 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:49:01 permitted by applicable law.
+2024-10-29 17:49:01 --2024-10-29 12:49:02--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/b85277111488a0be728b8b11567c715127fc47d4/client_udp_test.py
+2024-10-29 17:49:01 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8003::154, 2606:50c0:8000::154, 2606:50c0:8001::154, ...
+2024-10-29 17:49:02 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8003::154|:443... connected.
+2024-10-29 17:49:02 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:49:02 Length: 5423 (5.3K) [text/plain]
+2024-10-29 17:49:02 Saving to: ‘client_udp_test.py’
+2024-10-29 17:49:02 
+2024-10-29 17:49:02      0K .....                                                 100% 1.32M=0.004s
+2024-10-29 17:49:02 
+2024-10-29 17:49:02 2024-10-29 12:49:03 (1.32 MB/s) - ‘client_udp_test.py’ saved [5423/5423]
+2024-10-29 17:49:02 
+2024-10-29 17:49:02 Pi Unitree_Go513814A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:49:02 Successfully updated Unitree_Go513814A
+2024-10-29 17:49:02 Connecting to Unitree_Go513605A...
+2024-10-29 17:49:42 Connecting to Unitree_Go513605A...
+2024-10-29 17:50:00 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-29 17:50:00 Successfully connected to Unitree_Go513605A
+2024-10-29 17:50:00 Checking for running python3 processes on Unitree_Go513605A...
+2024-10-29 17:50:02 Killed python3 process for pid.py on Unitree_Go513605A
+2024-10-29 17:50:02 Running dhclient to get internet access on Unitree_Go513605A...
+2024-10-29 17:50:04 Unitree_Go513605A has internet access.
+2024-10-29 17:50:04 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-29 17:50:04 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-29 17:50:04 
+2024-10-29 17:50:04 The programs included with the Debian GNU/Linux system are free software;
+2024-10-29 17:50:04 the exact distribution terms for each program are described in the
+2024-10-29 17:50:04 individual files in /usr/share/doc/*/copyright.
+2024-10-29 17:50:04 
+2024-10-29 17:50:04 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-29 17:50:04 permitted by applicable law.
+2024-10-29 17:50:04 --2024-10-29 12:50:05--  https://raw.githubusercontent.com/chinmaynehate/rob-sync/b85277111488a0be728b8b11567c715127fc47d4/client_udp_test.py
+2024-10-29 17:50:04 Resolving raw.githubusercontent.com (raw.githubusercontent.com)... 2606:50c0:8000::154, 2606:50c0:8001::154, 2606:50c0:8002::154, ...
+2024-10-29 17:50:04 Connecting to raw.githubusercontent.com (raw.githubusercontent.com)|2606:50c0:8000::154|:443... connected.
+2024-10-29 17:50:05 HTTP request sent, awaiting response... 200 OK
+2024-10-29 17:50:05 Length: 5423 (5.3K) [text/plain]
+2024-10-29 17:50:05 Saving to: ‘client_udp_test.py’
+2024-10-29 17:50:05 
+2024-10-29 17:50:05      0K .....                                                 100% 3.72M=0.001s
+2024-10-29 17:50:05 
+2024-10-29 17:50:05 2024-10-29 12:50:05 (3.72 MB/s) - ‘client_udp_test.py’ saved [5423/5423]
+2024-10-29 17:50:05 
+2024-10-29 17:50:05 Pi Unitree_Go513605A has been updated successfully and SSH session closed. Moving to the next Pi...
+2024-10-29 17:50:05 Successfully updated Unitree_Go513605A
+2024-10-29 17:50:05 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-29 17:50:08 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-29 17:50:08 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-29 17:50:08 
+2024-10-29 17:50:08 Log has been saved to update_log.txt
