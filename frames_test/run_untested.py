@@ -8,20 +8,20 @@ import time
 import math
 
 frame0 = [[0, 0, 0],  
-          [1, 2, 3],  
+          [605, 699, 814],  
           [0, 0, 0]]  
 
 frame1 = [[0, 0, 0],
-          [0, 2, 0],
-          [1, 0, 3]]
+          [0, 699, 0],
+          [605, 0, 814]]
 
 frame2 = [[0, 0, 0],
-          [1, 0, 3],
-          [0, 2, 0]]
+          [605, 0, 814],
+          [0, 699, 0]]
 
 frame3 = [[0, 0, 0],  
           [0, 0, 0],  
-          [1, 2, 3]] 
+          [605, 699, 814]] 
 
 frames = [frame0, frame1, frame2, frame3]
 
@@ -300,7 +300,7 @@ async def do_drill():
             else:
                 print("waiting 20")
                 curr = time.time() - startTime
-                # await move_for_duration(20)
+                await move_for_duration(1)
                 print("entering dance pause")
                 while int(time.time() - startTime) < 19+curr:
                     print(time.time() - startTime,  19+curr)
