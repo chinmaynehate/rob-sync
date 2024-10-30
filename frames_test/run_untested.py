@@ -43,6 +43,10 @@ def get_current_yaw():
     udp_robot.Recv()  # Receive the latest data from the robot
     udp_robot.GetRecv(state_robot)  # Populate state_robot with the latest data
     return state_robot.imu.rpy[2]  # Return the yaw (rpy[2]) from the IMU
+
+async def normalize_yaw_difference(yaw_diff):
+    return (yaw_diff + math.pi) % (2 * math.pi) - math.pi
+
 async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold=0.01):
     integral = 0.0  # Initialize the integral term
     previous_error = 0.0  # Initialize the previous error for the derivative term
@@ -61,6 +65,7 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         # Get the current yaw and calculate error
         current_yaw = get_current_yaw()
         error = set_point - current_yaw
+        error = normalize_yaw_difference(error)
         print("error",error)
         # Stop the loop if the error is within an acceptable range
         if abs(error) < threshold:
@@ -185,6 +190,7 @@ def get_robot_position(frame, robot_number):
                 translated_y = len(frame) - 1 - y
                 return (translated_x + 1, translated_y + 1)
     return None
+
 
 # might need to switch x and y of cmd.velocity
 async def do_drill():
