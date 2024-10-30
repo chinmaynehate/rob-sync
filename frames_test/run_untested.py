@@ -1,4 +1,4 @@
-# untested implementation of drill logic
+#tested implementation of drill logic
 
 import sys
 import asyncio
@@ -125,6 +125,8 @@ async def process_command(command):
         cmd.yawSpeed = 0.0
         cmd.reserve = 0
     elif command == "triangle":
+        cmd.mode = 2
+        cmd.gaitType = 1
         await do_drill()
     else:
         print("Unknown command received.")
@@ -162,6 +164,7 @@ def get_robot_position(frame, robot_number):
 
 # might need to switch x and y of cmd.velocity
 async def do_drill():
+    startTime = time.time()
     for i in range(len(frames) - 1):
         await set_robot_mode(2)
         time.sleep(0.05)
@@ -183,8 +186,12 @@ async def do_drill():
                 # print("cmd.velocity[0][0] for " + str(frame_transition_time[i]) + " seconds")
                 cmd.mode = 2
                 cmd.velocity = [0, 0]
-                await move_for_duration(frame_transition_time[i])
-                await move_for_duration(frame_info[i][0])
+                while int(time.time() - startTime) < time.time() + frame_transition_time[i]*1000 + frame_info[i][0]*1000:
+                    udp_robot.SetSend(cmd)
+                    udp_robot.Send()
+                    await asyncio.sleep(0.05)
+                # await move_for_duration(frame_transition_time[i])
+                # await move_for_duration(frame_info[i][0])
 
                 # simulate performance at frame
                 print(int(frame_info[i][1]))
@@ -195,13 +202,31 @@ async def do_drill():
 
                 if (frame_info[i][1] == 13):
                     print("waiting 45")
-                    await move_for_duration(45)
+                    while int(time.time() - startTime) < time.time() + 45*1000:
+                        udp_robot.SetSend(cmd)
+                        udp_robot.Send()
+                        await asyncio.sleep(0.05)
+                    # await asyncio.sleep(0.05)
                     await set_robot_mode(2)
-                    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+
+                    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+                    while int(time.time() - startTime) < time.time() + 5*1000:
+                        udp_robot.SetSend(cmd)
+                        udp_robot.Send()
+                        await asyncio.sleep(0.05)
                     # call rotate 90 clockwise
                 else:
                     print("waiting 20")
-                    await move_for_duration(20)
+                    while int(time.time() - startTime) < time.time() + 19*1000:
+                        udp_robot.SetSend(cmd)
+                        udp_robot.Send()
+                        await asyncio.sleep(0.05)
+                    await set_robot_mode(2)
+                    await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+                    while int(time.time() - startTime) < time.time() + 5*1000:
+                        udp_robot.SetSend(cmd)
+                        udp_robot.Send()
+                        await asyncio.sleep(0.05)
                 continue
 
             # calculate speed given frame_transition_time
@@ -214,11 +239,20 @@ async def do_drill():
             # do move
             cmd.mode = 2
             cmd.velocity = [y_speed, x_speed]
+            print(cmd.mode, "should  be moving")
             await move_for_duration(frame_transition_time[i])
             cmd.velocity = [0, 0]
 
+            print("entering before dance pause")
+            curr = time.time() - startTime
+                # await move_for_duration(20)
+            while int(time.time() - startTime) < frame_info[i][0]+curr:
+                print(time.time() - startTime,  frame_info[i][0]+curr)
+                await asyncio.sleep(0.05)
+            print("exiting after dance pause")
+
             # wait before entering given mode
-            await move_for_duration(frame_info[i][0])
+            # await move_for_duration(frame_info[i][0])
 
             # enter mode
             print(int(frame_info[i][1]))
@@ -228,13 +262,34 @@ async def do_drill():
             cmd.mode = int(frame_info[i][1])
             if (frame_info[i][1] == 13):
                 print("waiting 45")
-                await move_for_duration(45)
+                while int(time.time() - startTime) < time.time() + 45*1000:
+                    udp_robot.SetSend(cmd)
+                    udp_robot.Send()
+                    await asyncio.sleep(0.05)
                 await set_robot_mode(2)
-                await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.01)
+                await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+                while int(time.time() - startTime) < time.time() + 5*1000:
+                    udp_robot.SetSend(cmd)
+                    udp_robot.Send()
+                    await asyncio.sleep(0.05)
                 # call rotate 90 clockwise
             else:
                 print("waiting 20")
-                await move_for_duration(20)
+                curr = time.time() - startTime
+                # await move_for_duration(20)
+                print("entering dance pause")
+                while int(time.time() - startTime) < 19+curr:
+                    print(time.time() - startTime,  19+curr)
+                    await asyncio.sleep(0.05)
+                print("exiting dance pause")
+                await set_robot_mode(2)
+                await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+                print("waiting for after rotate move to sync")
+                curr = time.time() - startTime
+                while int(time.time() - startTime) < curr + 3:
+                    print(time.time() - startTime,  3+curr)
+                    await asyncio.sleep(0.05)
+                print("exiting after rotate move to sync")
         else:
             print("Robot not found in frame or out of bounds")
             break
