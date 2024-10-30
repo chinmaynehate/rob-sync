@@ -20,7 +20,7 @@ frames = [frame0, frame1, frame2, frame3]
 
 # time spent at frame before entering given mode
 # [time, mode]
-frame_info = [[1, 12], [1, 12], [1, 12], [1, 12]]
+frame_info = [[3, 12], [3, 12], [3, 12], [3, 12]]
 
 # transition time to next frame
 frame_transition_time = [3, 3, 3]
