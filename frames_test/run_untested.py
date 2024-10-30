@@ -189,11 +189,10 @@ def get_robot_position(frame, robot_number):
 # might need to switch x and y of cmd.velocity
 async def do_drill():
     startTime = time.time()
+    await set_robot_mode(2)
+    time.sleep(0.05)
+    set_point = get_current_yaw()
     for i in range(len(frames) - 1):
-        await set_robot_mode(2)
-        time.sleep(0.05)
-        set_point = get_current_yaw()
-# this needs to be called once robot is to it's position
         print(set_point)
         print(i)
         print(name)
@@ -241,16 +240,21 @@ async def do_drill():
                     # call rotate 90 clockwise
                 else:
                     print("waiting 20")
-                    while int(time.time() - startTime) < time.time() + 19*1000:
-                        udp_robot.SetSend(cmd)
-                        udp_robot.Send()
+                    curr = time.time() - startTime
+                    await move_for_duration(1)
+                    print("entering dance pause")
+                    while int(time.time() - startTime) < 19+curr:
+                        print(time.time() - startTime,  19+curr)
                         await asyncio.sleep(0.05)
+                    print("exiting dance pause")
                     await set_robot_mode(2)
                     await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
-                    while int(time.time() - startTime) < time.time() + 5*1000:
-                        udp_robot.SetSend(cmd)
-                        udp_robot.Send()
+                    print("waiting for after rotate move to sync")
+                    curr = time.time() - startTime
+                    while int(time.time() - startTime) < curr + 3:
+                        print(time.time() - startTime,  3+curr)
                         await asyncio.sleep(0.05)
+                    print("exiting after rotate move to sync")
                 continue
 
             # calculate speed given frame_transition_time
