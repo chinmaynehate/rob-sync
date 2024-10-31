@@ -1,5 +1,3 @@
-#tested implementation of drill logic
-
 import sys
 import asyncio
 import websockets
@@ -524,14 +522,31 @@ async def websocket_handler(uri):
         print(f"Error during WebSocket communication: {e}")
 
 async def main():
-    if len(sys.argv) != 2:
-        print("Usage: client_udp_test.py <client_id>")
+    if len(sys.argv) != 3:
+        print("Usage: python client.py <robot_id> <server_ip>")
+        print("Example: python client.py 605 192.168.1.100")
         sys.exit(1)
 
     global name
     name = sys.argv[1]
-    uri = f"wss://rob-sync-production.up.railway.app/ws/{name}"
-    await websocket_handler(uri)
+    server_ip = sys.argv[2]
+    uri = f"ws://{server_ip}:8000/ws/{name}"  # Changed from wss:// to ws:// and using local server
+    print(f"Connecting to server at: {uri}")
+    
+    while True:
+        try:
+            await websocket_handler(uri)
+        except Exception as e:
+            print(f"Connection error: {e}")
+            print("Retrying in 5 seconds...")
+            await asyncio.sleep(5)
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except KeyboardInterrupt:
+        print("\nClient stopped by user")
+        cmd.mode = 0  # Stop the robot when the client is stopped
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        sys.exit(0)
