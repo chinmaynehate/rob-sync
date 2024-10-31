@@ -108,9 +108,13 @@ get_pi_suffix() {
     echo "$pi_ssid" | grep -oE '[0-9]{3}A$' | sed 's/A//'
 }
 
-# Function to kill any running Python process for frames_test.py
+# Function to kill any running Python process for local_client_udp_test.py
+# kill_python_process() {
+#     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'pgrep -f local_client_udp_test.py && sudo pkill -f local_client_udp_test.py' > /dev/null 2>&1
+# }
+
 kill_python_process() {
-    sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'pgrep -f frames_test.py && sudo pkill -f frames_test.py' > /dev/null 2>&1
+    sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'pgrep -f python3 && sudo pkill -f python3' > /dev/null 2>&1
 }
 
 # Function to run dhclient and check connection to router
@@ -150,7 +154,7 @@ update_pi() {
 
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd /home/pi/unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
-        nohup python3 frames_test.py @$pi_suffix $laptop_ip > /dev/null 2>&1 &
+        nohup python3 local_client_udp_test.py @$pi_suffix $laptop_ip > /dev/null 2>&1 &
 EOF
 
     echo "Pi $pi_ssid has been updated successfully and SSH session closed."

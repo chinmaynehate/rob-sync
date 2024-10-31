@@ -595,3 +595,397 @@
 2024-10-30 10:43:34 Successfully reconnected to main Wi-Fi (Cdn).
 2024-10-30 10:43:34 
 2024-10-30 10:43:34 Log has been saved to update_log.txt
+2024-10-30 11:06:55 Connecting to Unitree_Go506699A...
+2024-10-30 11:06:55 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:06:55 Successfully connected to Unitree_Go506699A
+2024-10-30 11:06:56 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:06:58 Unitree_Go506699A connected to the router.
+2024-10-30 11:06:58 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:06:58 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:06:59 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:06:59 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:06:59 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:07:00 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:07:00 
+2024-10-30 11:07:00 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:07:00 the exact distribution terms for each program are described in the
+2024-10-30 11:07:00 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:07:00 
+2024-10-30 11:07:00 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:07:00 permitted by applicable law.
+2024-10-30 11:07:00 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:07:00 Successfully updated Unitree_Go506699A
+2024-10-30 11:07:00 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:07:01 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-30 11:07:01 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:07:01 
+2024-10-30 11:07:01 Log has been saved to update_log.txt
+2024-10-30 11:07:22 Connecting to Unitree_Go513605A...
+2024-10-30 11:07:22 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-30 11:07:22 Successfully connected to Unitree_Go513605A
+2024-10-30 11:07:23 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:07:25 Unitree_Go513605A connected to the router.
+2024-10-30 11:07:25 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:07:25 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:07:26 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:07:26 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:07:26 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:07:27 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:07:27 
+2024-10-30 11:07:27 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:07:27 the exact distribution terms for each program are described in the
+2024-10-30 11:07:27 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:07:27 
+2024-10-30 11:07:27 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:07:27 permitted by applicable law.
+2024-10-30 11:07:27 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:07:27 Successfully updated Unitree_Go513605A
+2024-10-30 11:07:27 Connecting to Unitree_Go513814A...
+2024-10-30 11:07:31 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-30 11:07:31 Successfully connected to Unitree_Go513814A
+2024-10-30 11:07:31 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:07:33 Unitree_Go513814A connected to the router.
+2024-10-30 11:07:33 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513814A...
+2024-10-30 11:07:34 File exists on Unitree_Go513814A. Deleting the old file...
+2024-10-30 11:07:34 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A...
+2024-10-30 11:07:35 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A.
+2024-10-30 11:07:35 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:07:35 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:07:35 
+2024-10-30 11:07:35 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:07:35 the exact distribution terms for each program are described in the
+2024-10-30 11:07:35 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:07:35 
+2024-10-30 11:07:35 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:07:35 permitted by applicable law.
+2024-10-30 11:07:35 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-10-30 11:07:35 Successfully updated Unitree_Go513814A
+2024-10-30 11:07:35 Connecting to Unitree_Go506699A...
+2024-10-30 11:07:36 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:07:36 Successfully connected to Unitree_Go506699A
+2024-10-30 11:07:37 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:07:39 Unitree_Go506699A connected to the router.
+2024-10-30 11:07:39 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:07:39 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:07:39 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:07:40 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:07:40 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:07:40 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:07:40 
+2024-10-30 11:07:40 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:07:40 the exact distribution terms for each program are described in the
+2024-10-30 11:07:40 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:07:40 
+2024-10-30 11:07:40 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:07:40 permitted by applicable law.
+2024-10-30 11:07:40 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:07:40 Successfully updated Unitree_Go506699A
+2024-10-30 11:07:40 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:07:41 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-30 11:07:41 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:07:41 
+2024-10-30 11:07:41 Log has been saved to update_log.txt
+2024-10-30 11:09:49 Connecting to Unitree_Go506699A...
+2024-10-30 11:10:12 Connecting to Unitree_Go506699A...
+2024-10-30 11:10:12 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:10:12 Successfully connected to Unitree_Go506699A
+2024-10-30 11:10:12 ./local_update_pi.sh: line 144: kill_python_process: command not found
+2024-10-30 11:10:12 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:10:14 Unitree_Go506699A connected to the router.
+2024-10-30 11:10:14 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:10:15 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:10:15 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:10:15 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:10:15 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:10:16 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:10:16 
+2024-10-30 11:10:16 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:10:16 the exact distribution terms for each program are described in the
+2024-10-30 11:10:16 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:10:16 
+2024-10-30 11:10:16 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:10:16 permitted by applicable law.
+2024-10-30 11:10:16 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:10:16 Successfully updated Unitree_Go506699A
+2024-10-30 11:10:16 Connecting to Unitree_Go513814A...
+2024-10-30 11:10:26 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-30 11:10:26 Successfully connected to Unitree_Go513814A
+2024-10-30 11:10:26 ./local_update_pi.sh: line 144: kill_python_process: command not found
+2024-10-30 11:10:26 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:10:27 Unitree_Go513814A connected to the router.
+2024-10-30 11:10:27 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513814A...
+2024-10-30 11:10:28 File exists on Unitree_Go513814A. Deleting the old file...
+2024-10-30 11:10:28 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A...
+2024-10-30 11:10:29 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A.
+2024-10-30 11:10:29 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:10:29 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:10:29 
+2024-10-30 11:10:29 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:10:29 the exact distribution terms for each program are described in the
+2024-10-30 11:10:29 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:10:29 
+2024-10-30 11:10:29 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:10:29 permitted by applicable law.
+2024-10-30 11:10:29 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-10-30 11:10:29 Successfully updated Unitree_Go513814A
+2024-10-30 11:10:29 Connecting to Unitree_Go513605A...
+2024-10-30 11:10:30 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-30 11:10:30 Successfully connected to Unitree_Go513605A
+2024-10-30 11:10:30 ./local_update_pi.sh: line 144: kill_python_process: command not found
+2024-10-30 11:10:30 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:10:32 Unitree_Go513605A connected to the router.
+2024-10-30 11:10:32 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:10:32 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:10:32 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:10:33 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:10:33 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:10:34 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:10:34 
+2024-10-30 11:10:34 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:10:34 the exact distribution terms for each program are described in the
+2024-10-30 11:10:34 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:10:34 
+2024-10-30 11:10:34 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:10:34 permitted by applicable law.
+2024-10-30 11:10:34 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:10:34 Successfully updated Unitree_Go513605A
+2024-10-30 11:10:34 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:10:34 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-30 11:10:34 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:10:34 
+2024-10-30 11:10:34 Log has been saved to update_log.txt
+2024-10-30 11:10:47 Connecting to Unitree_Go513814A...
+2024-10-30 11:10:51 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-30 11:10:51 Successfully connected to Unitree_Go513814A
+2024-10-30 11:10:51 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:10:53 Unitree_Go513814A connected to the router.
+2024-10-30 11:10:53 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513814A...
+2024-10-30 11:10:53 File exists on Unitree_Go513814A. Deleting the old file...
+2024-10-30 11:10:54 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A...
+2024-10-30 11:10:54 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A.
+2024-10-30 11:10:54 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:10:54 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:10:54 
+2024-10-30 11:10:54 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:10:54 the exact distribution terms for each program are described in the
+2024-10-30 11:10:54 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:10:54 
+2024-10-30 11:10:54 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:10:54 permitted by applicable law.
+2024-10-30 11:10:54 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-10-30 11:10:54 Successfully updated Unitree_Go513814A
+2024-10-30 11:10:54 Connecting to Unitree_Go506699A...
+2024-10-30 11:10:59 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:10:59 Successfully connected to Unitree_Go506699A
+2024-10-30 11:10:59 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:11:01 Unitree_Go506699A connected to the router.
+2024-10-30 11:11:01 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:11:01 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:11:02 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:11:02 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:11:02 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:11:02 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:11:02 
+2024-10-30 11:11:02 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:11:02 the exact distribution terms for each program are described in the
+2024-10-30 11:11:02 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:11:02 
+2024-10-30 11:11:02 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:11:02 permitted by applicable law.
+2024-10-30 11:11:03 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:11:03 Successfully updated Unitree_Go506699A
+2024-10-30 11:11:03 Connecting to Unitree_Go513605A...
+2024-10-30 11:11:03 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-30 11:11:03 Successfully connected to Unitree_Go513605A
+2024-10-30 11:11:04 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:11:05 Unitree_Go513605A connected to the router.
+2024-10-30 11:11:05 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:11:06 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:11:06 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:11:07 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:11:07 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:11:07 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:11:07 
+2024-10-30 11:11:07 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:11:07 the exact distribution terms for each program are described in the
+2024-10-30 11:11:07 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:11:07 
+2024-10-30 11:11:07 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:11:07 permitted by applicable law.
+2024-10-30 11:11:07 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:11:07 Successfully updated Unitree_Go513605A
+2024-10-30 11:11:07 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:11:10 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-30 11:11:10 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:11:10 
+2024-10-30 11:11:10 Log has been saved to update_log.txt
+2024-10-30 11:11:31 Connecting to Unitree_Go513605A...
+2024-10-30 11:11:32 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-30 11:11:32 Successfully connected to Unitree_Go513605A
+2024-10-30 11:11:33 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:11:35 Unitree_Go513605A connected to the router.
+2024-10-30 11:11:35 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:11:35 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:11:36 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:11:36 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:11:36 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:11:36 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:11:36 
+2024-10-30 11:11:36 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:11:36 the exact distribution terms for each program are described in the
+2024-10-30 11:11:36 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:11:36 
+2024-10-30 11:11:36 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:11:36 permitted by applicable law.
+2024-10-30 11:11:37 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:11:37 Successfully updated Unitree_Go513605A
+2024-10-30 11:11:37 Connecting to Unitree_Go506699A...
+2024-10-30 11:11:37 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:11:37 Successfully connected to Unitree_Go506699A
+2024-10-30 11:11:38 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:11:39 Unitree_Go506699A connected to the router.
+2024-10-30 11:11:39 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:11:40 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:11:40 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:11:40 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:11:40 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:11:41 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:11:41 
+2024-10-30 11:11:41 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:11:41 the exact distribution terms for each program are described in the
+2024-10-30 11:11:41 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:11:41 
+2024-10-30 11:11:41 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:11:41 permitted by applicable law.
+2024-10-30 11:11:41 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:11:41 Successfully updated Unitree_Go506699A
+2024-10-30 11:11:41 Connecting to Unitree_Go513814A...
+2024-10-30 11:12:07 Error: Connection activation failed: (53) The Wi-Fi network could not be found.
+2024-10-30 11:12:07 Successfully connected to Unitree_Go513814A
+2024-10-30 11:12:07 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:12:07 Unitree_Go513814A failed to connect to the router.
+2024-10-30 11:12:07 Update aborted for Unitree_Go513814A due to connection failure.
+2024-10-30 11:12:07 Failed to update Unitree_Go513814A. Retrying...
+2024-10-30 11:12:07 Connecting to Unitree_Go513814A...
+2024-10-30 11:12:07 Error: No network with SSID 'Unitree_Go513814A' found.
+2024-10-30 11:12:07 Failed to connect to Unitree_Go513814A
+2024-10-30 11:12:07 Failed to connect to Unitree_Go513814A. Retrying...
+2024-10-30 11:12:07 Connecting to Unitree_Go513814A...
+2024-10-30 11:12:07 Error: No network with SSID 'Unitree_Go513814A' found.
+2024-10-30 11:12:07 Failed to connect to Unitree_Go513814A
+2024-10-30 11:12:07 Failed to connect to Unitree_Go513814A. Retrying...
+2024-10-30 11:12:07 Giving up on Unitree_Go513814A after 3 attempts.
+2024-10-30 11:12:07 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:12:07 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-30 11:12:07 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:12:07 
+2024-10-30 11:12:07 Log has been saved to update_log.txt
+2024-10-30 11:13:10 Connecting to Unitree_Go513605A...
+2024-10-30 11:13:11 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-10-30 11:13:11 Successfully connected to Unitree_Go513605A
+2024-10-30 11:13:18 Connecting to Unitree_Go513605A...
+2024-10-30 11:15:36 Connecting to Unitree_Go506699A...
+2024-10-30 11:15:40 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-30 11:15:40 Successfully connected to Unitree_Go506699A
+2024-10-30 11:15:40 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-30 11:15:42 Unitree_Go506699A connected to the router.
+2024-10-30 11:15:42 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go506699A...
+2024-10-30 11:15:43 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-30 11:15:43 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A...
+2024-10-30 11:15:43 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go506699A.
+2024-10-30 11:15:43 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:15:44 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:15:44 
+2024-10-30 11:15:44 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:15:44 the exact distribution terms for each program are described in the
+2024-10-30 11:15:44 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:15:44 
+2024-10-30 11:15:44 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:15:44 permitted by applicable law.
+2024-10-30 11:15:44 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-30 11:15:44 Successfully updated Unitree_Go506699A
+2024-10-30 11:15:44 Connecting to Unitree_Go513605A...
+2024-10-30 11:15:45 [2KDevice 'wlx5091e347d0b7' successfully activated with '2bb27681-df7f-494b-9b21-9c5145dcb263'.
+2024-10-30 11:15:45 Successfully connected to Unitree_Go513605A
+2024-10-30 11:15:46 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:15:47 Unitree_Go513605A connected to the router.
+2024-10-30 11:15:47 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:15:48 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:15:48 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:15:49 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:15:49 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:15:49 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:15:49 
+2024-10-30 11:15:49 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:15:49 the exact distribution terms for each program are described in the
+2024-10-30 11:15:49 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:15:49 
+2024-10-30 11:15:49 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:15:49 permitted by applicable law.
+2024-10-30 11:15:49 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:15:49 Successfully updated Unitree_Go513605A
+2024-10-30 11:15:49 Connecting to Unitree_Go513814A...
+2024-10-30 11:16:15 Error: Connection activation failed: (53) The Wi-Fi network could not be found.
+2024-10-30 11:16:15 Successfully connected to Unitree_Go513814A
+2024-10-30 11:16:16 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:16:19 Unitree_Go513814A connected to the router.
+2024-10-30 11:16:19 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513814A...
+2024-10-30 11:16:20 File exists on Unitree_Go513814A. Deleting the old file...
+2024-10-30 11:16:21 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A...
+2024-10-30 11:16:22 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A.
+2024-10-30 11:16:22 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:16:22 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:16:22 
+2024-10-30 11:16:22 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:16:22 the exact distribution terms for each program are described in the
+2024-10-30 11:16:22 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:16:22 
+2024-10-30 11:16:22 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:16:22 permitted by applicable law.
+2024-10-30 11:16:22 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-10-30 11:16:22 Successfully updated Unitree_Go513814A
+2024-10-30 11:16:22 Connecting to Unitree_Go513605A...
+2024-10-30 11:16:34 [2KDevice 'wlx5091e347d0b7' successfully activated with '2bb27681-df7f-494b-9b21-9c5145dcb263'.
+2024-10-30 11:16:34 Successfully connected to Unitree_Go513605A
+2024-10-30 11:16:34 Running dhclient to connect Unitree_Go513605A to router...
+2024-10-30 11:16:36 Unitree_Go513605A connected to the router.
+2024-10-30 11:16:36 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513605A...
+2024-10-30 11:16:36 File exists on Unitree_Go513605A. Deleting the old file...
+2024-10-30 11:16:37 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A...
+2024-10-30 11:16:37 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513605A.
+2024-10-30 11:16:37 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:16:37 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:16:37 
+2024-10-30 11:16:37 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:16:37 the exact distribution terms for each program are described in the
+2024-10-30 11:16:37 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:16:37 
+2024-10-30 11:16:37 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:16:37 permitted by applicable law.
+2024-10-30 11:16:38 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-10-30 11:16:38 Successfully updated Unitree_Go513605A
+2024-10-30 11:16:38 Connecting to Unitree_Go513814A...
+2024-10-30 11:16:58 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-10-30 11:16:58 Successfully connected to Unitree_Go513814A
+2024-10-30 11:16:58 Running dhclient to connect Unitree_Go513814A to router...
+2024-10-30 11:17:00 Unitree_Go513814A connected to the router.
+2024-10-30 11:17:00 Checking if /home/pi/unitree_legged_sdk/example_py/local_client_udp_test.py exists on Unitree_Go513814A...
+2024-10-30 11:17:00 File exists on Unitree_Go513814A. Deleting the old file...
+2024-10-30 11:17:01 Copying /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A...
+2024-10-30 11:17:01 Successfully copied /home/chinmay/rob-sync/local_client_udp_test.py to Unitree_Go513814A.
+2024-10-30 11:17:01 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-30 11:17:02 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-30 11:17:02 
+2024-10-30 11:17:02 The programs included with the Debian GNU/Linux system are free software;
+2024-10-30 11:17:02 the exact distribution terms for each program are described in the
+2024-10-30 11:17:02 individual files in /usr/share/doc/*/copyright.
+2024-10-30 11:17:02 
+2024-10-30 11:17:02 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-30 11:17:02 permitted by applicable law.
+2024-10-30 11:17:02 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-10-30 11:17:02 Successfully updated Unitree_Go513814A
+2024-10-30 11:17:02 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-30 11:17:03 [2KDevice 'wlx5091e347d0b7' successfully activated with 'c508679e-1b50-4d44-91d5-9ba2732b3f2a'.
+2024-10-30 11:17:03 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-30 11:17:03 
+2024-10-30 11:17:03 Log has been saved to update_log.txt
