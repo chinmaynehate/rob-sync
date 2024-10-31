@@ -40,6 +40,10 @@ def get_current_yaw():
     udp_robot.Recv()  # Receive the latest data from the robot
     udp_robot.GetRecv(state_robot)  # Populate state_robot with the latest data
     return state_robot.imu.rpy[2]  # Return the yaw (rpy[2]) from the IMU
+
+def angle_difference(target_angle, current_angle):
+    diff = (target_angle - current_angle + math.pi) % (2 * math.pi) - math.pi
+    return diff
     
 async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold=0.01):
     integral = 0.0  # Initialize the integral term
@@ -58,7 +62,7 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         time.sleep(0.05)
         # Get the current yaw and calculate error
         current_yaw = get_current_yaw()
-        error = set_point - current_yaw
+        error = angle_difference(set_point, current_yaw)
         print("error",error)
         # Stop the loop if the error is within an acceptable range
         if abs(error) < threshold:
@@ -329,9 +333,9 @@ async def do_drill():
             await asyncio.sleep(0.05)
         
         # backflip
-        cmd.mode = 14
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
+        # cmd.mode = 14
+        # udp_robot.SetSend(cmd)
+        # udp_robot.Send()
 
     elif name == 699:
         # go back
