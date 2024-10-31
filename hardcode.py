@@ -85,7 +85,7 @@ async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold
         yawSpeed = P_term + I_term + D_term
 
         # Limit yawSpeed to avoid extreme values
-        yawSpeed = max(min(yawSpeed,2.0), -2.0)  # Clamp between -1 and 1
+        yawSpeed = max(min(yawSpeed,2.5), -2.5)  # Clamp between -1 and 1
 
         # Set yaw speed and keep velocity zero (no forward/backward movement)
         cmd.yawSpeed = yawSpeed
@@ -197,13 +197,13 @@ async def do_drill():
     if name == "605" or name == "814":
         # go back
         cmd.mode = 2
-        cmd.velocity = [-0.3, 0]
+        cmd.velocity = [-0.4, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         curr = time.time()  - startTime
 
         # move for x seconds
-        while int(time.time() - startTime) < 3+curr:
+        while int(time.time() - startTime) < 2+curr:
             udp_robot.SetSend(cmd)
             udp_robot.Send()
             await asyncio.sleep(0.05)
@@ -211,7 +211,7 @@ async def do_drill():
         # stop and wait for inertia to stop
         init_robots()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 0.9+curr:
             await asyncio.sleep(0.05)
 
         # begin dance & wait for it to commence
@@ -219,42 +219,18 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 19+curr:
+        while int(time.time() - startTime) < 17.2+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
-
-        # jump yaw twice
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
-
-        # wait before next jump yaw
-        while int(time.time() - startTime) < 2+curr:
-            await asyncio.sleep(0.05)
-
-        init_robots()
-
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
-
-        init_robots()
-        curr = time.time() - startTime
-
-        # wait after jump yaw
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
 
         curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
-        await apply_pid_controller(set_point + math.pi, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+        await apply_pid_controller(set_point + math.pi, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 5+curr:
+        while int(time.time() - startTime) < 4+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -262,64 +238,109 @@ async def do_drill():
         # pitch up
         cmd.mode = 2
         curr = time.time() - startTime
-        cmd.euler = [0, 0.5, 0]
+        cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
-        
-        init_robots()
-
-        curr = time.time() - startTime
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
 
         # pitch down
         curr = time.time() - startTime
-        cmd.euler = [0, -0.5, 0]
+        cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
         curr = time.time() - startTime
 
         # wait for robot to go to 0, 0, 0
-        while int(time.time() - startTime) < 1+curr:
+        while int(time.time() - startTime) < 0.3+curr:
             await asyncio.sleep(0.05)
 
-         # jump yaw twice
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
+        #  # jump yaw twice
+        # cmd.mode = 10
+        # udp_robot.SetSend(cmd)
+        # udp_robot.Send()
+        # curr = time.time() - startTime
 
-        # wait before next jump yaw
-        while int(time.time() - startTime) < 2+curr:
-            await asyncio.sleep(0.05)
+        # # wait before next jump yaw
+        # while int(time.time() - startTime) < 2+curr:
+        #     await asyncio.sleep(0.05)
 
-        init_robots()
+        # init_robots()
 
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
+        # cmd.mode = 10
+        # udp_robot.SetSend(cmd)
+        # udp_robot.Send()
+        # curr = time.time() - startTime
 
-        init_robots()
-        curr = time.time() - startTime
+        # init_robots()
+        # curr = time.time() - startTime
 
-        # wait after jump yaw
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
+        # # wait after jump yaw
+        # while int(time.time() - startTime) < 1+curr:
+        #     await asyncio.sleep(0.05)
 
         curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
-        await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+        await apply_pid_controller(set_point, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 5+curr:
+        while int(time.time() - startTime) < 4+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -332,7 +353,7 @@ async def do_drill():
 
         # wait for pray to finish
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 8+curr:
+        while int(time.time() - startTime) < 7+curr:
             await asyncio.sleep(0.05)
 
         # exit pray
@@ -354,7 +375,7 @@ async def do_drill():
         curr = time.time() - startTime
 
         # move for x seconds
-        while int(time.time() - startTime) < 3+curr:
+        while int(time.time() - startTime) < 2+curr:
             udp_robot.SetSend(cmd)
             udp_robot.Send()
             await asyncio.sleep(0.05)
@@ -362,7 +383,7 @@ async def do_drill():
         # stop and wait for inertia to stop
         init_robots()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 0.9+curr:
             await asyncio.sleep(0.05)
 
         # begin dance & wait for it to commence
@@ -370,42 +391,18 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 19+curr:
+        while int(time.time() - startTime) < 17.2+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
-
-        # jump yaw twice
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
-
-        # wait before next jump yaw
-        while int(time.time() - startTime) < 2+curr:
-            await asyncio.sleep(0.05)
-
-        init_robots()
-
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
-
-        init_robots()
-        curr = time.time() - startTime
-
-        # wait after jump yaw
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
 
         curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
-        await apply_pid_controller(set_point + math.pi, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+        await apply_pid_controller(set_point + math.pi, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 5+curr:
+        while int(time.time() - startTime) < 4+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -413,64 +410,109 @@ async def do_drill():
         # pitch up
         cmd.mode = 2
         curr = time.time() - startTime
-        cmd.euler = [0, 0.5, 0]
+        cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
-        
-        init_robots()
-
-        curr = time.time() - startTime
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
 
         # pitch down
         curr = time.time() - startTime
-        cmd.euler = [0, -0.5, 0]
+        cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
+            await asyncio.sleep(0.05)  
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        while int(time.time() - startTime) < 0.3+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
         curr = time.time() - startTime
 
         # wait for robot to go to 0, 0, 0
-        while int(time.time() - startTime) < 1+curr:
+        while int(time.time() - startTime) < 0.3+curr:
             await asyncio.sleep(0.05)
 
-         # jump yaw twice
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
+        #  # jump yaw twice
+        # cmd.mode = 10
+        # udp_robot.SetSend(cmd)
+        # udp_robot.Send()
+        # curr = time.time() - startTime
 
-        # wait before next jump yaw
-        while int(time.time() - startTime) < 2+curr:
-            await asyncio.sleep(0.05)
+        # # wait before next jump yaw
+        # while int(time.time() - startTime) < 2+curr:
+        #     await asyncio.sleep(0.05)
 
-        init_robots()
+        # init_robots()
 
-        cmd.mode = 10
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        curr = time.time() - startTime
+        # cmd.mode = 10
+        # udp_robot.SetSend(cmd)
+        # udp_robot.Send()
+        # curr = time.time() - startTime
 
-        init_robots()
-        curr = time.time() - startTime
+        # init_robots()
+        # curr = time.time() - startTime
 
-        # wait after jump yaw
-        while int(time.time() - startTime) < 1+curr:
-            await asyncio.sleep(0.05)
+        # # wait after jump yaw
+        # while int(time.time() - startTime) < 1+curr:
+        #     await asyncio.sleep(0.05)
 
         curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
-        await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
+        await apply_pid_controller(set_point, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 5+curr:
+        while int(time.time() - startTime) < 4+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -483,7 +525,7 @@ async def do_drill():
 
         # wait for pray to finish
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 8+curr:
+        while int(time.time() - startTime) < 7+curr:
             await asyncio.sleep(0.05)
 
         # exit pray
