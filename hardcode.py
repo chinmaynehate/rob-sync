@@ -14,7 +14,7 @@ cmd = sdk.HighCmd()
 udp_robot.InitCmdData(cmd)
 
 def init_robots():
-    cmd.mode = 0     
+    cmd.mode = 0
     cmd.gaitType = 0
     cmd.speedLevel = 0
     cmd.footRaiseHeight = 0
@@ -44,7 +44,7 @@ def get_current_yaw():
 def angle_difference(target_angle, current_angle):
     diff = (target_angle - current_angle + math.pi) % (2 * math.pi) - math.pi
     return diff
-    
+
 async def apply_pid_controller(set_point, K_p=1.0, K_i=0.01, K_d=0.05, threshold=0.01):
     integral = 0.0  # Initialize the integral term
     previous_error = 0.0  # Initialize the previous error for the derivative term
@@ -166,7 +166,7 @@ async def move_for_duration(seconds):
         udp_robot.Send()
         await asyncio.sleep(0.05)
 
-async def set_robot_mode(mode):
+def set_robot_mode(mode):
     cmd.mode = mode  # Set the mode (1 for standing, 2 for walking, etc.)
     cmd.velocity = [0, 0]  # No movement
     cmd.yawSpeed = 0.0  # No rotation
@@ -192,22 +192,30 @@ def get_robot_position(frame, robot_number):
 async def do_drill():
     startTime = time.time()
     set_point = get_current_yaw()
+    print("hello from ", name)
 
-    if name == 605 or name == 814:
+    if name == "605" or name == "814":
         # go back
+        print("entered if")
         cmd.mode = 2
         cmd.velocity = [-0.3, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time()  - startTime
+        print("test1")
 
         # move for x seconds
         while int(time.time() - startTime) < 3+curr:
+            print("in while loop")
+            print(time.time() - startTime, 3+curr)
+            udp_robot.SetSend(cmd)
+            udp_robot.Send()
             await asyncio.sleep(0.05)
 
+        print("after sleep")
         # stop and wait for inertia to stop
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 2+curr:
             await asyncio.sleep(0.05)
 
@@ -215,17 +223,17 @@ async def do_drill():
         cmd.mode = 12
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 19+curr:
             await asyncio.sleep(0.05)
-            
+
         init_robots()
 
         # jump yaw twice
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait before next jump yaw
         while int(time.time() - startTime) < 3+curr:
@@ -234,16 +242,16 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait after jump yaw
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
 
-        curr = time.time()
+        curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
         await apply_pid_controller(set_point + math.pi, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
@@ -256,7 +264,7 @@ async def do_drill():
 
         # pitch up
         cmd.mode = 2
-        curr = time.time()
+        curr = time.time() - startTime
         cmd.euler = [0, 0.3, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
@@ -266,15 +274,15 @@ async def do_drill():
         init_robots()
 
         # pitch down
-        curr = time.time()
+        curr = time.time() - startTime
         cmd.euler = [0, -0.3, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         while int(time.time() - startTime) < 2+curr:
             await asyncio.sleep(0.05)
-            
+
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait for robot to go to 0, 0, 0
         while int(time.time() - startTime) < 1+curr:
@@ -284,7 +292,7 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait before next jump yaw
         while int(time.time() - startTime) < 3+curr:
@@ -295,16 +303,16 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait after jump yaw
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
 
-        curr = time.time()
+        curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
         await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
@@ -315,23 +323,23 @@ async def do_drill():
 
         init_robots()
 
-        # enter pray 
-        curr = time.time()
+        # enter pray
+        curr = time.time() - startTime
         cmd.mode = 11
         udp_robot.SetSend(cmd)
         udp_robot.Send()
 
         # wait for pray to finish
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 8+curr:
             await asyncio.sleep(0.05)
 
         # exit pray
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
-        
+
         # backflip
         # cmd.mode = 14
         # udp_robot.SetSend(cmd)
@@ -340,7 +348,7 @@ async def do_drill():
     elif name == 699:
         # go back
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # move for x seconds
         while int(time.time() - startTime) < 3+curr:
@@ -348,7 +356,7 @@ async def do_drill():
 
         # stop and wait for inertia to stop
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 2+curr:
             await asyncio.sleep(0.05)
 
@@ -356,17 +364,17 @@ async def do_drill():
         cmd.mode = 12
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 19+curr:
             await asyncio.sleep(0.05)
-            
+
         init_robots()
 
         # jump yaw twice
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait before next jump yaw
         while int(time.time() - startTime) < 3+curr:
@@ -375,16 +383,16 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait after jump yaw
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
 
-        curr = time.time()
+        curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
         await apply_pid_controller(set_point + math.pi, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
@@ -397,7 +405,7 @@ async def do_drill():
 
         # pitch up
         cmd.mode = 2
-        curr = time.time()
+        curr = time.time() - startTime
         cmd.euler = [0, 0.3, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
@@ -407,15 +415,15 @@ async def do_drill():
         init_robots()
 
         # pitch down
-        curr = time.time()
+        curr = time.time() - startTime
         cmd.euler = [0, -0.3, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         while int(time.time() - startTime) < 2+curr:
             await asyncio.sleep(0.05)
-            
+
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait for robot to go to 0, 0, 0
         while int(time.time() - startTime) < 1+curr:
@@ -425,7 +433,7 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait before next jump yaw
         while int(time.time() - startTime) < 3+curr:
@@ -436,16 +444,16 @@ async def do_drill():
         cmd.mode = 10
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        curr = time.time()
+        curr = time.time() - startTime
 
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
 
         # wait after jump yaw
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
 
-        curr = time.time()
+        curr = time.time() - startTime
 
         # apply PID to ensure 180 degree turn
         await apply_pid_controller(set_point, K_p=2.0, K_i=0.02, K_d=0.05, threshold=0.05)
@@ -456,29 +464,29 @@ async def do_drill():
 
         init_robots()
 
-        # enter pray 
-        curr = time.time()
+        # enter pray
+        curr = time.time() - startTime
         cmd.mode = 11
         udp_robot.SetSend(cmd)
         udp_robot.Send()
 
         # wait for pray to finish
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 8+curr:
             await asyncio.sleep(0.05)
 
         # exit pray
         init_robots()
-        curr = time.time()
+        curr = time.time() - startTime
         while int(time.time() - startTime) < 1+curr:
             await asyncio.sleep(0.05)
-        
+
         # backflip
         cmd.mode = 14
         udp_robot.SetSend(cmd)
         udp_robot.Send()
 
-    
+
 # Function to handle received messages
 async def handle_message(websocket, message):
     print("Received message:", message)
@@ -532,11 +540,11 @@ async def main():
         sys.exit(1)
 
     global name
-    name = sys.argv[1]
+    name =sys.argv[1]
     server_ip = sys.argv[2]
     uri = f"ws://{server_ip}:8000/ws/{name}"  # Changed from wss:// to ws:// and using local server
     print(f"Connecting to server at: {uri}")
-    
+
     while True:
         try:
             await websocket_handler(uri)
