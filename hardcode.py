@@ -203,7 +203,7 @@ async def do_drill():
         curr = time.time()  - startTime
 
         # move for x seconds
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 1+curr:
             udp_robot.SetSend(cmd)
             udp_robot.Send()
             await asyncio.sleep(0.05)
@@ -369,13 +369,13 @@ async def do_drill():
         # udp_robot.SetSend(cmd)
         # udp_robot.Send()
 
-    elif name == 699:
+    elif name == "699":
         # go back
         init_robots()
         curr = time.time() - startTime
 
         # move for x seconds
-        while int(time.time() - startTime) < 2+curr:
+        while int(time.time() - startTime) < 1+curr:
             udp_robot.SetSend(cmd)
             udp_robot.Send()
             await asyncio.sleep(0.05)
