@@ -62,6 +62,55 @@ done
 
 exec > >(while IFS= read -r line; do echo "$(date '+%Y-%m-%d %H:%M:%S') $line"; done | tee -a "$LOGFILE") 2>&1
 
+
+# Function to kill any process running on port 8000
+kill_server_script() {
+    local pid=$(pgrep -f "python3 server.py")
+    if [ -n "$pid" ]; then
+        echo "Killing existing server.py process with PID $pid"
+        kill -9 $pid
+    else
+        echo "No running instance of server.py found."
+    fi
+}
+
+# Function to kill any process running on port 8000
+kill_process_on_port() {
+    local port=8000
+    local pid=$(lsof -ti:$port)
+    if [ -n "$pid" ]; then
+        echo "Killing process on port $port with PID $pid"
+        kill -9 $pid
+    else
+        echo "No process found on port $port."
+    fi
+}
+kill_firefox() {
+    local pid=$(pgrep -f firefox)
+    if [ -n "$pid" ]; then
+        echo "Killing existing Firefox process with PID $pid"
+        kill -9 $pid
+    else
+        echo "No running instance of Firefox found."
+    fi
+}
+# Function to start the server.py script
+start_server() {
+    echo "Starting server.py..."
+    nohup python3 server.py > server.log 2>&1 &
+    sleep 2  # Give the server time to start
+    kill_firefox
+    # Open the server in Firefox on laptop_ip:8000
+    local url="http://$laptop_ip:8000"
+    echo "Opening server in Mozilla Firefox at $url..."
+    firefox "$url" &
+}
+
+# Kill any process on port 8000 and start the server
+kill_server_script
+kill_process_on_port
+start_server
+
 # Function to copy and replace the Python file on the Raspberry Pi
 copy_new_code() {
     local pi_ssid="$1"

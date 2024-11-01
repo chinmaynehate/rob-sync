@@ -1,0 +1,21 @@
+INFO:     Started server process [156769]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://192.168.0.24:8000 (Press CTRL+C to quit)
+INFO:     ('192.168.0.130', 39694) - "WebSocket /ws/699" [accepted]
+INFO:     connection open
+Server running at http://192.168.0.24:8000
+WebSocket URL: ws://192.168.0.24:8000/ws/<client_id>
+Client 699 connected
+Broadcasting message: {"type": "status", "client_id": "699", "status": "connected"}
+Message from client 699: {"type": "getConnectedClients"}
+INFO:     192.168.0.24:41552 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.24:41552 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.0.24:41552 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 41562) - "WebSocket /ws/Desktop-Linux-Firefox-600f-ae7" [accepted]
+INFO:     connection open
+Client Desktop-Linux-Firefox-600f-ae7 connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-600f-ae7", "status": "connected"}
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:41568 - "POST /execute HTTP/1.1" 200 OK
+INFO:     connection closed
