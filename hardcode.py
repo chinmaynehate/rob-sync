@@ -235,39 +235,20 @@ async def do_drill():
 
         init_robots()
 
-        # pitch up
+         # pitch up
         cmd.mode = 2
         curr = time.time() - startTime
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
-
-        # pitch up
-        cmd.mode = 2
-        curr = time.time() - startTime
-        cmd.euler = [0, 0.6, 0]
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
-
-        # pitch down
-        curr = time.time() - startTime
-        cmd.euler = [0, -0.6, 0]
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
 
         # pitch up
         cmd.mode = 2
@@ -275,16 +256,14 @@ async def do_drill():
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
 
         # pitch up
         cmd.mode = 2
@@ -292,16 +271,59 @@ async def do_drill():
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
 
         init_robots()
         curr = time.time() - startTime
@@ -407,39 +429,20 @@ async def do_drill():
 
         init_robots()
 
-        # pitch up
+         # pitch up
         cmd.mode = 2
         curr = time.time() - startTime
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
-
-        # pitch up
-        cmd.mode = 2
-        curr = time.time() - startTime
-        cmd.euler = [0, 0.6, 0]
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
-
-        # pitch down
-        curr = time.time() - startTime
-        cmd.euler = [0, -0.6, 0]
-        udp_robot.SetSend(cmd)
-        udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
 
         # pitch up
         cmd.mode = 2
@@ -447,16 +450,14 @@ async def do_drill():
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
 
         # pitch up
         cmd.mode = 2
@@ -464,16 +465,59 @@ async def do_drill():
         cmd.euler = [0, 0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)  
+        await asyncio.sleep(0.4)
 
         # pitch down
         curr = time.time() - startTime
         cmd.euler = [0, -0.6, 0]
         udp_robot.SetSend(cmd)
         udp_robot.Send()
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch up
+        cmd.mode = 2
+        curr = time.time() - startTime
+        cmd.euler = [0, 0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
+
+        # pitch down
+        curr = time.time() - startTime
+        cmd.euler = [0, -0.6, 0]
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
+        await asyncio.sleep(0.4)
 
         init_robots()
         curr = time.time() - startTime
