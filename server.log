@@ -140,3 +140,265 @@ Broadcasting message: {"type": "command", "command": "forward"}
 INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
 Broadcasting message: {"type": "command", "command": "dance 1"}
 INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+INFO:     connection closed
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 953, in transfer_data
+    message = await self.read_message()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1023, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1098, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1155, in read_frame
+    frame = await Frame.read(
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/framing.py", line 70, in read
+    data = await reader(2)
+  File "/usr/lib/python3.8/asyncio/streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/usr/lib/python3.8/asyncio/streams.py", line 517, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 330, in asgi_send
+    await self.send(data)  # type: ignore[arg-type]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 628, in send
+    await self.ensure_open()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 938, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 85, in send
+    await self._send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 39, in sender
+    await send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 343, in asgi_send
+    raise ClientDisconnected from exc
+uvicorn.protocols.utils.ClientDisconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 242, in run_asgi
+    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)  # type: ignore[func-returns-value]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 152, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/cors.py", line 77, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 362, in handle
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 95, in app
+    await wrap_app_handling_exceptions(app, session)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 93, in app
+    await func(session)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/routing.py", line 383, in app
+    await dependant.call(**solved_result.values)
+  File "server.py", line 58, in websocket_endpoint
+    await manager.broadcast({"type": "status", "client_id": client_id, "status": "disconnected"})
+  File "server.py", line 40, in broadcast
+    await connection.send_text(json_message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 165, in send_text
+    await self.send({"type": "websocket.send", "text": data})
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 88, in send
+    raise WebSocketDisconnect(code=1006)
+starlette.websockets.WebSocketDisconnect
+INFO:     connection closed
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 953, in transfer_data
+    message = await self.read_message()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1023, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1098, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1155, in read_frame
+    frame = await Frame.read(
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/framing.py", line 70, in read
+    data = await reader(2)
+  File "/usr/lib/python3.8/asyncio/streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/usr/lib/python3.8/asyncio/streams.py", line 517, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 330, in asgi_send
+    await self.send(data)  # type: ignore[arg-type]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 628, in send
+    await self.ensure_open()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 938, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 85, in send
+    await self._send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 39, in sender
+    await send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 343, in asgi_send
+    raise ClientDisconnected from exc
+uvicorn.protocols.utils.ClientDisconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 242, in run_asgi
+    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)  # type: ignore[func-returns-value]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 152, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/cors.py", line 77, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 362, in handle
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 95, in app
+    await wrap_app_handling_exceptions(app, session)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 93, in app
+    await func(session)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/routing.py", line 383, in app
+    await dependant.call(**solved_result.values)
+  File "server.py", line 58, in websocket_endpoint
+    await manager.broadcast({"type": "status", "client_id": client_id, "status": "disconnected"})
+  File "server.py", line 40, in broadcast
+    await connection.send_text(json_message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 165, in send_text
+    await self.send({"type": "websocket.send", "text": data})
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 88, in send
+    raise WebSocketDisconnect(code=1006)
+starlette.websockets.WebSocketDisconnect
+INFO:     connection closed
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 953, in transfer_data
+    message = await self.read_message()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1023, in read_message
+    frame = await self.read_data_frame(max_size=self.max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1098, in read_data_frame
+    frame = await self.read_frame(max_size)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 1155, in read_frame
+    frame = await Frame.read(
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/framing.py", line 70, in read
+    data = await reader(2)
+  File "/usr/lib/python3.8/asyncio/streams.py", line 723, in readexactly
+    await self._wait_for_data('readexactly')
+  File "/usr/lib/python3.8/asyncio/streams.py", line 517, in _wait_for_data
+    await self._waiter
+asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 330, in asgi_send
+    await self.send(data)  # type: ignore[arg-type]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 628, in send
+    await self.ensure_open()
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/websockets/legacy/protocol.py", line 938, in ensure_open
+    raise self.connection_closed_exc()
+websockets.exceptions.ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 85, in send
+    await self._send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 39, in sender
+    await send(message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 343, in asgi_send
+    raise ClientDisconnected from exc
+uvicorn.protocols.utils.ClientDisconnected
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/protocols/websockets/websockets_impl.py", line 242, in run_asgi
+    result = await self.app(self.scope, self.asgi_receive, self.asgi_send)  # type: ignore[func-returns-value]
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/errors.py", line 152, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/cors.py", line 77, in __call__
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 362, in handle
+    await self.app(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 95, in app
+    await wrap_app_handling_exceptions(app, session)(scope, receive, send)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/routing.py", line 93, in app
+    await func(session)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/fastapi/routing.py", line 383, in app
+    await dependant.call(**solved_result.values)
+  File "server.py", line 58, in websocket_endpoint
+    await manager.broadcast({"type": "status", "client_id": client_id, "status": "disconnected"})
+  File "server.py", line 40, in broadcast
+    await connection.send_text(json_message)
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 165, in send_text
+    await self.send({"type": "websocket.send", "text": data})
+  File "/home/chinmay/rob-sync-venv/lib/python3.8/site-packages/starlette/websockets.py", line 88, in send
+    raise WebSocketDisconnect(code=1006)
+starlette.websockets.WebSocketDisconnect
+INFO:     connection closed

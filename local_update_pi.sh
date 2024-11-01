@@ -99,14 +99,10 @@ start_server() {
     echo "Starting server.py..."
     nohup python3 server.py > server.log 2>&1 &
     sleep 2  # Give the server time to start
-    kill_firefox
-    # Open the server in Firefox on laptop_ip:8000
-    local url="http://$laptop_ip:8000"
-    echo "Opening server in Mozilla Firefox at $url..."
-    firefox "$url" &
 }
 
 # Kill any process on port 8000 and start the server
+reconnect_to_main_wifi
 kill_server_script
 kill_process_on_port
 start_server
@@ -308,5 +304,11 @@ done
 
 # Reconnect to main Wi-Fi
 reconnect_to_main_wifi
+
+kill_firefox
+# Open the server in Firefox on laptop_ip:8000
+local url="http://$laptop_ip:8000"
+echo "Opening server in Mozilla Firefox at $url..."
+firefox "$url" &
 
 echo -e "\nLog has been saved to $LOGFILE"
