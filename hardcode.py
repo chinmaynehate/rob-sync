@@ -219,7 +219,7 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 17.2+curr:
+        while int(time.time() - startTime) < 16.7+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -230,7 +230,7 @@ async def do_drill():
         await apply_pid_controller(set_point + math.pi, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 4+curr:
+        while int(time.time() - startTime) < 3.5+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -326,11 +326,7 @@ async def do_drill():
         await asyncio.sleep(0.4)
 
         init_robots()
-        curr = time.time() - startTime
-
-        # wait for robot to go to 0, 0, 0
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.2)
 
         #  # jump yaw twice
         # cmd.mode = 10
@@ -362,7 +358,7 @@ async def do_drill():
         await apply_pid_controller(set_point, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 4+curr:
+        while int(time.time() - startTime) < 3.5+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -413,7 +409,7 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
         curr = time.time() - startTime
-        while int(time.time() - startTime) < 17.2+curr:
+        while int(time.time() - startTime) < 16.7+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -424,7 +420,7 @@ async def do_drill():
         await apply_pid_controller(set_point + math.pi, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 4+curr:
+        while int(time.time() - startTime) < 3.5+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
@@ -520,11 +516,7 @@ async def do_drill():
         await asyncio.sleep(0.4)
 
         init_robots()
-        curr = time.time() - startTime
-
-        # wait for robot to go to 0, 0, 0
-        while int(time.time() - startTime) < 0.3+curr:
-            await asyncio.sleep(0.05)
+        await asyncio.sleep(0.2)
 
         #  # jump yaw twice
         # cmd.mode = 10
@@ -556,7 +548,7 @@ async def do_drill():
         await apply_pid_controller(set_point, K_p=2.5, K_i=0.02, K_d=0.05, threshold=0.05)
 
         # allow time for rotate
-        while int(time.time() - startTime) < 4+curr:
+        while int(time.time() - startTime) < 3.5+curr:
             await asyncio.sleep(0.05)
 
         init_robots()
