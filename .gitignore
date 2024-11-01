@@ -1,2 +1,2 @@
-venv
-*.txt
+venv/
+update_log.txt

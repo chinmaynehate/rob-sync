@@ -154,7 +154,7 @@ update_pi() {
 
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd /home/pi/unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
-        nohup python3 local_client_udp_test.py @$pi_suffix $laptop_ip > /dev/null 2>&1 &
+        nohup python3 local_hardcode.py $pi_suffix $laptop_ip > /dev/null 2>&1 &
 EOF
 
     echo "Pi $pi_ssid has been updated successfully and SSH session closed."
