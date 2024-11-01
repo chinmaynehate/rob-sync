@@ -167,18 +167,62 @@ kill_python_process() {
 }
 
 # Function to run dhclient and check connection to router
+# get_internet_access() {
+#     local pi_ssid="$1"
+#     echo "Running dhclient to connect $pi_ssid to router..."
+#     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0' > /dev/null 2>&1
+#     if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'ip a | grep "inet 192.168"' > /dev/null 2>&1; then
+#         echo "$pi_ssid connected to the router."
+#         return 0
+#     else
+#         echo "$pi_ssid failed to connect to the router."
+#         return 1
+#     fi
+# }
+
+# Function to run dhclient with timeout and check connection to router with retry
 get_internet_access() {
     local pi_ssid="$1"
+    local attempts=0
+    local max_attempts=10
+    local delay=2
+    local timeout_duration=5
+
     echo "Running dhclient to connect $pi_ssid to router..."
-    sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0' > /dev/null 2>&1
-    if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'ip a | grep "inet 192.168"' > /dev/null 2>&1; then
-        echo "$pi_ssid connected to the router."
-        return 0
-    else
-        echo "$pi_ssid failed to connect to the router."
-        return 1
-    fi
+
+    while [ $attempts -lt $max_attempts ]; do
+        # Run systemctl daemon-reload before dhclient
+        sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo systemctl daemon-reload' > /dev/null 2>&1
+
+        # Run dhclient in the background
+        sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0' &
+        dhclient_pid=$!
+        
+        # Wait for dhclient or timeout
+        sleep $timeout_duration
+        
+        # Check if dhclient is still running and kill if needed
+        if ps -p $dhclient_pid > /dev/null; then
+            echo "dhclient timed out. Terminating..."
+            kill -9 $dhclient_pid
+        fi
+
+        # Check if the Pi is connected
+        if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'ip a | grep "inet 192.168"' > /dev/null 2>&1; then
+            echo "$pi_ssid connected to the router."
+            return 0
+        else
+            echo "$pi_ssid failed to connect to the router. Retrying in $delay seconds..."
+            sleep $delay
+            attempts=$((attempts + 1))
+        fi
+    done
+
+    echo "$pi_ssid failed to connect to the router after $max_attempts attempts."
+    return 1
 }
+
+
 
 # Function to update the Pi
 update_pi() {

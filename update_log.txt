@@ -1300,3 +1300,905 @@
 2024-10-31 21:54:49 
 2024-10-31 21:54:49 Log has been saved to update_log.txt
 2024-10-31 21:55:03 [156897] Sandbox: Unexpected EOF, op 0 flags 00 path /proc/cpuinfo
+2024-10-31 21:56:18 Killing existing server.py process with PID 156769
+2024-10-31 21:56:18 No process found on port 8000.
+2024-10-31 21:56:18 Starting server.py...
+2024-10-31 21:56:20 No running instance of Firefox found.
+2024-10-31 21:56:20 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-10-31 21:56:20 Connecting to Unitree_Go506699A...
+2024-10-31 21:56:21 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-31 21:56:21 Successfully connected to Unitree_Go506699A
+2024-10-31 21:56:21 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-10-31 21:56:21 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-10-31 21:56:22 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-31 21:56:23 Unitree_Go506699A connected to the router.
+2024-10-31 21:56:23 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-10-31 21:56:24 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-31 21:56:24 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-10-31 21:56:25 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-10-31 21:56:25 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-31 21:56:25 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-31 21:56:25 
+2024-10-31 21:56:25 The programs included with the Debian GNU/Linux system are free software;
+2024-10-31 21:56:25 the exact distribution terms for each program are described in the
+2024-10-31 21:56:25 individual files in /usr/share/doc/*/copyright.
+2024-10-31 21:56:25 
+2024-10-31 21:56:25 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-31 21:56:25 permitted by applicable law.
+2024-10-31 21:56:25 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-31 21:56:25 Successfully updated Unitree_Go506699A
+2024-10-31 21:56:25 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-31 21:56:26 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-31 21:56:26 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-31 21:56:26 
+2024-10-31 21:56:26 Log has been saved to update_log.txt
+2024-10-31 21:57:02 No running instance of server.py found.
+2024-10-31 21:57:02 No process found on port 8000.
+2024-10-31 21:57:02 Starting server.py...
+2024-10-31 21:57:04 Killing existing Firefox process with PID 157843
+2024-10-31 21:57:04 158052
+2024-10-31 21:57:04 158191
+2024-10-31 21:57:04 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-10-31 21:57:04 Connecting to Unitree_Go506699A...
+2024-10-31 21:57:05 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-10-31 21:57:05 Successfully connected to Unitree_Go506699A
+2024-10-31 21:57:05 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-10-31 21:57:05 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-10-31 21:57:06 Running dhclient to connect Unitree_Go506699A to router...
+2024-10-31 21:57:07 Unitree_Go506699A connected to the router.
+2024-10-31 21:57:07 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-10-31 21:57:08 File exists on Unitree_Go506699A. Deleting the old file...
+2024-10-31 21:57:08 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-10-31 21:57:09 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-10-31 21:57:09 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-10-31 21:57:09 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-10-31 21:57:09 
+2024-10-31 21:57:09 The programs included with the Debian GNU/Linux system are free software;
+2024-10-31 21:57:09 the exact distribution terms for each program are described in the
+2024-10-31 21:57:09 individual files in /usr/share/doc/*/copyright.
+2024-10-31 21:57:09 
+2024-10-31 21:57:09 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-10-31 21:57:09 permitted by applicable law.
+2024-10-31 21:57:09 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-10-31 21:57:09 Successfully updated Unitree_Go506699A
+2024-10-31 21:57:09 Attempting to reconnect to main Wi-Fi: Cdn
+2024-10-31 21:57:10 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-10-31 21:57:10 Successfully reconnected to main Wi-Fi (Cdn).
+2024-10-31 21:57:10 
+2024-10-31 21:57:10 Log has been saved to update_log.txt
+2024-11-01 08:21:46 Killing existing server.py process with PID 158641
+2024-11-01 08:21:46 No process found on port 8000.
+2024-11-01 08:21:46 Starting server.py...
+2024-11-01 08:21:48 No running instance of Firefox found.
+2024-11-01 08:21:48 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 08:21:48 Connecting to Unitree_Go513814A...
+2024-11-01 08:21:51 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 08:21:51 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 08:21:54 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 08:21:54 Successfully connected to Unitree_Go513814A
+2024-11-01 08:21:55 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 08:21:56 Unitree_Go513814A connected to the router.
+2024-11-01 08:21:56 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 08:21:57 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 08:21:57 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 08:21:57 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 08:21:58 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 08:21:58 
+2024-11-01 08:21:58 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 08:21:58 the exact distribution terms for each program are described in the
+2024-11-01 08:21:58 individual files in /usr/share/doc/*/copyright.
+2024-11-01 08:21:58 
+2024-11-01 08:21:58 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 08:21:58 permitted by applicable law.
+2024-11-01 08:21:58 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 08:21:58 Successfully updated Unitree_Go513814A
+2024-11-01 08:21:58 Connecting to Unitree_Go513605A...
+2024-11-01 08:21:59 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 08:21:59 Successfully connected to Unitree_Go513605A
+2024-11-01 08:21:59 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 08:22:01 Unitree_Go513605A connected to the router.
+2024-11-01 08:22:01 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 08:22:01 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 08:22:02 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 08:22:02 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 08:22:02 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 08:22:02 
+2024-11-01 08:22:02 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 08:22:02 the exact distribution terms for each program are described in the
+2024-11-01 08:22:02 individual files in /usr/share/doc/*/copyright.
+2024-11-01 08:22:02 
+2024-11-01 08:22:02 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 08:22:02 permitted by applicable law.
+2024-11-01 08:22:02 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 08:22:02 Successfully updated Unitree_Go513605A
+2024-11-01 08:22:02 Connecting to Unitree_Go506699A...
+2024-11-01 08:22:03 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 08:22:03 Successfully connected to Unitree_Go506699A
+2024-11-01 08:22:04 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 08:22:05 Unitree_Go506699A connected to the router.
+2024-11-01 08:22:05 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 08:22:06 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 08:22:06 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 08:22:07 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 08:22:07 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 08:22:07 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 08:22:07 
+2024-11-01 08:22:07 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 08:22:07 the exact distribution terms for each program are described in the
+2024-11-01 08:22:07 individual files in /usr/share/doc/*/copyright.
+2024-11-01 08:22:07 
+2024-11-01 08:22:07 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 08:22:07 permitted by applicable law.
+2024-11-01 08:22:07 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 08:22:07 Successfully updated Unitree_Go506699A
+2024-11-01 08:22:07 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 08:22:08 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 08:22:08 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 08:22:08 
+2024-11-01 08:22:08 Log has been saved to update_log.txt
+2024-11-01 08:39:57 No running instance of server.py found.
+2024-11-01 08:39:57 No process found on port 8000.
+2024-11-01 08:39:57 Starting server.py...
+2024-11-01 08:39:59 No running instance of Firefox found.
+2024-11-01 08:39:59 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 08:39:59 Connecting to Unitree_Go513814A...
+2024-11-01 08:40:01 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 08:40:01 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 08:40:03 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 08:40:03 Successfully connected to Unitree_Go513814A
+2024-11-01 08:40:03 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:05:18 No running instance of server.py found.
+2024-11-01 09:05:18 No process found on port 8000.
+2024-11-01 09:05:18 Starting server.py...
+2024-11-01 09:05:20 Killing existing Firefox process with PID 2805
+2024-11-01 09:05:20 2931
+2024-11-01 09:05:20 2948
+2024-11-01 09:05:20 3209
+2024-11-01 09:05:20 3662
+2024-11-01 09:05:20 5730
+2024-11-01 09:05:20 5753
+2024-11-01 09:05:20 5882
+2024-11-01 09:05:20 6470
+2024-11-01 09:05:20 7307
+2024-11-01 09:05:20 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:05:20 Connecting to Unitree_Go506699A...
+2024-11-01 09:05:21 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:05:21 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:05:25 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:05:25 Successfully connected to Unitree_Go506699A
+2024-11-01 09:05:26 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:05:33 Unitree_Go506699A connected to the router.
+2024-11-01 09:05:33 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:05:34 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:05:34 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:05:35 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:05:35 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:05:35 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:05:35 
+2024-11-01 09:05:35 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:05:35 the exact distribution terms for each program are described in the
+2024-11-01 09:05:35 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:05:35 
+2024-11-01 09:05:35 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:05:35 permitted by applicable law.
+2024-11-01 09:05:35 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:05:35 Successfully updated Unitree_Go506699A
+2024-11-01 09:05:35 Connecting to Unitree_Go513605A...
+2024-11-01 09:05:37 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:05:37 Successfully connected to Unitree_Go513605A
+2024-11-01 09:05:38 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:06:53 Killing existing server.py process with PID 9301
+2024-11-01 09:06:53 No process found on port 8000.
+2024-11-01 09:06:53 Starting server.py...
+2024-11-01 09:06:55 Killing existing Firefox process with PID 9313
+2024-11-01 09:06:55 9429
+2024-11-01 09:06:55 9447
+2024-11-01 09:06:55 9496
+2024-11-01 09:06:55 9552
+2024-11-01 09:06:55 9561
+2024-11-01 09:06:55 9576
+2024-11-01 09:06:55 9581
+2024-11-01 09:06:55 9616
+2024-11-01 09:06:55 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:06:55 Connecting to Unitree_Go513814A...
+2024-11-01 09:06:57 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:07:30 Killing existing server.py process with PID 10188
+2024-11-01 09:07:30 No process found on port 8000.
+2024-11-01 09:07:30 Starting server.py...
+2024-11-01 09:07:32 Killing existing Firefox process with PID 9313
+2024-11-01 09:07:32 10205
+2024-11-01 09:07:32 10308
+2024-11-01 09:07:32 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:07:32 Connecting to Unitree_Go513814A...
+2024-11-01 09:07:34 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:07:34 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:07:40 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:07:40 Successfully connected to Unitree_Go513814A
+2024-11-01 09:07:41 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:07:42 Unitree_Go513814A connected to the router.
+2024-11-01 09:07:42 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 09:07:43 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 09:07:43 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 09:07:44 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 09:07:44 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:07:44 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:07:44 
+2024-11-01 09:07:44 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:07:44 the exact distribution terms for each program are described in the
+2024-11-01 09:07:44 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:07:44 
+2024-11-01 09:07:44 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:07:44 permitted by applicable law.
+2024-11-01 09:07:44 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 09:07:44 Successfully updated Unitree_Go513814A
+2024-11-01 09:07:44 Connecting to Unitree_Go513605A...
+2024-11-01 09:07:52 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:07:52 Successfully connected to Unitree_Go513605A
+2024-11-01 09:07:53 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:07:56 Unitree_Go513605A connected to the router.
+2024-11-01 09:07:56 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:07:57 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:07:58 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:07:59 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:07:59 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:08:00 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:08:00 
+2024-11-01 09:08:00 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:08:00 the exact distribution terms for each program are described in the
+2024-11-01 09:08:00 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:08:00 
+2024-11-01 09:08:00 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:08:00 permitted by applicable law.
+2024-11-01 09:08:00 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:08:00 Successfully updated Unitree_Go513605A
+2024-11-01 09:08:00 Connecting to Unitree_Go506699A...
+2024-11-01 09:08:04 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:08:04 Successfully connected to Unitree_Go506699A
+2024-11-01 09:08:05 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:08:06 Unitree_Go506699A connected to the router.
+2024-11-01 09:08:06 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:08:06 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:08:07 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:08:07 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:08:07 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:08:08 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:08:08 
+2024-11-01 09:08:08 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:08:08 the exact distribution terms for each program are described in the
+2024-11-01 09:08:08 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:08:08 
+2024-11-01 09:08:08 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:08:08 permitted by applicable law.
+2024-11-01 09:08:08 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:08:08 Successfully updated Unitree_Go506699A
+2024-11-01 09:08:08 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:08:08 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:08:08 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:08:08 
+2024-11-01 09:08:08 Log has been saved to update_log.txt
+2024-11-01 09:08:33 Killing existing server.py process with PID 10639
+2024-11-01 09:08:33 No process found on port 8000.
+2024-11-01 09:08:33 Starting server.py...
+2024-11-01 09:08:35 Killing existing Firefox process with PID 9313
+2024-11-01 09:08:35 10205
+2024-11-01 09:08:35 10651
+2024-11-01 09:08:35 10747
+2024-11-01 09:08:35 10781
+2024-11-01 09:08:35 10830
+2024-11-01 09:08:35 10890
+2024-11-01 09:08:35 10899
+2024-11-01 09:08:35 10937
+2024-11-01 09:08:35 10956
+2024-11-01 09:08:35 10967
+2024-11-01 09:08:35 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:08:35 Connecting to Unitree_Go513814A...
+2024-11-01 09:08:37 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:08:37 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:08:38 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:08:38 Successfully connected to Unitree_Go513814A
+2024-11-01 09:08:39 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:08:41 Unitree_Go513814A connected to the router.
+2024-11-01 09:08:41 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 09:08:41 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 09:08:41 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 09:08:42 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 09:08:42 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:08:42 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:08:42 
+2024-11-01 09:08:42 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:08:42 the exact distribution terms for each program are described in the
+2024-11-01 09:08:42 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:08:42 
+2024-11-01 09:08:42 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:08:42 permitted by applicable law.
+2024-11-01 09:08:42 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 09:08:42 Successfully updated Unitree_Go513814A
+2024-11-01 09:08:42 Connecting to Unitree_Go513605A...
+2024-11-01 09:08:43 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:08:43 Successfully connected to Unitree_Go513605A
+2024-11-01 09:08:45 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:08:46 Unitree_Go513605A connected to the router.
+2024-11-01 09:08:46 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:08:47 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:08:48 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:08:52 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:08:52 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:08:53 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:08:53 
+2024-11-01 09:08:53 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:08:53 the exact distribution terms for each program are described in the
+2024-11-01 09:08:53 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:08:53 
+2024-11-01 09:08:53 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:08:53 permitted by applicable law.
+2024-11-01 09:08:53 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:08:53 Successfully updated Unitree_Go513605A
+2024-11-01 09:08:53 Connecting to Unitree_Go506699A...
+2024-11-01 09:08:57 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:08:57 Successfully connected to Unitree_Go506699A
+2024-11-01 09:08:58 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:08:59 Unitree_Go506699A connected to the router.
+2024-11-01 09:08:59 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:09:00 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:09:00 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:09:01 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:09:01 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:09:01 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:09:01 
+2024-11-01 09:09:01 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:09:01 the exact distribution terms for each program are described in the
+2024-11-01 09:09:01 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:09:01 
+2024-11-01 09:09:01 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:09:01 permitted by applicable law.
+2024-11-01 09:09:01 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:09:01 Successfully updated Unitree_Go506699A
+2024-11-01 09:09:01 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:09:02 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:09:02 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:09:02 
+2024-11-01 09:09:02 Log has been saved to update_log.txt
+2024-11-01 09:37:41 No running instance of server.py found.
+2024-11-01 09:37:41 No process found on port 8000.
+2024-11-01 09:37:41 Starting server.py...
+2024-11-01 09:37:43 Killing existing Firefox process with PID 4922
+2024-11-01 09:37:43 4996
+2024-11-01 09:37:43 5016
+2024-11-01 09:37:43 5074
+2024-11-01 09:37:43 5149
+2024-11-01 09:37:43 5156
+2024-11-01 09:37:43 5162
+2024-11-01 09:37:43 5177
+2024-11-01 09:37:43 5261
+2024-11-01 09:37:43 5302
+2024-11-01 09:37:43 5346
+2024-11-01 09:37:43 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:37:43 Connecting to Unitree_Go506699A...
+2024-11-01 09:37:44 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:37:44 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:37:51 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:37:51 Successfully connected to Unitree_Go506699A
+2024-11-01 09:37:52 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:38:01 Unitree_Go506699A connected to the router.
+2024-11-01 09:38:01 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:38:02 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:38:02 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:38:03 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:38:03 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:38:03 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:38:03 
+2024-11-01 09:38:03 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:38:03 the exact distribution terms for each program are described in the
+2024-11-01 09:38:03 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:38:03 
+2024-11-01 09:38:03 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:38:03 permitted by applicable law.
+2024-11-01 09:38:03 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:38:03 Successfully updated Unitree_Go506699A
+2024-11-01 09:38:03 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:38:05 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:38:05 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:38:05 
+2024-11-01 09:38:05 Log has been saved to update_log.txt
+2024-11-01 09:41:51 Killing existing server.py process with PID 6516
+2024-11-01 09:41:51 No process found on port 8000.
+2024-11-01 09:41:51 Starting server.py...
+2024-11-01 09:41:53 Killing existing Firefox process with PID 6532
+2024-11-01 09:41:53 6636
+2024-11-01 09:41:53 6655
+2024-11-01 09:41:53 6701
+2024-11-01 09:41:53 6765
+2024-11-01 09:41:53 6775
+2024-11-01 09:41:53 6814
+2024-11-01 09:41:53 6818
+2024-11-01 09:41:53 6838
+2024-11-01 09:41:53 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:41:53 Connecting to Unitree_Go513605A...
+2024-11-01 09:41:53 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:41:53 Successfully connected to Unitree_Go513605A
+2024-11-01 09:41:54 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:41:54 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:41:54 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:43:55 Killing existing server.py process with PID 7323
+2024-11-01 09:43:55 No process found on port 8000.
+2024-11-01 09:43:55 Starting server.py...
+2024-11-01 09:43:57 Killing existing Firefox process with PID 7334
+2024-11-01 09:43:57 7534
+2024-11-01 09:43:57 7558
+2024-11-01 09:43:57 7606
+2024-11-01 09:43:57 7681
+2024-11-01 09:43:57 7692
+2024-11-01 09:43:57 7736
+2024-11-01 09:43:57 7739
+2024-11-01 09:43:57 7756
+2024-11-01 09:43:57 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:43:57 Connecting to Unitree_Go513814A...
+2024-11-01 09:43:58 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:43:58 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:44:04 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:44:04 Successfully connected to Unitree_Go513814A
+2024-11-01 09:44:05 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:45:01 No running instance of server.py found.
+2024-11-01 09:45:01 No process found on port 8000.
+2024-11-01 09:45:01 Starting server.py...
+2024-11-01 09:45:03 Killing existing Firefox process with PID 7334
+2024-11-01 09:45:03 8459
+2024-11-01 09:45:03 8562
+2024-11-01 09:45:03 8579
+2024-11-01 09:45:03 8623
+2024-11-01 09:45:03 8688
+2024-11-01 09:45:03 8697
+2024-11-01 09:45:03 8701
+2024-11-01 09:45:03 8726
+2024-11-01 09:45:03 8785
+2024-11-01 09:45:03 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:45:03 Connecting to Unitree_Go513814A...
+2024-11-01 09:45:04 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:45:04 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:45:09 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:45:09 Successfully connected to Unitree_Go513814A
+2024-11-01 09:45:10 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:46:38 No running instance of server.py found.
+2024-11-01 09:46:38 No process found on port 8000.
+2024-11-01 09:46:38 Starting server.py...
+2024-11-01 09:46:54 No running instance of server.py found.
+2024-11-01 09:46:54 No process found on port 8000.
+2024-11-01 09:46:54 Starting server.py...
+2024-11-01 09:46:56 Killing existing Firefox process with PID 7334
+2024-11-01 09:46:56 9171
+2024-11-01 09:46:56 9271
+2024-11-01 09:46:56 9289
+2024-11-01 09:46:56 9334
+2024-11-01 09:46:56 9397
+2024-11-01 09:46:56 9407
+2024-11-01 09:46:56 9446
+2024-11-01 09:46:56 9449
+2024-11-01 09:46:56 9452
+2024-11-01 09:46:56 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:46:56 Connecting to Unitree_Go513605A...
+2024-11-01 09:46:56 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:46:56 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:47:02 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:47:02 Successfully connected to Unitree_Go513605A
+2024-11-01 09:47:03 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:47:03 RTNETLINK answers: File exists
+2024-11-01 09:47:04 Warning: The unit file, source configuration file or drop-ins of systemd-timesyncd.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+2024-11-01 09:47:13 Unitree_Go513605A connected to the router.
+2024-11-01 09:47:13 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:47:14 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:47:14 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:47:15 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:47:15 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:47:15 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:47:15 
+2024-11-01 09:47:15 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:47:15 the exact distribution terms for each program are described in the
+2024-11-01 09:47:15 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:47:15 
+2024-11-01 09:47:15 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:47:15 permitted by applicable law.
+2024-11-01 09:47:15 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:47:15 Successfully updated Unitree_Go513605A
+2024-11-01 09:47:15 Connecting to Unitree_Go506699A...
+2024-11-01 09:47:17 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:47:17 Successfully connected to Unitree_Go506699A
+2024-11-01 09:47:18 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:47:23 Warning: The unit file, source configuration file or drop-ins of systemd-timesyncd.service changed on disk. Run 'systemctl daemon-reload' to reload units.
+2024-11-01 09:47:29 Unitree_Go506699A connected to the router.
+2024-11-01 09:47:29 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:47:29 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:48:29 Killing existing server.py process with PID 10171
+2024-11-01 09:48:29 No process found on port 8000.
+2024-11-01 09:48:29 Starting server.py...
+2024-11-01 09:48:31 Killing existing Firefox process with PID 7334
+2024-11-01 09:48:31 10185
+2024-11-01 09:48:31 10286
+2024-11-01 09:48:31 10307
+2024-11-01 09:48:31 10353
+2024-11-01 09:48:31 10413
+2024-11-01 09:48:31 10423
+2024-11-01 09:48:31 10437
+2024-11-01 09:48:31 10467
+2024-11-01 09:48:31 10484
+2024-11-01 09:48:31 Opening server in Mozilla Firefox at http://10.32.15.173:8000...
+2024-11-01 09:48:31 Connecting to Unitree_Go513605A...
+2024-11-01 09:48:31 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:48:31 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:48:33 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:48:33 Successfully connected to Unitree_Go513605A
+2024-11-01 09:48:33 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:48:46 Killing existing server.py process with PID 11216
+2024-11-01 09:48:46 No process found on port 8000.
+2024-11-01 09:48:46 Starting server.py...
+2024-11-01 09:48:48 Killing existing Firefox process with PID 7334
+2024-11-01 09:48:48 10185
+2024-11-01 09:48:48 11227
+2024-11-01 09:48:48 11365
+2024-11-01 09:48:48 11381
+2024-11-01 09:48:48 11428
+2024-11-01 09:48:48 11495
+2024-11-01 09:48:48 11505
+2024-11-01 09:48:48 11543
+2024-11-01 09:48:48 11555
+2024-11-01 09:48:48 11564
+2024-11-01 09:48:48 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:48:48 Connecting to Unitree_Go513605A...
+2024-11-01 09:48:49 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:48:49 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:48:52 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:48:52 Successfully connected to Unitree_Go513605A
+2024-11-01 09:48:53 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:48:55 RTNETLINK answers: File exists
+2024-11-01 09:49:05 Unitree_Go513605A connected to the router.
+2024-11-01 09:49:05 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:49:06 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:49:06 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:49:07 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:49:07 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:49:08 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:49:08 
+2024-11-01 09:49:08 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:49:08 the exact distribution terms for each program are described in the
+2024-11-01 09:49:08 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:49:08 
+2024-11-01 09:49:08 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:49:08 permitted by applicable law.
+2024-11-01 09:49:08 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:49:08 Successfully updated Unitree_Go513605A
+2024-11-01 09:49:08 Connecting to Unitree_Go513814A...
+2024-11-01 09:49:08 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:49:08 Successfully connected to Unitree_Go513814A
+2024-11-01 09:49:09 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:49:12 RTNETLINK answers: File exists
+2024-11-01 09:49:22 Unitree_Go513814A connected to the router.
+2024-11-01 09:49:22 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 09:49:22 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 09:49:23 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 09:49:23 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 09:49:23 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:49:24 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:49:24 
+2024-11-01 09:49:24 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:49:24 the exact distribution terms for each program are described in the
+2024-11-01 09:49:24 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:49:24 
+2024-11-01 09:49:24 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:49:24 permitted by applicable law.
+2024-11-01 09:49:24 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 09:49:24 Successfully updated Unitree_Go513814A
+2024-11-01 09:49:24 Connecting to Unitree_Go506699A...
+2024-11-01 09:49:28 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:49:28 Successfully connected to Unitree_Go506699A
+2024-11-01 09:49:28 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:49:31 RTNETLINK answers: File exists
+2024-11-01 09:49:41 Unitree_Go506699A connected to the router.
+2024-11-01 09:49:41 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:49:42 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:49:42 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:49:42 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:49:42 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:49:43 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:49:43 
+2024-11-01 09:49:43 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:49:43 the exact distribution terms for each program are described in the
+2024-11-01 09:49:43 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:49:43 
+2024-11-01 09:49:43 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:49:43 permitted by applicable law.
+2024-11-01 09:49:43 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:49:43 Successfully updated Unitree_Go506699A
+2024-11-01 09:49:43 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:49:47 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:49:47 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:49:47 
+2024-11-01 09:49:47 Log has been saved to update_log.txt
+2024-11-01 09:51:58 Killing existing server.py process with PID 11841
+2024-11-01 09:51:58 No process found on port 8000.
+2024-11-01 09:51:58 Starting server.py...
+2024-11-01 09:52:00 Killing existing Firefox process with PID 7334
+2024-11-01 09:52:00 10185
+2024-11-01 09:52:00 11227
+2024-11-01 09:52:00 11855
+2024-11-01 09:52:00 11948
+2024-11-01 09:52:00 11965
+2024-11-01 09:52:00 12012
+2024-11-01 09:52:00 12074
+2024-11-01 09:52:00 12082
+2024-11-01 09:52:00 12095
+2024-11-01 09:52:00 12104
+2024-11-01 09:52:00 12144
+2024-11-01 09:52:00 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:52:00 Connecting to Unitree_Go513814A...
+2024-11-01 09:52:00 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:52:00 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:52:06 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:52:06 Successfully connected to Unitree_Go513814A
+2024-11-01 09:52:07 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:52:20 dhclient timed out. Terminating...
+2024-11-01 09:52:20 ./local_update_pi.sh: line 184: 13776 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 09:52:20 Unitree_Go513814A connected to the router.
+2024-11-01 09:52:20 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 09:52:21 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 09:52:22 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 09:52:23 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 09:52:23 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:52:24 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:52:24 
+2024-11-01 09:52:24 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:52:24 the exact distribution terms for each program are described in the
+2024-11-01 09:52:24 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:52:24 
+2024-11-01 09:52:24 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:52:24 permitted by applicable law.
+2024-11-01 09:52:24 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 09:52:24 Successfully updated Unitree_Go513814A
+2024-11-01 09:52:24 Connecting to Unitree_Go513605A...
+2024-11-01 09:52:28 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:52:28 Successfully connected to Unitree_Go513605A
+2024-11-01 09:52:29 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:52:41 dhclient timed out. Terminating...
+2024-11-01 09:52:42 ./local_update_pi.sh: line 184: 13967 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 09:52:42 Unitree_Go513605A connected to the router.
+2024-11-01 09:52:42 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:52:43 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:52:43 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:52:44 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:52:44 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:52:45 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:52:45 
+2024-11-01 09:52:45 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:52:45 the exact distribution terms for each program are described in the
+2024-11-01 09:52:45 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:52:45 
+2024-11-01 09:52:45 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:52:45 permitted by applicable law.
+2024-11-01 09:52:46 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:52:46 Successfully updated Unitree_Go513605A
+2024-11-01 09:52:46 Connecting to Unitree_Go506699A...
+2024-11-01 09:52:48 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:52:48 Successfully connected to Unitree_Go506699A
+2024-11-01 09:52:49 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:53:01 Unitree_Go506699A connected to the router.
+2024-11-01 09:53:01 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:53:02 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:53:02 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:53:03 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:53:03 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:53:04 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:53:04 
+2024-11-01 09:53:04 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:53:04 the exact distribution terms for each program are described in the
+2024-11-01 09:53:04 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:53:04 
+2024-11-01 09:53:04 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:53:04 permitted by applicable law.
+2024-11-01 09:53:04 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:53:04 Successfully updated Unitree_Go506699A
+2024-11-01 09:53:04 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:53:05 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:53:05 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:53:05 
+2024-11-01 09:53:05 Log has been saved to update_log.txt
+2024-11-01 09:55:30 Killing existing server.py process with PID 13270
+2024-11-01 09:55:30 No process found on port 8000.
+2024-11-01 09:55:30 Starting server.py...
+2024-11-01 09:55:32 Killing existing Firefox process with PID 7334
+2024-11-01 09:55:32 10185
+2024-11-01 09:55:32 11227
+2024-11-01 09:55:32 13284
+2024-11-01 09:55:32 13389
+2024-11-01 09:55:32 13408
+2024-11-01 09:55:32 13454
+2024-11-01 09:55:32 13518
+2024-11-01 09:55:32 13527
+2024-11-01 09:55:32 13565
+2024-11-01 09:55:32 13567
+2024-11-01 09:55:32 13573
+2024-11-01 09:55:32 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:55:32 Connecting to Unitree_Go513605A...
+2024-11-01 09:55:32 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:55:32 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:55:38 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:55:38 Successfully connected to Unitree_Go513605A
+2024-11-01 09:55:39 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:55:39 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:55:40 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:55:40 
+2024-11-01 09:55:40 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:55:40 the exact distribution terms for each program are described in the
+2024-11-01 09:55:40 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:55:40 
+2024-11-01 09:55:40 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:55:40 permitted by applicable law.
+2024-11-01 09:56:32 No running instance of server.py found.
+2024-11-01 09:56:32 No process found on port 8000.
+2024-11-01 09:56:32 Starting server.py...
+2024-11-01 09:56:34 Killing existing Firefox process with PID 7334
+2024-11-01 09:56:34 10185
+2024-11-01 09:56:34 11227
+2024-11-01 09:56:34 14984
+2024-11-01 09:56:34 15084
+2024-11-01 09:56:34 15103
+2024-11-01 09:56:34 15147
+2024-11-01 09:56:34 15212
+2024-11-01 09:56:34 15222
+2024-11-01 09:56:34 15226
+2024-11-01 09:56:34 15229
+2024-11-01 09:56:34 15288
+2024-11-01 09:56:34 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 09:56:34 Connecting to Unitree_Go513814A...
+2024-11-01 09:56:35 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:56:35 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 09:56:40 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 09:56:40 Successfully connected to Unitree_Go513814A
+2024-11-01 09:56:41 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 09:56:53 dhclient timed out. Terminating...
+2024-11-01 09:56:54 ./local_update_pi.sh: line 184: 16252 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 09:56:54 Unitree_Go513814A connected to the router.
+2024-11-01 09:56:54 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 09:56:54 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 09:56:55 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 09:56:56 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 09:56:56 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:56:57 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:56:57 
+2024-11-01 09:56:57 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:56:57 the exact distribution terms for each program are described in the
+2024-11-01 09:56:57 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:56:57 
+2024-11-01 09:56:57 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:56:57 permitted by applicable law.
+2024-11-01 09:56:57 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 09:56:57 Successfully updated Unitree_Go513814A
+2024-11-01 09:56:57 Connecting to Unitree_Go513605A...
+2024-11-01 09:57:02 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 09:57:02 Successfully connected to Unitree_Go513605A
+2024-11-01 09:57:02 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 09:57:05 RTNETLINK answers: File exists
+2024-11-01 09:57:14 Unitree_Go513605A connected to the router.
+2024-11-01 09:57:14 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 09:57:15 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 09:57:15 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 09:57:16 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 09:57:16 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:57:17 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:57:17 
+2024-11-01 09:57:17 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:57:17 the exact distribution terms for each program are described in the
+2024-11-01 09:57:17 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:57:17 
+2024-11-01 09:57:17 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:57:17 permitted by applicable law.
+2024-11-01 09:57:17 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 09:57:17 Successfully updated Unitree_Go513605A
+2024-11-01 09:57:17 Connecting to Unitree_Go506699A...
+2024-11-01 09:57:19 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 09:57:19 Successfully connected to Unitree_Go506699A
+2024-11-01 09:57:19 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 09:57:32 Unitree_Go506699A connected to the router.
+2024-11-01 09:57:32 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 09:57:32 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 09:57:33 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 09:57:33 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 09:57:33 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 09:57:34 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 09:57:34 
+2024-11-01 09:57:34 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 09:57:34 the exact distribution terms for each program are described in the
+2024-11-01 09:57:34 individual files in /usr/share/doc/*/copyright.
+2024-11-01 09:57:34 
+2024-11-01 09:57:34 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 09:57:34 permitted by applicable law.
+2024-11-01 09:57:34 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 09:57:34 Successfully updated Unitree_Go506699A
+2024-11-01 09:57:34 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 09:57:38 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 09:57:38 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 09:57:38 
+2024-11-01 09:57:38 Log has been saved to update_log.txt
+2024-11-01 10:00:37 Killing existing server.py process with PID 15755
+2024-11-01 10:00:38 No process found on port 8000.
+2024-11-01 10:00:38 Starting server.py...
+2024-11-01 10:00:40 Killing existing Firefox process with PID 15777
+2024-11-01 10:00:40 15880
+2024-11-01 10:00:40 15897
+2024-11-01 10:00:40 15945
+2024-11-01 10:00:40 16004
+2024-11-01 10:00:40 16015
+2024-11-01 10:00:40 16053
+2024-11-01 10:00:40 16056
+2024-11-01 10:00:40 16076
+2024-11-01 10:00:40 Opening server in Mozilla Firefox at http://192.168.0.24:8000...
+2024-11-01 10:00:40 Connecting to Unitree_Go513605A...
+2024-11-01 10:00:40 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 10:00:40 ATTENTION: default value of option mesa_glthread overridden by environment.
+2024-11-01 10:00:41 [2KDevice 'wlo1' successfully activated with '005c5dee-a71b-41c5-8446-e929e68d05a8'.
+2024-11-01 10:00:41 Successfully connected to Unitree_Go513605A
+2024-11-01 10:00:42 Running dhclient to connect Unitree_Go513605A to router...
+2024-11-01 10:00:49 dhclient timed out. Terminating...
+2024-11-01 10:00:51 ./local_update_pi.sh: line 184: 17770 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 10:00:51 Unitree_Go513605A connected to the router.
+2024-11-01 10:00:51 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513605A...
+2024-11-01 10:00:51 File exists on Unitree_Go513605A. Deleting the old file...
+2024-11-01 10:00:52 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A...
+2024-11-01 10:00:53 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513605A.
+2024-11-01 10:00:53 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 10:00:54 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 10:00:54 
+2024-11-01 10:00:54 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 10:00:54 the exact distribution terms for each program are described in the
+2024-11-01 10:00:54 individual files in /usr/share/doc/*/copyright.
+2024-11-01 10:00:54 
+2024-11-01 10:00:54 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 10:00:54 permitted by applicable law.
+2024-11-01 10:00:54 Pi Unitree_Go513605A has been updated successfully and SSH session closed.
+2024-11-01 10:00:54 Successfully updated Unitree_Go513605A
+2024-11-01 10:00:54 Connecting to Unitree_Go506699A...
+2024-11-01 10:00:58 [2KDevice 'wlo1' successfully activated with '493f5e9e-c3a2-4e00-83f0-2731a3735e72'.
+2024-11-01 10:00:58 Successfully connected to Unitree_Go506699A
+2024-11-01 10:00:59 Running dhclient to connect Unitree_Go506699A to router...
+2024-11-01 10:01:06 dhclient timed out. Terminating...
+2024-11-01 10:01:06 ./local_update_pi.sh: line 184: 17963 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 10:01:06 Unitree_Go506699A connected to the router.
+2024-11-01 10:01:06 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go506699A...
+2024-11-01 10:01:07 File exists on Unitree_Go506699A. Deleting the old file...
+2024-11-01 10:01:07 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A...
+2024-11-01 10:01:07 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go506699A.
+2024-11-01 10:01:08 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 10:01:08 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 10:01:08 
+2024-11-01 10:01:08 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 10:01:08 the exact distribution terms for each program are described in the
+2024-11-01 10:01:08 individual files in /usr/share/doc/*/copyright.
+2024-11-01 10:01:08 
+2024-11-01 10:01:08 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 10:01:08 permitted by applicable law.
+2024-11-01 10:01:08 Pi Unitree_Go506699A has been updated successfully and SSH session closed.
+2024-11-01 10:01:08 Successfully updated Unitree_Go506699A
+2024-11-01 10:01:08 Connecting to Unitree_Go513814A...
+2024-11-01 10:01:10 [2KDevice 'wlo1' successfully activated with '65a0a305-cf1e-4aa1-94f4-81c23007cb02'.
+2024-11-01 10:01:10 Successfully connected to Unitree_Go513814A
+2024-11-01 10:01:11 Running dhclient to connect Unitree_Go513814A to router...
+2024-11-01 10:01:18 dhclient timed out. Terminating...
+2024-11-01 10:01:19 ./local_update_pi.sh: line 184: 18140 Killed                  sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'sudo dhclient wlan0'
+2024-11-01 10:01:19 Unitree_Go513814A connected to the router.
+2024-11-01 10:01:19 Checking if /home/pi/unitree_legged_sdk/example_py/local_hardcode.py exists on Unitree_Go513814A...
+2024-11-01 10:01:20 File exists on Unitree_Go513814A. Deleting the old file...
+2024-11-01 10:01:21 Copying /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A...
+2024-11-01 10:01:22 Successfully copied /home/chinmay/rob-sync/local_hardcode.py to Unitree_Go513814A.
+2024-11-01 10:01:23 Pseudo-terminal will not be allocated because stdin is not a terminal.
+2024-11-01 10:01:23 Linux raspberrypi 5.4.81-rt45-v8+ #9 SMP PREEMPT_RT Mon Dec 28 00:13:29 PST 2020 aarch64
+2024-11-01 10:01:23 
+2024-11-01 10:01:23 The programs included with the Debian GNU/Linux system are free software;
+2024-11-01 10:01:23 the exact distribution terms for each program are described in the
+2024-11-01 10:01:23 individual files in /usr/share/doc/*/copyright.
+2024-11-01 10:01:23 
+2024-11-01 10:01:23 Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+2024-11-01 10:01:23 permitted by applicable law.
+2024-11-01 10:01:23 Pi Unitree_Go513814A has been updated successfully and SSH session closed.
+2024-11-01 10:01:23 Successfully updated Unitree_Go513814A
+2024-11-01 10:01:23 Attempting to reconnect to main Wi-Fi: Cdn
+2024-11-01 10:01:27 [2KDevice 'wlo1' successfully activated with '252ae0de-06e0-4881-b82c-3263b669ddd8'.
+2024-11-01 10:01:27 Successfully reconnected to main Wi-Fi (Cdn).
+2024-11-01 10:01:27 
+2024-11-01 10:01:27 Log has been saved to update_log.txt

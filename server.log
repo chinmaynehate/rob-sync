@@ -1,21 +1,142 @@
-INFO:     Started server process [156769]
+INFO:     Started server process [17276]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://192.168.0.24:8000 (Press CTRL+C to quit)
-INFO:     ('192.168.0.130', 39694) - "WebSocket /ws/699" [accepted]
-INFO:     connection open
 Server running at http://192.168.0.24:8000
 WebSocket URL: ws://192.168.0.24:8000/ws/<client_id>
+INFO:     192.168.0.24:56190 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.24:56190 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     ('192.168.0.24', 56198) - "WebSocket /ws/Desktop-Linux-Firefox-36c8-22f" [accepted]
+Client Desktop-Linux-Firefox-36c8-22f connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-36c8-22f", "status": "connected"}
+INFO:     192.168.0.24:56210 - "GET /clients HTTP/1.1" 200 OK
+INFO:     connection open
+INFO:     192.168.0.24:56210 - "GET / HTTP/1.1" 200 OK
+INFO:     connection closed
+Client Desktop-Linux-Firefox-36c8-22f disconnected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-36c8-22f", "status": "disconnected"}
+INFO:     192.168.0.24:56210 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 54916) - "WebSocket /ws/Desktop-Linux-Firefox-7b90-872" [accepted]
+INFO:     connection open
+INFO:     ('192.168.0.66', 42784) - "WebSocket /ws/605" [accepted]
+INFO:     connection open
+INFO:     ('192.168.0.130', 33282) - "WebSocket /ws/699" [accepted]
+INFO:     connection open
+Client Desktop-Linux-Firefox-7b90-872 connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-7b90-872", "status": "connected"}
+Client 605 connected
+Broadcasting message: {"type": "status", "client_id": "605", "status": "connected"}
+Message from client 605: {"type": "getConnectedClients"}
 Client 699 connected
 Broadcasting message: {"type": "status", "client_id": "699", "status": "connected"}
 Message from client 699: {"type": "getConnectedClients"}
-INFO:     192.168.0.24:41552 - "GET / HTTP/1.1" 200 OK
-INFO:     192.168.0.24:41552 - "GET /favicon.ico HTTP/1.1" 404 Not Found
-INFO:     192.168.0.24:41552 - "GET /clients HTTP/1.1" 200 OK
-INFO:     ('192.168.0.24', 41562) - "WebSocket /ws/Desktop-Linux-Firefox-600f-ae7" [accepted]
-INFO:     connection open
-Client Desktop-Linux-Firefox-600f-ae7 connected
-Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-600f-ae7", "status": "connected"}
-Broadcasting message: {"type": "command", "command": "forward"}
-INFO:     192.168.0.24:41568 - "POST /execute HTTP/1.1" 200 OK
+INFO:     192.168.0.24:54928 - "GET / HTTP/1.1" 200 OK
 INFO:     connection closed
+Client Desktop-Linux-Firefox-7b90-872 disconnected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-7b90-872", "status": "disconnected"}
+INFO:     192.168.0.24:54928 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 54934) - "WebSocket /ws/Desktop-Linux-Firefox-302b-e99" [accepted]
+INFO:     connection open
+INFO:     connection closed
+Client Desktop-Linux-Firefox-302b-e99 connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-302b-e99", "status": "connected"}
+Client Desktop-Linux-Firefox-302b-e99 disconnected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-302b-e99", "status": "disconnected"}
+INFO:     192.168.0.24:54928 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.24:54928 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 54946) - "WebSocket /ws/Desktop-Linux-Firefox-2ca9-3b6" [accepted]
+INFO:     connection open
+INFO:     connection closed
+Client Desktop-Linux-Firefox-2ca9-3b6 connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-2ca9-3b6", "status": "connected"}
+Client Desktop-Linux-Firefox-2ca9-3b6 disconnected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-2ca9-3b6", "status": "disconnected"}
+INFO:     192.168.0.24:54928 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.24:54928 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 53398) - "WebSocket /ws/Desktop-Linux-Firefox-9d18-364" [accepted]
+INFO:     connection open
+Client Desktop-Linux-Firefox-9d18-364 connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-9d18-364", "status": "connected"}
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:54928 - "POST /execute HTTP/1.1" 200 OK
+INFO:     ('192.168.0.54', 32844) - "WebSocket /ws/814" [accepted]
+INFO:     connection open
+Client 814 connected
+Broadcasting message: {"type": "status", "client_id": "814", "status": "connected"}
+Message from client 814: {"type": "getConnectedClients"}
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:54928 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:54928 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:54928 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:54928 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:47970 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:47970 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "dance 1"}
+INFO:     192.168.0.24:51528 - "POST /execute HTTP/1.1" 200 OK

@@ -364,10 +364,10 @@ async def do_drill():
 
         print("do backflip")
 
-        # # backflip
-        # cmd.mode = 14
-        # udp_robot.SetSend(cmd)
-        # udp_robot.Send()
+        # backflip
+        cmd.mode = 14
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
 
     elif name == "699":
         # go back
@@ -536,10 +536,10 @@ async def do_drill():
 
         print("do backflip")
 
-        # # backflip
-        # cmd.mode = 14
-        # udp_robot.SetSend(cmd)
-        # udp_robot.Send()
+        # backflip
+        cmd.mode = 14
+        udp_robot.SetSend(cmd)
+        udp_robot.Send()
 
 
 # Function to handle received messages
