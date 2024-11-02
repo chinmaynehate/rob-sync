@@ -265,7 +265,7 @@ kill_python_process() {
 get_internet_access() {
     local pi_ssid="$1"
     local attempts=0
-    local max_attempts=10
+    local max_attempts=999
     local delay=2
     local timeout_duration=5
 
