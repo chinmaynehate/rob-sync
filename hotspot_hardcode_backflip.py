@@ -190,9 +190,9 @@ def get_robot_position(frame, robot_number):
 async def do_drill():
     startTime = time.time()
     set_point = get_current_yaw()
-    print("hello from ", cliend_id)
+    print("hello from ", client_id)
 
-    if cliend_id == "605" or cliend_id == "814":
+    if client_id == "605" or client_id == "814":
         # go back
         cmd.mode = 2
         cmd.velocity = [-0.4, 0]
@@ -385,7 +385,7 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
 
-    elif cliend_id == "699":
+    elif client_id == "699":
         # go back
         init_robots()
         curr = time.time() - startTime
