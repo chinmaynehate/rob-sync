@@ -623,8 +623,9 @@ async def websocket_handler(uri):
         print(f"Error during WebSocket communication: {e}")
 
 async def main():
-    if len(sys.argv) != 2:
-        print("Usage: client.py <client_id>")
+    if len(sys.argv) != 3:
+        print("Usage: python client.py <robot_id> <server_ip>")
+        print("Example: python client.py 605 192.168.1.100")
         sys.exit(1)
 
     client_id = sys.argv[1]
