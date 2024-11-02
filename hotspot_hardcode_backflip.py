@@ -192,7 +192,7 @@ async def do_drill():
     set_point = get_current_yaw()
     print("hello from ", cliend_id)
 
-    if cliend_id == "605" or cliend_id == "814":
+    if cliend_id == "885" or cliend_id == "814":
         # go back
         cmd.mode = 2
         cmd.velocity = [-0.4, 0]
