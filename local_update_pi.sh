@@ -327,10 +327,10 @@ update_pi() {
     if $GETNEWCODE; then
         copy_new_code "$pi_ssid"
     fi
-
+    local filename=$(basename "$FILE_PATH")
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd /home/pi/unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
-        nohup python3 local_hardcode.py $pi_suffix $laptop_ip > /dev/null 2>&1 &
+        nohup python3 $filename $pi_suffix $laptop_ip > /dev/null 2>&1 &
 EOF
 
     echo "Pi $pi_ssid has been updated successfully and SSH session closed."
@@ -376,6 +376,6 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo "Laptop IP: $laptop_ip"
 url="http://$laptop_ip:8000" 
 echo "Opening server in Mozilla Firefox at $url..."
-firefox "$url" &
+sudo -u $USER firefox "$url" &
 
 echo -e "\nLog has been saved to $LOGFILE"
