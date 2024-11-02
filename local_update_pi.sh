@@ -37,7 +37,7 @@ shift $((OPTIND -1))
 
 # Function to restart Wi-Fi, connect to the main Wi-Fi, and check for at least 3 Raspberry Pi hotspots
 wait_for_raspberry_pis() {
-    local max_attempts=10  # Maximum number of times to try restarting Wi-Fi
+    local max_attempts=999  # Maximum number of times to try restarting Wi-Fi
     local attempt=0
     local target_count=3  # Desired number of Raspberry Pi SSIDs
 
