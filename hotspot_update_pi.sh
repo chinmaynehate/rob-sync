@@ -34,7 +34,7 @@ shift $((OPTIND -1))
 
 # Function to restart Wi-Fi, connect to the main Wi-Fi, and check for at least 3 Raspberry Pi hotspots
 wait_for_raspberry_pis() {
-    local max_attempts=10  # Maximum number of times to try restarting Wi-Fi
+    local max_attempts=999  # Maximum number of times to try restarting Wi-Fi
     local attempt=0
     local target_count=3  # Desired number of Raspberry Pi SSIDs
 
@@ -178,7 +178,6 @@ start_server() {
     echo "Starting server.py..."
     nohup python3 server.py > server.log 2>&1 &
     sleep 2  # Give the server time to start
-
 }
 
 # Kill any process on port 8000 and start the server
@@ -260,11 +259,11 @@ kill_python_process() {
 get_internet_access() {
     local pi_ssid="$1"
     local attempts=0
-    local max_attempts=10
+    local max_attempts=999  # Reduced attempts as we are assuming internet is generally available
     local delay=2
     local timeout_duration=5
 
-    echo "Running dhclient to connect $pi_ssid to router..."
+    echo "Checking internet access for $pi_ssid..."
 
     while [ $attempts -lt $max_attempts ]; do
         # Run systemctl daemon-reload before dhclient
@@ -283,18 +282,18 @@ get_internet_access() {
             kill -9 $dhclient_pid
         fi
 
-        # Check if the Pi is connected
-        if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'ip a | grep "inet 192.168"' > /dev/null 2>&1; then
-            echo "$pi_ssid connected to the router."
+        # Check internet connectivity by pinging google.com
+        if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'curl -s --head http://google.com | head -n 1 | grep "200 OK"' > /dev/null 2>&1; then
+            echo "$pi_ssid has internet access."
             return 0
         else
-            echo "$pi_ssid failed to connect to the router. Retrying in $delay seconds..."
+            echo "$pi_ssid does not have internet access. Retrying in $delay seconds..."
             sleep $delay
             attempts=$((attempts + 1))
         fi
     done
 
-    echo "$pi_ssid failed to connect to the router after $max_attempts attempts."
+    echo "$pi_ssid failed to establish internet connectivity after $max_attempts attempts."
     return 1
 }
 
@@ -320,10 +319,12 @@ update_pi() {
     if $GETNEWCODE; then
         copy_new_code "$pi_ssid"
     fi
-
+    local filename=$(basename "$FILE_PATH")
     sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 <<EOF
         cd /home/pi/unitree_legged_sdk/example_py || { echo "Failed to change directory on $pi_ssid"; exit 1; }
-        nohup python3 hotspot_hardcode.py $pi_suffix $laptop_ip > /dev/null 2>&1 &
+        rm -rf $filename
+        wget https://raw.githubusercontent.com/chinmaynehate/rob-sync/refs/heads/local-ws/$filename
+        nohup python3 $filename $pi_suffix $laptop_ip > /dev/null 2>&1 &
 EOF
 
     echo "Pi $pi_ssid has been updated successfully and SSH session closed."
@@ -367,7 +368,7 @@ kill_firefox
 # Open the server in Firefox on laptop_ip:8000
 echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 echo "Laptop IP: $laptop_ip"
-url="http://$laptop_ip:8000" 
+url="https://rob-sync-production.up.railway.app/" 
 echo "Opening server in Mozilla Firefox at $url..."
 firefox "$url" &
 
