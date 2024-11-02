@@ -283,9 +283,9 @@ get_internet_access() {
         fi
 
         # Check internet connectivity by pinging google.com
-        if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'curl -s --head http://google.com | head -n 1 | grep "200 OK"' > /dev/null 2>&1; then
+        if sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no pi@192.168.12.1 'curl -s -I https://www.google.com' > /dev/null 2>&1; then
             echo "$pi_ssid has internet access."
-            return 0
+        return 0
         else
             echo "$pi_ssid does not have internet access. Retrying in $delay seconds..."
             sleep $delay
@@ -370,6 +370,6 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo "Laptop IP: $laptop_ip"
 url="https://rob-sync-production.up.railway.app/" 
 echo "Opening server in Mozilla Firefox at $url..."
-firefox "$url" &
+sudo -u $(logname) firefox "$url" &
 
 echo -e "\nLog has been saved to $LOGFILE"
