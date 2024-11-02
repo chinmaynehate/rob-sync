@@ -1,0 +1,6 @@
+alias runlocal='cd ~/rob-sync && chmod +x local_update_pi.sh && sudo ./local_update_pi.sh -g true -f ~/rob-sync/local_hardcode.py'
+alias runlocalbackflip='cd ~/rob-sync && chmod +x local_update_pi.sh && sudo ./local_update_pi.sh -g true -f ~/rob-sync/local_hardcode_backflip.py'
+
+
+alias runhotspot='cd ~/rob-sync && chmod +x hotspot_update_pi.sh && sudo ./hotspot_update_pi.sh -g true -f ~/rob-sync/hotspot_hardcode.py'
+alias runhotspotbackflip='cd ~/rob-sync && chmod +x hotspot_update_pi.sh && sudo ./hotspot_update_pi.sh -g true -f ~/rob-sync/hotspot_hardcode_backflip.py'
