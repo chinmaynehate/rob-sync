@@ -1,10 +1,32 @@
-INFO:     Started server process [21586]
+INFO:     Started server process [46866]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://192.168.0.24:8000 (Press CTRL+C to quit)
 Server running at http://192.168.0.24:8000
 WebSocket URL: ws://192.168.0.24:8000/ws/<client_id>
-INFO:     192.168.0.24:38322 - "GET / HTTP/1.1" 200 OK
-INFO:     192.168.0.24:38322 - "GET /clients HTTP/1.1" 200 OK
-INFO:     ('192.168.0.24', 38332) - "WebSocket /ws/Desktop-Linux-Firefox-7e1a-e5d" [accepted]
+INFO:     192.168.0.24:49556 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.0.24:49556 - "GET /clients HTTP/1.1" 200 OK
+INFO:     ('192.168.0.24', 49560) - "WebSocket /ws/Desktop-Linux-Firefox-8a24-6af" [accepted]
 INFO:     connection open
+INFO:     ('192.168.0.54', 48172) - "WebSocket /ws/814" [accepted]
+INFO:     connection open
+INFO:     ('192.168.0.66', 53710) - "WebSocket /ws/605" [accepted]
+INFO:     connection open
+INFO:     ('192.168.0.130', 49418) - "WebSocket /ws/699" [accepted]
+INFO:     connection open
+Client Desktop-Linux-Firefox-8a24-6af connected
+Broadcasting message: {"type": "status", "client_id": "Desktop-Linux-Firefox-8a24-6af", "status": "connected"}
+Client 814 connected
+Broadcasting message: {"type": "status", "client_id": "814", "status": "connected"}
+Message from client 814: {"type": "getConnectedClients"}
+Client 605 connected
+Broadcasting message: {"type": "status", "client_id": "605", "status": "connected"}
+Message from client 605: {"type": "getConnectedClients"}
+Client 699 connected
+Broadcasting message: {"type": "status", "client_id": "699", "status": "connected"}
+Message from client 699: {"type": "getConnectedClients"}
+Broadcasting message: {"type": "command", "command": "forward"}
+INFO:     192.168.0.24:44798 - "POST /execute HTTP/1.1" 200 OK
+Broadcasting message: {"type": "command", "command": "backward"}
+INFO:     192.168.0.24:44798 - "POST /execute HTTP/1.1" 200 OK
+INFO:     connection closed

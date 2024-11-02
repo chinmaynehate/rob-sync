@@ -32,6 +32,59 @@ while getopts ":u:w:s:r:m:g:f:" opt; do
 done
 shift $((OPTIND -1))
 
+# Function to restart Wi-Fi, connect to the main Wi-Fi, and check for at least 3 Raspberry Pi hotspots
+wait_for_raspberry_pis() {
+    local max_attempts=10  # Maximum number of times to try restarting Wi-Fi
+    local attempt=0
+    local target_count=3  # Desired number of Raspberry Pi SSIDs
+
+    while [ $attempt -lt $max_attempts ]; do
+        echo "Attempt $((attempt + 1)) to find at least $target_count Raspberry Pi hotspots..."
+
+        # Restart Wi-Fi
+        nmcli radio wifi off
+        sleep 2
+        nmcli radio wifi on
+        sleep 5  # Wait for Wi-Fi to come back up and scan
+
+        # Reconnect to the main Wi-Fi network
+        if nmcli dev wifi connect "$MAIN_WIFI_SSID" password "$MAIN_WIFI_PASSWORD"; then
+            echo "Connected to main Wi-Fi ($MAIN_WIFI_SSID)"
+        else
+            echo "Failed to connect to main Wi-Fi ($MAIN_WIFI_SSID). Retrying Wi-Fi restart..."
+            attempt=$((attempt + 1))
+            continue
+        fi
+
+        # Scan for Raspberry Pi hotspots
+        pis=($(nmcli -t -f SSID dev wifi list | grep 'Unitree_Go'))
+
+        if [ ${#pis[@]} -ge $target_count ]; then
+            echo "Found ${#pis[@]} Raspberry Pi hotspots:"
+            for pi in "${pis[@]}"; do
+                echo " - $pi"
+            done
+            return 0
+        else
+            echo "Only found ${#pis[@]} Raspberry Pi hotspots. Retrying..."
+            attempt=$((attempt + 1))
+            sleep 5  # Wait before trying again
+        fi
+    done
+
+    echo "Failed to detect at least $target_count Raspberry Pi hotspots after $max_attempts attempts."
+    return 1
+}
+
+# Call the function to wait for Raspberry Pi hotspots
+if wait_for_raspberry_pis; then
+    echo "Proceeding with the script..."
+else
+    echo "Exiting script due to insufficient Raspberry Pi hotspots detected."
+    exit 1
+fi
+
+
 # Function to reconnect to the main Wi-Fi network
 reconnect_to_main_wifi() {
     local retries=0
