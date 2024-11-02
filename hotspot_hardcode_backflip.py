@@ -627,8 +627,8 @@ async def main():
         print("Usage: python client.py <robot_id> <server_ip>")
         print("Example: python client.py 605 192.168.1.100")
         sys.exit(1)
-
-    global client_id = sys.argv[1]
+    global client_id
+    client_id = sys.argv[1]
     uri = f"wss://rob-sync-production.up.railway.app/ws/{client_id}"
     await websocket_handler(uri)
 
