@@ -376,6 +376,6 @@ echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 echo "Laptop IP: $laptop_ip"
 url="http://$laptop_ip:8000" 
 echo "Opening server in Mozilla Firefox at $url..."
-sudo -u $USER firefox "$url" &
+sudo -u $(logname) firefox "$url" &
 
 echo -e "\nLog has been saved to $LOGFILE"
