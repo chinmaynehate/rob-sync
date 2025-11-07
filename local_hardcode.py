@@ -387,7 +387,7 @@ async def do_drill():
         # udp_robot.SetSend(cmd)
         # udp_robot.Send()
 
-    elif name == "699":
+    elif name == "885":
         # go back
         init_robots()
         curr = time.time() - startTime

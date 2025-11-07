@@ -194,7 +194,7 @@ async def do_drill():
     set_point = get_current_yaw()
     print("hello from ", name)
 
-    if name == "605" or name == "814":
+    if name == "194" or name == "814":
         # go back
         cmd.mode = 2
         cmd.velocity = [-0.4, 0]
@@ -387,7 +387,7 @@ async def do_drill():
         udp_robot.SetSend(cmd)
         udp_robot.Send()
 
-    elif name == "699":
+    elif name == "885":
         # go back
         init_robots()
         curr = time.time() - startTime

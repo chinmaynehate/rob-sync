@@ -7,8 +7,8 @@ else
     echo ".env file not found! Please create one with the necessary configurations."
     exit 1
 fi
-
-source ../venv/bin/activate
+# cd /home/chinmay/rob-sync
+source /venv/bin/activate
 
 # Trap to handle Ctrl+C (SIGINT) for graceful exit
 trap 'echo -e "\n\nScript interrupted! Reconnecting to main Wi-Fi..."; reconnect_to_main_wifi; exit 1' INT
